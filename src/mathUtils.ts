@@ -1,4 +1,4 @@
-import { arrayOrderNumberUp } from './jsUtils'
+import { arrayOrderNumberIncreasing } from './jsUtils'
 
 /*
  * Specify how many decimal digits you want in all results
@@ -60,7 +60,7 @@ export const roundNumber = (number: number, decimals: number = defaultDecimalGid
  * @return {number}
  */
 export const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalGidits): number => {
-  return roundNumber([a, b, c].sort(arrayOrderNumberUp)[1], decimals)
+  return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)
 }
 
 /*
