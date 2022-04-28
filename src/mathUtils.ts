@@ -309,7 +309,8 @@ export const getQuadraticBezierCurveLength = (
   if (BA === -C_2 && a.x !== 0 && a.y !== 0 && b.x !== 0 && b.y !== 0) {
     BA += 1
   }
-  return roundNumber((A_32 * Sabc + A_2 * B * (Sabc - C_2) + (4 * C * A - B * B) * MATH.log((2 * A_2 + BA + Sabc) / (BA + C_2))) / (4 * A_32), decimals)
+  const length = (A_32 * Sabc + A_2 * B * (Sabc - C_2) + (4 * C * A - B * B) * MATH.log((2 * A_2 + BA + Sabc) / (BA + C_2))) / (4 * A_32)
+  return roundNumber(length, decimals)
 }
 
 /*
@@ -432,7 +433,9 @@ export const getDistanceBetweenThreePoints = (
   y3: number,
   decimals: number = defaultDecimalGidits,
 ): number => {
-  return roundNumber((getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0) + (getDistanceBetweenTwoPoints(x2, y2, x3, y3, decimals) || 0), decimals)
+  const firstDistance = getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0
+  const secondDistance = getDistanceBetweenTwoPoints(x2, y2, x3, y3, decimals) || 0
+  return roundNumber(firstDistance + secondDistance, decimals)
 }
 
 /*
@@ -576,7 +579,8 @@ export const translateCoords = (x: number, y: number, dx: number, dy: number): A
  * @return {Array} Array with [x, y] middle point's coords
  */
 export const getMiddlePointCoords = (
-  x1: number, y1: number,
+  x1: number,
+  y1: number,
   x2: number,
   y2: number,
   decimals: number = defaultDecimalGidits,
