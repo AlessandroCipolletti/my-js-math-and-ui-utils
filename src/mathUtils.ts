@@ -151,7 +151,12 @@ export const getValueOfPercentage = (percentage: number, total: number, decimals
  * @param {number} [decimals]
  * @return {number}
  */
-export const getLogarithmicValueOfPercentage = (percentage: number, minValue: number, maxValue: number, decimals: number = defaultDecimalGidits): number => {
+export const getLogarithmicValueOfPercentage = (
+  percentage: number,
+  minValue: number,
+  maxValue: number,
+  decimals: number = defaultDecimalGidits,
+): number => {
   if (percentage < 0 || minValue <= 0 || maxValue <= 0) {
     return NaN
   }
@@ -180,7 +185,12 @@ export const getLogarithmicValueOfPercentage = (percentage: number, minValue: nu
  * @param {number} [decimals]
  * @return {number}
  */
-export const getLogarithmicPercentageOfValue = (value: number, minValue: number, maxValue: number, decimals: number = defaultDecimalGidits): number => {
+export const getLogarithmicPercentageOfValue = (
+  value: number,
+  minValue: number,
+  maxValue: number,
+  decimals: number = defaultDecimalGidits,
+): number => {
   minValue = Math.log(minValue)
   maxValue = Math.log(maxValue)
   const scale = ((maxValue - minValue) / 100)
@@ -271,7 +281,15 @@ export const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean 
  * @param {number} [decimals]
  * @return {number}
  */
-export const getQuadraticBezierCurveLength = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, decimals: number = defaultDecimalGidits): number => {
+export const getQuadraticBezierCurveLength = (
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+  x3: number,
+  y3: number,
+  decimals: number = defaultDecimalGidits,
+): number => {
   const a = {
     x: x1 - 2 * x2 + x3,
     y: y1 - 2 * y2 + y3,
@@ -379,7 +397,13 @@ export const convertAngleDegreesToRadians = (degrees: number): number => {
  * @param {number} [decimals]
  * @return {number}
  */
-export const getDistanceBetweenTwoPoints = (x1: number, y1: number, x2: number, y2: number, decimals: number = defaultDecimalGidits): number => {
+export const getDistanceBetweenTwoPoints = (
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+  decimals: number = defaultDecimalGidits,
+): number => {
   return roundNumber(MATH.sqrt(MATH.pow(x2 - x1, 2) + MATH.pow(y2 - y1, 2)), decimals)
 }
 
@@ -399,7 +423,15 @@ export const getDistanceBetweenTwoPoints = (x1: number, y1: number, x2: number, 
  * @param {number} [decimals]
  * @return {number}
  */
-export const getDistanceBetweenThreePoints = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, decimals: number = defaultDecimalGidits): number => {
+export const getDistanceBetweenThreePoints = (
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+  x3: number,
+  y3: number,
+  decimals: number = defaultDecimalGidits,
+): number => {
   return roundNumber((getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0) + (getDistanceBetweenTwoPoints(x2, y2, x3, y3, decimals) || 0), decimals)
 }
 
@@ -543,7 +575,12 @@ export const translateCoords = (x: number, y: number, dx: number, dy: number): A
  * @param {number} [decimals]
  * @return {Array} Array with [x, y] middle point's coords
  */
-export const getMiddlePointCoords = (x1: number, y1: number, x2: number, y2: number, decimals: number = defaultDecimalGidits): Array<number> => {
+export const getMiddlePointCoords = (
+  x1: number, y1: number,
+  x2: number,
+  y2: number,
+  decimals: number = defaultDecimalGidits,
+): Array<number> => {
   return [
     roundNumber((x1 + x2) / 2, decimals),
     roundNumber((y1 + y2) / 2, decimals),
