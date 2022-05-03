@@ -266,6 +266,29 @@ export const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean 
   return Math.abs(max - min) <= tolerance
 }
 
+/*
+ * Get the factorial of the given number
+ * (Recursive function)
+ *
+ * @param {number} n
+ * @return {number}
+ */
+export const factorial = (n: number): number => {
+  return n === 1 ? 1 : n * factorial(n - 1)
+}
+
+/*
+ * Get the summation of the first N natural numbers
+ * Thanks to Carl Friedrich Gauss we don't need to use a recursive function
+ *
+ * @param {number} n
+ * @return {number}
+ */
+export const naturalNumbersSummation = (n: number): number => {
+  // return n === 1 ? 1 : n + naturalNumbersSummation(n - 1)
+  return (n * (n + 1)) / 2
+}
+
 
 /* BEZIER CURVE */
 
@@ -699,27 +722,4 @@ export const getPointProjectionOnLine = (x1: number, y1: number, x2: number, y2:
     y4 = y3
   }
   return getIntersectionBetween4Points(x1, y1, x2, y2, x3, y3, x4, y4)
-}
-
-/*
- * Get the factorial of the given number
- * (Recursive function)
- *
- * @param {number} n
- * @return {number}
- */
-export const factorial = (n: number): number => {
-  return n === 1 ? 1 : n * factorial(n - 1)
-}
-
-/*
- * Get the summation of the first N natural numbers
- * Thanks to Carl Friedrich Gauss we don't need to use a recursive function
- *
- * @param {number} n
- * @return {number}
- */
-export const naturalNumbersSummation = (n: number): number => {
-  // return n === 1 ? 1 : n + naturalNumbersSummation(n - 1)
-  return (n * (n + 1)) / 2
 }
