@@ -1,25 +1,25 @@
 import { arrayOrderNumberIncreasing } from './jsUtils'
 
-/*
+/**
  * Specify how many decimal digits you want in all results
  *
  * @type {number}
  */
 let defaultDecimalGidits = 4
 
-/*
+/**
  * Local alias for Math object
  */
 const MATH = Math
 
-/*
+/**
  * Local alias for Math.PI number
  *
  * @type {number}
  */
 const PI = MATH.PI
 
-/*
+/**
  * Set a different default decimal digit amount
  *
  * @param {number} digits
@@ -31,7 +31,7 @@ export const setDefaultDecimalDigit = (digits: number):void => {
 
 /* ARITHMETIC UTILS */
 
-/*
+/**
  * Round a number how much you want
  *
  * @param {number} number
@@ -43,7 +43,7 @@ export const roundNumber = (number: number, decimals: number = defaultDecimalGid
   return MATH.round(number * factor) / factor
 }
 
-/*
+/**
  * Force a number to be between a min and a max value, and then rounds it
  *
  * @example
@@ -63,7 +63,7 @@ export const getNumberInBetween = (a:number, b:number, c:number, decimals: numbe
   return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)
 }
 
-/*
+/**
  * Get a random number, between min and max included, and then rounds it
  *
  * @example
@@ -93,7 +93,7 @@ export const getRandomNumber = (n1: number, n2?: number, decimals: number = defa
   return roundNumber((MATH.random() * (max - min)) + min, decimals)
 }
 
-/*
+/**
  * Get the percentage of a value out of the total, and then rounds it
  *
  *
@@ -113,7 +113,7 @@ export const getPercentageOfValue = (value: number, total: number, decimals: num
   return roundNumber(value * 100 / total, decimals)
 }
 
-/*
+/**
  * Get the value of a percentage out of the total, and then rounds it
  *
  * @example
@@ -132,7 +132,7 @@ export const getValueOfPercentage = (percentage: number, total: number, decimals
   return roundNumber(percentage * total / 100, decimals)
 }
 
-/*
+/**
  * Get the value of a percentage out of the total using a logarithmic scale, and then rounds it
  *
  * @example
@@ -166,7 +166,7 @@ export const getLogarithmicValueOfPercentage = (
   return roundNumber(Math.exp(minValue + (scale * percentage)), decimals)
 }
 
-/*
+/**
  * Get the value of a percentage out of the total using a logarithmic scale, and then rounds it
  *
  * @example
@@ -201,7 +201,7 @@ export const getLogarithmicPercentageOfValue = (
   }
 }
 
-/*
+/**
  * Get the average of all given numbers
  *
  * @example
@@ -227,7 +227,7 @@ const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number =
   return x
 }
 
-/*
+/**
  * Get the great common divisor between all given numbers
  *
  * @example
@@ -246,7 +246,7 @@ export const getGreatCommonDivisor = (numbers: Array<number>): number => {
   return _getGreatCommonDivisorBetweenTwoNumbers(numbers[0], numbers[1])
 }
 
-/*
+/**
  * Checks if all elements in the array differ from each other by less than the given tolerance
  *
  * @example
@@ -266,7 +266,7 @@ export const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean 
   return Math.abs(max - min) <= tolerance
 }
 
-/*
+/**
  * Get the factorial of the given number
  * (Recursive function)
  *
@@ -277,7 +277,7 @@ export const factorial = (n: number): number => {
   return n === 1 ? 1 : n * factorial(n - 1)
 }
 
-/*
+/**
  * Get the summation of the first N natural numbers
  * Thanks to Carl Friedrich Gauss we don't need to use a recursive function
  *
@@ -292,7 +292,7 @@ export const naturalNumbersSummation = (n: number): number => {
 
 /* BEZIER CURVE */
 
-/*
+/**
  * Get the length of a quadratic bezier curve passing through 3 points, and then rounds it
  *
  * @param {number} x1
@@ -336,7 +336,7 @@ export const getQuadraticBezierCurveLength = (
   return roundNumber(length, decimals)
 }
 
-/*
+/**
  * Get the quadratic bezier value at the given time t
  *
  * @param {number} t
@@ -345,11 +345,11 @@ export const getQuadraticBezierCurveLength = (
  * @param {number} p3
  * @return {number}
  */
-export const getQuadraticBezierValue = (t: number, p1: number, p2: number, p3: number): number => {
+export const getQuadraticBezierValueAtTime = (t: number, p1: number, p2: number, p3: number): number => {
   return ((1 - t) * (1 - t) * p1 + 2 * (1 - t) * t * p2 + t * t * p3)
 }
 
-/*
+/**
  * Get the length of a quadratic bezier curve passing through 3 points, and then rounds it
  *
  * @param {number} t
@@ -381,33 +381,33 @@ export const getQuadraticBezierCurvePointAtTime = (
 
 /* CARTESIAN PLANE UTILS */
 
-/*
+/**
  * Converts radians to degrees
  *
  * @example
  * // returns 180
  * convertAngleRadiansToDegrees(Math.PI)
  *
- * @param {number} rad
+ * @param {number} radians
  */
 export const convertAngleRadiansToDegrees = (radians: number): number => {
   return radians * 180 / PI
 }
 
-/*
+/**
  * Converts degrees to radians
  *
  * @example
  * // returns 3.141592653589793
  * convertAngleDegreesToRadians(180)
  *
- * @param {number} deg
+ * @param {number} degrees
  */
 export const convertAngleDegreesToRadians = (degrees: number): number => {
   return degrees * PI / 180
 }
 
-/*
+/**
  * Get the distance between two points' coords (on a Cartesian plane px system), and then rounds it
  *
  * @example
@@ -431,7 +431,7 @@ export const getDistanceBetweenTwoPoints = (
   return roundNumber(MATH.sqrt(MATH.pow(x2 - x1, 2) + MATH.pow(y2 - y1, 2)), decimals)
 }
 
-/*
+/**
  * Get the distance between three points' coords (on a Cartesian plane px system), and then rounds it
  *
  * @example
@@ -461,7 +461,7 @@ export const getDistanceBetweenThreePoints = (
   return roundNumber(firstDistance + secondDistance, decimals)
 }
 
-/*
+/**
  * Tells if the distance between two points is greater than a certain amount (on a Cartesian plane px system)
  *
  * @example
@@ -479,7 +479,7 @@ export const distanceBetweenTwoPointsGreaterThan = (x1: number, y1: number, x2: 
   return MATH.pow(x2 - x1, 2) + MATH.pow(y2 - y1, 2) >= MATH.pow(distance, 2)
 }
 
-/*
+/**
  * Get the angle (in degree) of the line passing through two points (on a Cartesian plane px system)
  *
  * @example
@@ -499,7 +499,7 @@ export const getAngleDegreesBetweenTwoPoints = (x1: number, y1: number, x2: numb
   return convertAngleRadiansToDegrees(getAngleRadiansBetweenTwoPoints(x1, y1, x2, y2))
 }
 
-/*
+/**
  * Get the angle (in radians) of the line passing through two points (on a Cartesian plane px system)
  *
  * @example
@@ -544,7 +544,7 @@ export const getAngleRadiansBetweenTwoPoints = (x1: number, y1: number, x2: numb
   }
 }
 
-/*
+/**
  * Rotate a point's coords by a specific radians angle (on a Cartesian plane px system)
  *
  * @example
@@ -567,7 +567,7 @@ export const rotateCoords = (x: number, y: number, angleRadians: number, decimal
   ]
 }
 
-/*
+/**
  * Translate a point's coords by a specific amount (on a Cartesian plane px system)
  *
  * @example
@@ -587,7 +587,7 @@ export const translateCoords = (x: number, y: number, dx: number, dy: number): A
   ]
 }
 
-/*
+/**
  * Get the middle point's coords between the two given points (on a Cartesian plane px system)
  *
  * @example
@@ -614,7 +614,7 @@ export const getMiddlePointCoords = (
   ]
 }
 
-/*
+/**
  * Get the slope coefficient of the line passing through two given points (on a Cartesian plane px system)
  *
  * @param {number} x1
@@ -627,7 +627,7 @@ export const getSlopeCoefficientBetweenTwoPoints = (x1: number, y1: number, x2: 
   return (y2 - y1) / (x2 - x1)
 }
 
-/*
+/**
  * Get the cartesian function of the line passing through two given points (on a Cartesian plane px system)
  *
  * @param {number} x1
@@ -640,7 +640,7 @@ export const getLineFunctionBetweenTwoPoints = (x1: number, y1: number, x2: numb
   return (x: number) => (((x - x1) * (y2 - y1)) / (x2 - x1)) + y1
 }
 
-/*
+/**
  * Get the cartesian function of the perpendicular line passing through one given point (on a Cartesian plane px system)
  *
  * @param {number} slope
@@ -652,7 +652,7 @@ export const getPerpendicularLineFunctionPassingByPoint = (slope: number, x1: nu
   return (x: number) => (-1 / slope) * (x - x1) + y1
 }
 
-/*
+/**
  * Get the coords of the intersection point between two lines (on a Cartesian plane px system)
  *
  * @param {number} x1
@@ -690,7 +690,7 @@ export const getIntersectionBetween4Points = (
   ]
 }
 
-/*
+/**
  * Get the coords of the perpendicular projection of the given point on the given live (on a Cartesian plane px system)
  *
  * @param {number} x1

@@ -1,6 +1,13 @@
+import { v4 as uuidv4 } from 'uuid'
 import isEqual from 'lodash.isequal'
 
-/*
+/* UTILS WEB WORKERS */
+const fileLoaderWorker = new Worker('./workers/fileLoader.ts')
+
+
+/* ARRAY UTILS */
+
+/**
  * Utils to sort an array of number increasing
  *
  * @param {number} a
@@ -9,7 +16,7 @@ import isEqual from 'lodash.isequal'
  */
 export const arrayOrderNumberIncreasing = (a: number, b: number): number => a - b
 
-/*
+/**
  * Utils to sort an array of number decreasing
  *
  * @param {number} a
@@ -18,7 +25,7 @@ export const arrayOrderNumberIncreasing = (a: number, b: number): number => a - 
  */
 export const arrayOrderNumberDecreasing = (a: number, b: number): number => b - a
 
-/*
+/**
  * Utils to sort an array of string alphabetically
  *
  * @param {string} a
@@ -31,7 +38,7 @@ export const arrayOrderStringAlphabetically = (a: string, b: string): number => 
   return 0
 }
 
-/*
+/**
  * Utils to sort an array of string counter alphabetically
  *
  * @param {string} a
@@ -44,7 +51,9 @@ export const arrayOrderStringDown = (a: string, b: string): number => {
   return 0
 }
 
-/*
+
+
+/**
  * Utils to make a deep copy of a variable
  *
  * @param {any} value
@@ -54,7 +63,7 @@ export const deepCopy = (value: Record<string, any> | number | string): Record<s
   return JSON.parse(JSON.stringify(value))
 }
 
-/*
+/**
  * Utils to stop js execution inline with async/await syntax
  *
  * @example
@@ -67,7 +76,7 @@ export const delay = (milliseconds: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds))
 }
 
-/*
+/**
  * Utils to delay as little as possible a function call
  *
  * @example
@@ -85,7 +94,7 @@ export const delayFn = (fn: () => any) => function(...args: Array<any>) {
   })
 }
 
-/*
+/**
  * Utils to iterate one function over multiple elements in parallel
  *
  * @example
@@ -114,7 +123,7 @@ export const iterateFn = async(
   }
 }
 
-/*
+/**
  * Trottle a function
  *
  * @example
@@ -144,7 +153,7 @@ export const throttle = (callback: () => any, delay: number) => {
   }
 }
 
-/*
+/**
  * Calls the callback everytime its arguments change
  *
  * @example
@@ -154,6 +163,7 @@ export const throttle = (callback: () => any, delay: number) => {
  * myFnOnlyWhenChange('hello') // nothing
  * myFnOnlyWhenChange('hello', 'world') // <-- 'hello' 'world'
  * myFnOnlyWhenChange('hello', 'world') // nothing
+ * myFnOnlyWhenChange('hello') // <-- 'hello'
  *
  * @param {Function} callback
  * @return {Function}
@@ -176,7 +186,7 @@ export const callCallbackIfDataChanged = (callback: () => any) => {
   }
 }
 
-/*
+/**
  * Copy a string to device clipboard
  *
  * @param {string} str
@@ -189,4 +199,45 @@ export const copyTextToClipboard = (str: string) => {
   el.select()
   document.execCommand('copy')
   document.body.removeChild(el)
+}
+
+
+/* WEB WORKER UTILS */
+
+/**
+ * A standardized way to wait for a worker response.
+ * By passing an additional string id to each command, you can await for one specific response.
+ * Workers must take in input 'id' from each message, and give it back whitin each response.
+ *
+ * @example
+ * const myWorker = new Worker('pathToTheWorkerFile')
+ * const id = uuidv4()
+ * myWorker.postMessage({ id, someData })
+ * const response = await waitWorkerMessage()
+ *
+ */
+export function waitWorkerMessage (worker: Worker, id: string): any {
+  return new Promise((resolve) => {
+    const onLoaded = (event: MessageEvent) => {
+      const { id: idMsg } = event.data
+      if (id === idMsg) {
+        worker.removeEventListener('message', onLoaded)
+        resolve(event.data)
+      }
+    }
+    worker.addEventListener('message', onLoaded)
+  })
+}
+
+/**
+ * Retreives a blob from the given url asynchronously in a separate thread, and returns a local ObjectURl pointing to it
+ *
+ * @params {string} url
+ * @return {Promise<string>}
+ */
+export const fetchUrlFileOffThread = async(url: string): Promise<string> => {
+  const id = uuidv4()
+  fileLoaderWorker.postMessage({ id, url })
+  const data = await waitWorkerMessage(fileLoaderWorker, id)
+  return URL.createObjectURL(data.blob)
 }
