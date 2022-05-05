@@ -50,20 +50,6 @@ interface ParticlesListItem {
 }
 
 /**
- * @typedef RgbaColorObject
- * @prop {number} r
- * @prop {number} g
- * @prop {number} b
- * @prop {number} a
- */
-interface RgbaColorObject {
-  r: number,
-  g: number,
-  b: number,
-  a: number,
-}
-
-/**
  * @typeof FrameFunction
  * @prop {MyCanvasRenderingContext2D} destinationContext
  * @prop {number} x
