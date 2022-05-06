@@ -51,14 +51,14 @@ const pixelCompareAndSet = (
 
 
 self.addEventListener('message', (event: MessageEvent) => {
-  const id = event.data.id as string
-  const bucketData = event.data.bucketData as Uint8ClampedArray
-  const fillColor = event.data.fillColor as RgbaColorObject
-  const targetColor = event.data.targetColor as RgbaColorObject
-  const onePxLineArrayLength = event.data.onePxLineArrayLength as number
-  const tolerance = event.data.tolerance as number
-  const boundariesWeekMode = event.data.boundariesWeekMode as boolean
-  let i = event.data.i as number
+  const id: string = event.data.id
+  const bucketData: Uint8ClampedArray = event.data.bucketData
+  const fillColor: RgbaColorObject = event.data.fillColor
+  const targetColor: RgbaColorObject = event.data.targetColor
+  const onePxLineArrayLength: number = event.data.onePxLineArrayLength
+  const tolerance: number = event.data.tolerance
+  const boundariesWeekMode: boolean = event.data.boundariesWeekMode
+  let i: number = event.data.i
 
   const bucketDataLength = bucketData.length
   const pixelsQueue = []

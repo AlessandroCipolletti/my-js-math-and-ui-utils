@@ -5,7 +5,7 @@ import { arrayOrderNumberIncreasing } from './jsUtils'
  *
  * @type {number}
  */
-let defaultDecimalGidits = 4
+let defaultDecimalDigits = 4
 
 /**
  * Local alias for Math object
@@ -23,9 +23,10 @@ const PI = MATH.PI
  * Set a different default decimal digit amount
  *
  * @param {number} digits
+ * @return {void}
  */
-export const setDefaultDecimalDigit = (digits: number):void => {
-  defaultDecimalGidits = digits
+export const setDefaultDecimalDigits = (digits: number):void => {
+  defaultDecimalDigits = digits
 }
 
 
@@ -38,7 +39,7 @@ export const setDefaultDecimalDigit = (digits: number):void => {
  * @param {number} [decimals]
  * @return {number}
  */
-export const roundNumber = (number: number, decimals: number = defaultDecimalGidits): number => {
+export const roundNumber = (number: number, decimals: number = defaultDecimalDigits): number => {
   const factor = MATH.pow(10, decimals)
   return MATH.round(number * factor) / factor
 }
@@ -59,7 +60,7 @@ export const roundNumber = (number: number, decimals: number = defaultDecimalGid
  * @param {number} [decimals]
  * @return {number}
  */
-export const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalGidits): number => {
+export const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)
 }
 
@@ -81,7 +82,7 @@ export const getNumberInBetween = (a:number, b:number, c:number, decimals: numbe
  * @param {number} [decimals]
  * @return {number}
  */
-export const getRandomNumber = (n1: number, n2?: number, decimals: number = defaultDecimalGidits): number => {
+export const getRandomNumber = (n1: number, n2?: number, decimals: number = defaultDecimalDigits): number => {
   let min, max
   if (typeof n2 === 'undefined') {
     min = 0
@@ -109,7 +110,7 @@ export const getRandomNumber = (n1: number, n2?: number, decimals: number = defa
  * @param {number} [decimals]
  * @return {number}
  */
-export const getPercentageOfValue = (value: number, total: number, decimals: number = defaultDecimalGidits): number => {
+export const getPercentageOfValue = (value: number, total: number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(value * 100 / total, decimals)
 }
 
@@ -128,7 +129,7 @@ export const getPercentageOfValue = (value: number, total: number, decimals: num
  * @param {number} [decimals]
  * @return {number}
  */
-export const getValueOfPercentage = (percentage: number, total: number, decimals: number = defaultDecimalGidits): number => {
+export const getValueOfPercentage = (percentage: number, total: number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(percentage * total / 100, decimals)
 }
 
@@ -155,7 +156,7 @@ export const getLogarithmicValueOfPercentage = (
   percentage: number,
   minValue: number,
   maxValue: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): number => {
   if (percentage < 0 || minValue <= 0 || maxValue <= 0) {
     return NaN
@@ -189,7 +190,7 @@ export const getLogarithmicPercentageOfValue = (
   value: number,
   minValue: number,
   maxValue: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): number => {
   minValue = Math.log(minValue)
   maxValue = Math.log(maxValue)
@@ -212,7 +213,7 @@ export const getLogarithmicPercentageOfValue = (
  * @param {number} [decimals]
  * @return {number}
  */
-export const getAverage = (values: Array<number>, decimals: number = defaultDecimalGidits): number => {
+export const getAverage = (values: Array<number>, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(values.reduce((t, v) => t + v, 0) / values.length, decimals)
 }
 
@@ -311,7 +312,7 @@ export const getQuadraticBezierCurveLength = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): number => {
   const a = {
     x: x1 - 2 * x2 + x3,
@@ -370,7 +371,7 @@ export const getQuadraticBezierCurvePointAtTime = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): Array<number> => {
   return [
     roundNumber((1 - t) * (1 - t) * x1 + 2 * (1 - t) * t * x2 + t * t * x3, decimals), // curve x at time t
@@ -426,7 +427,7 @@ export const getDistanceBetweenTwoPoints = (
   y1: number,
   x2: number,
   y2: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): number => {
   return roundNumber(MATH.sqrt(MATH.pow(x2 - x1, 2) + MATH.pow(y2 - y1, 2)), decimals)
 }
@@ -454,7 +455,7 @@ export const getDistanceBetweenThreePoints = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): number => {
   const firstDistance = getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0
   const secondDistance = getDistanceBetweenTwoPoints(x2, y2, x3, y3, decimals) || 0
@@ -560,7 +561,7 @@ export const getAngleRadiansBetweenTwoPoints = (x1: number, y1: number, x2: numb
  * @param {number} [decimals]
  * @return {Array} Array with [x, y] rotated coords
  */
-export const rotateCoords = (x: number, y: number, angleRadians: number, decimals: number = defaultDecimalGidits): Array<number> => {
+export const rotateCoords = (x: number, y: number, angleRadians: number, decimals: number = defaultDecimalDigits): Array<number> => {
   return [
     roundNumber(x * MATH.cos(angleRadians) + y * MATH.sin(angleRadians), decimals),
     roundNumber(-x * MATH.sin(angleRadians) + y * MATH.cos(angleRadians), decimals),
@@ -606,7 +607,7 @@ export const getMiddlePointCoords = (
   y1: number,
   x2: number,
   y2: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): Array<number> => {
   return [
     roundNumber((x1 + x2) / 2, decimals),
@@ -675,7 +676,7 @@ export const getIntersectionBetween4Points = (
   y3: number,
   x4: number,
   y4: number,
-  decimals: number = defaultDecimalGidits,
+  decimals: number = defaultDecimalDigits,
 ): Array<number> => {
   // points {x1, y1} and {x2, y2} define the first line
   // points {x3, y3} and {x4, y4} define the second line

@@ -13,6 +13,9 @@ import { waitWorkerMessage } from './jsUtils'
 import { colorStringToRgb, compareRgbColorsWithinTolerance } from './colorsUtils'
 
 
+const bucketWorker: Worker = new Worker('./workers/bucket.ts')
+
+
 /**
  * Local alias for Math object
  */
@@ -450,7 +453,7 @@ export const fillCompletely = (destinationContext: MyCanvasRenderingContext2D, c
 
 /* BUCKET UTILS */
 
-const bucketWorker: Worker = new Worker('./workers/bucket.ts')
+
 const bucketConfig = {
   bucketColorsHistorySize: 150,
   bucketColorsToleranceWithTransparency: 24,
