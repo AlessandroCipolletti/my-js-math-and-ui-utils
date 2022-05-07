@@ -16,7 +16,8 @@
     ],
     "no-console": 0,
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": ["off"]
+    "@typescript-eslint/no-empty-function": ["off"],
+    "@typescript-eslint/no-explicit-any": "off",
     "prefer-rest-params": 1,
     "linebreak-style": [
       "error",

@@ -59,6 +59,7 @@ export const arrayOrderStringDown = (a: string, b: string): number => {
  * @param {any} value
  * @return {any}
  */
+// eslint-disable-next-line
 export const deepCopy = (value: Record<string, any> | number | string): Record<string, any> | number | string => {
   return JSON.parse(JSON.stringify(value))
 }
@@ -170,18 +171,17 @@ export const throttle = (callback: () => any, delay: number) => {
  */
 export const callCallbackIfDataChanged = (callback: () => any) => {
   let lastArguments: Array<any> = []
-  return function() {
-    const newArguments = Array.from(arguments)
+  return (...args) => {
     let changed = false
-    for (let i = 0; i < newArguments.length; i++) {
-      if (!isEqual(lastArguments[i], newArguments[i])) {
+    for (let i = 0; i < args.length; i++) {
+      if (!isEqual(lastArguments[i], args[i])) {
         changed = true
         break
       }
     }
     if (changed) {
-      lastArguments = newArguments
-      callback(...newArguments as [])
+      lastArguments = args
+      callback(...args as [])
     }
   }
 }

@@ -10,7 +10,7 @@ import {
   getQuadraticBezierValueAtTime,
 } from './mathUtils'
 import { waitWorkerMessage } from './jsUtils'
-import { colorStringToRgb, compareRgbColorsWithinTolerance } from './colorsUtils'
+import { colorStringToRgb, compareRgbColorsWithTolerance } from './colorsUtils'
 
 
 const bucketWorker: Worker = new Worker('./workers/bucket.ts')
@@ -503,7 +503,7 @@ export const fillWithBucket = (
   fillColor.a = roundNumber(fillColor.a * 255, 0)
 
   // if target color and fill color are the same (within tolerance) I do nothing
-  if (image.data[i + 3] > 0 && compareRgbColorsWithinTolerance(targetColor, fillColor, tolerance)) {
+  if (image.data[i + 3] > 0 && compareRgbColorsWithTolerance(targetColor, fillColor, tolerance)) {
     return false
   }
 
