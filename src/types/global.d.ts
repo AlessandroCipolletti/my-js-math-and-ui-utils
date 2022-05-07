@@ -11,6 +11,15 @@ declare interface MyCanvasRenderingContext2D extends CanvasRenderingContext2D {
 }
 
 /**
+ * @typedef HTMLElementWithAnimations
+ * Extends a HTMLElement to add animationsInProgress
+ * @prop {Record<string, Animation>} animationsInProgress
+ */
+declare interface HTMLElementWithAnimations extends HTMLElement {
+  animationsInProgress?: Record<string, Animation>,
+}
+
+/**
  * @typedef RgbaColorObject
  * @prop {number} r int [0...255]
  * @prop {number} g int [0...255]
@@ -76,6 +85,20 @@ declare interface DomRect {
   centerY: number,
 }
 
+/**
+ * Any type of pointer input event
+ * @typedef {MouseEvent | PointerEvent | TouchEvent} AnyPointerEvent
+ */
 declare type AnyPointerEvent = MouseEvent | PointerEvent | TouchEvent
+
+/**
+ * Any type of pointer / touch input variable who indentify one or more pointers / fingers
+ * @typedef {MouseEvent | PointerEvent | Touch | TouchEvent | TouchList} AnyPointerEventOrArray
+ */
 declare type AnyPointerEventOrArray = MouseEvent | PointerEvent | Touch | TouchEvent | TouchList
+
+/**
+ * Any type of pointer / touch input variable who identify only one pointer / finger
+ * @typedef {MouseEvent | PointerEvent | Touch} OnePointerEvent
+ */
 declare type OnePointerEvent = MouseEvent | PointerEvent | Touch
