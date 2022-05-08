@@ -102,3 +102,11 @@ declare type AnyPointerEventOrArray = MouseEvent | PointerEvent | Touch | TouchE
  * @typedef {MouseEvent | PointerEvent | Touch} OnePointerEvent
  */
 declare type OnePointerEvent = MouseEvent | PointerEvent | Touch
+
+
+declare type GestureHandler = (
+  x: number,
+  y: number,
+  scale: number,
+  rotation: number,
+) => void
