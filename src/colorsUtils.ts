@@ -2,6 +2,7 @@ import { getRandomNumber, roundNumber } from './mathUtils'
 
 
 /**
+ * @function rgbaToRgbaString
  * Returns a valid rgba() css string from the given r g b a values
  *
  * @example
@@ -11,7 +12,7 @@ import { getRandomNumber, roundNumber } from './mathUtils'
  * @param {number} r
  * @param {number} g
  * @param {number} b
- * @param {number} [a]
+ * @param {number} [a = 1]
  * @return {string}
  */
 export const rgbaToRgbaString = (r: number, g: number, b: number, a = 1) => {
@@ -19,6 +20,7 @@ export const rgbaToRgbaString = (r: number, g: number, b: number, a = 1) => {
 }
 
 /**
+ * @function rgbaStringToRgba
  * Spits a rgba() or rgb() css string to its r g b a values
  *
  * @example
@@ -39,6 +41,7 @@ export const rgbaStringToRgba = (rgbaString: string): RgbaColorObject => {
 }
 
 /**
+ * @function hexToRgba
  * Converts hex string (#aabbcc || #aabbccdd) to rgba object
  *
  * @example
@@ -56,6 +59,7 @@ export const hexToRgba = (hex: string): RgbaColorObject => ({
 })
 
 /**
+ * @function rgbToHex
  * converts r g b values to rgb string #aabbcc
  *
  * @example
@@ -71,6 +75,7 @@ export const rgbToHex = (r: number, g: number, b: number): string => {
 }
 
 /**
+ * @function rgbaToHex
  * converts r g b a values to rgb string #aabbccdd
  *
  * @example
@@ -87,12 +92,13 @@ export const rgbaToHex = (r: number, g: number, b: number, a: number): string =>
 }
 
 /**
+ * @function compareRgbColorsWithTolerance
  * Compares two RgbColorObject.
  * It needs all three values r g b to be within the tolerance for the two colors to be treated as equal.
  *
  * @param {RgbColorObject} rgb1
  * @param {RgbColorObject} rgb2
- * @param {number} [tolerance]
+ * @param {number} [tolerance = 10]
  * @return {boolean}
  */
 export const compareRgbColorsWithTolerance = (
@@ -106,6 +112,7 @@ export const compareRgbColorsWithTolerance = (
 )
 
 /**
+ * @function hslaToRgba
  * Converts hue saturation brightness alpha values to  r g b a values
  *
  * @example
@@ -115,10 +122,10 @@ export const compareRgbColorsWithTolerance = (
  * @param {number} hue
  * @param {number} sat
  * @param {number} light
- * @param {number} [a]
+ * @param {number} [alpha = 1]
  * @return {RgbaColorObject}
  */
-export const hslaToRgba = (hue: number, sat: number, light: number, a = 1): RgbaColorObject => {
+export const hslaToRgba = (hue: number, sat: number, light: number, alpha = 1): RgbaColorObject => {
   let t2: number
   sat = roundNumber(sat / 100, 2)
   light = roundNumber(light / 100, 2)
@@ -133,7 +140,7 @@ export const hslaToRgba = (hue: number, sat: number, light: number, a = 1): Rgba
   const g = roundNumber(_hueToRgb(t1, t2, hue) * 255, 0)
   const b = roundNumber(_hueToRgb(t1, t2, hue - 2) * 255, 0)
 
-  return { r, g, b, a }
+  return { r, g, b, a: alpha }
 }
 
 const _hueToRgb = (t1: number, t2: number, hue: number): number => {
@@ -146,6 +153,7 @@ const _hueToRgb = (t1: number, t2: number, hue: number): number => {
 }
 
 /**
+ * @function rgbaToHsla
  * Converts r g b a values to h l s a values
  *
  * @example
@@ -215,6 +223,7 @@ const rgbaToHsla = (r: number, g: number, b: number, a = 1): HslaColorObject => 
 }
 
 /**
+ * @function hslaStringToRgba
  * Converts hsl css strings to rgba values
  *
  * @example
@@ -230,6 +239,7 @@ export const hslaStringToRgba = (hslaString: string): RgbaColorObject => {
 }
 
 /**
+ * @function getRandomRgbaColor
  * Get a random rgba() css string color.
  * With a specific alpha, a default alpha, or without alpha.
  *
@@ -238,7 +248,7 @@ export const hslaStringToRgba = (hslaString: string): RgbaColorObject => {
  * getRandomRgbaColor(true) // ==> 'rgba(212, 143, 246, 0.7)'
  * getRandomRgbaColor(0.356) // ==> 'rgba(22, 13, 26, 0.356)'
  *
- * @param {boolean|number} alpha
+ * @param {boolean|number} [alpha = false]
  * @return {string}
  */
 export const getRandomRgbaColor = (alpha: boolean|number = false): string => {
@@ -250,6 +260,7 @@ export const getRandomRgbaColor = (alpha: boolean|number = false): string => {
 }
 
 /**
+ * @function getRandomHexColor
  * Get a random hex css string #123456
  *
  * @example
@@ -265,6 +276,7 @@ export const getRandomHexColor = (): string => {
 }
 
 /**
+ * @function getRandomHslaColor
  * Get a random hsla() css string
  *
  * @example
@@ -273,9 +285,9 @@ export const getRandomHexColor = (): string => {
  * getRandomHslaColor(0.34, 50) // ==> 'hsla(111, 50, 28, 0.34)'
  * getRandomHslaColor(0.34, 50, 40) // ==> 'hsla(87, 50, 40, 0.34)'
  *
- * @param {boolean|number} alpha
- * @param {boolean|number} defaultSat
- * @param {boolean|number} defaultLight
+ * @param {boolean|number} [alpha = false]
+ * @param {boolean|number} [defaultSat = true]
+ * @param {boolean|number} [defaultLight = true]
  * @return {string}
  */
 export const getRandomHslaColor = (alpha: boolean|number = false, defaultSat = true, defaultLight = true): string => {
@@ -291,6 +303,7 @@ export const getRandomHslaColor = (alpha: boolean|number = false, defaultSat = t
 }
 
 /**
+ * @function colorStringToRgb
  * Converts any valid css color string to rgba values
  *
  * @example
@@ -317,6 +330,7 @@ export const colorStringToRgb = (colorString: string): RgbaColorObject|string =>
 }
 
 /**
+ * @function applyBrightnessToHex
  * Allows to chenge brightness to an hex rgb color like it was an hsl color.
  * It returns a new hex rgb string.
  *
@@ -334,6 +348,7 @@ export const applyBrightnessToHex = (hex: string, brightness: number): string =>
 }
 
 /**
+ * @function getHexBrightness
  * Allows to read the brightness of an hex rgb string like it was an hsl color.
  *
  * @param {string} hex
