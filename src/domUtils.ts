@@ -2,8 +2,12 @@ import { roundNumber } from './mathUtils'
 import { iterateFn } from './jsUtils'
 
 /**
+ * @function preventDefaultTouchOnEls
  * Prevents default behavior and stop propagation for all "pointer start" on multiple elements at the same time.
  * 'pointerdown', 'mousedown', and (if supported) 'touchstart'
+ *
+ * @example
+ * preventDefaultTouchOnEls([myDom1, myDom2])
  *
  * @param {Array<HTMLElement>} els
  * @return {void}
@@ -19,7 +23,13 @@ export const preventDefaultTouchOnEls = (...els: Array<HTMLElement>): void => {
 }
 
 /**
+ * @function preventDefault
  * Prevents default event behavior and stop event propagation
+ *
+ * @example
+ * function onTouchStart(e) {
+ *   preventDefault(e)
+ * }
  *
  * @param {Event} e
  * @return {void}
@@ -32,10 +42,16 @@ export const preventDefault = (e: Event): void => {
 }
 
 /**
+ * @function preventMoveDefaultIfNeeded
  * This fixes an annoying iOS15+ behavior on apple devices.
  * Prevents 'pull down to refresh' if the element you are pulling down has a scroll.
  * I used a css class "scrollable" to identify the dom elements who needs to prevent 'pull to refresh'.
  * You can do it by using getComputedStyle(target).overflow === 'auto'|'scroll', but it's more demanding in terms of performance.
+ *
+ * @example
+ * appContainer.addEventListener('touchstart', (e) => {
+ *   preventMoveDefaultIfNeeded(e)
+ * }, false)
  *
  * @param {AnyPointerEvent} event
  * @return {void}
@@ -105,7 +121,11 @@ export const preventMoveDefaultIfNeeded = (event: AnyPointerEvent) => {
 }
 
 /**
+ * @function preventAllDefault
  * Prevents and stops propagation for all pointer related events on the given HTMLElement
+ *
+ * @example
+ * preventAllDefault(myDom)
  *
  * @param {HTMLElement} element
  * @return {void}
@@ -126,6 +146,7 @@ export const preventAllDefault = (element: HTMLElement): void => {
 }
 
 /**
+ * @function createDom
  * Creates (and return) a dom element, and assigns some class names to it.
  *
  * @example
@@ -148,10 +169,16 @@ export const createDom = (tagName = 'div', ...classes: Array<string>): HTMLEleme
 }
 
 /**
+ * @function getEventCoordX
  * Gets the coordX of any type of pointer input
  *
+ * @example
+ * function onMouseMove(e) {
+ *   const mouseX = getEventCoordX(e)
+ * }
+ *
  * @param {AnyPointerEventOrArray} event
- * @param {number} [offset]
+ * @param {number} [offset = 0]
  * @return {number}
  */
 export const getEventCoordX = (
@@ -174,10 +201,16 @@ export const getEventCoordX = (
 }
 
 /**
+ * @function getEventCoordY
  * Gets the coordY of any type of pointer input
  *
+ * @example
+ * function onMouseMove(e) {
+ *   const mouseY = getEventCoordY(e)
+ * }
+ *
  * @param {AnyPointerEventOrArray} event
- * @param {number} [offset]
+ * @param {number} [offset = 0]
  * @return {number}
  */
 export const getEventCoordY = (
@@ -206,6 +239,7 @@ const _attachEvents = (el: HTMLElement, events: Record<string, () => any>): void
 }
 
 /**
+ * @function attachDomEvents
  * Attaches multiple event handlers to multiple dom elements at the same time.
  *
  * @example
@@ -223,9 +257,13 @@ export const attachDomEvents = (elements: Array<HTMLElement>, events: Record<str
 }
 
 /**
+ * @function getDomRect
  * Gets a detailed positioning information about the given dom element (in px, rounded a 1 decimal digit)
  * If you want to get coords related to its container, you can specify container's 'offsetX' and 'offsetY' position.
  * Otherwise it returns coords relative to the page.
+ *
+ * @example
+ * const myDomRect = getDomRect(myDom)
  *
  * @param {HTMLElement} element
  * @param {number} [offsetX]
@@ -250,7 +288,11 @@ export const getDomRect = (element: HTMLElement, offsetX = 0, offsetY = 0): DomR
 }
 
 /**
+ * @function nodeIsChildOf
  * Checks if 'node' is child (at any level) of 'container'
+ *
+ * @example
+ * const isContained = nodeIsChildOf(someChildDom, containerDom)
  *
  * @param {HTMLElement} node
  * @param {HTMLElement} container
@@ -269,8 +311,12 @@ export const nodeIsChildOf = (node: HTMLElement, container: HTMLElement): boolea
 }
 
 /**
+ * @function redrawDomElement
  * Forces an update for the given element.
  * Sometime this is useful to force a dom element to take care of a css or scroll change.
+ *
+ * @example
+ * redrawDomElement(myDom)
  *
  * @param {HTMLElement} element
  * @return {void}
@@ -288,7 +334,13 @@ export const redrawDomElement = (element: HTMLElement): void => {
 }
 
 /**
+ * @function filterTouchesByTargets
  * Given a TouchEvent, it filters the e.touches that are fired on the given target(s)
+ *
+ * @example
+ * function onTouchStart(e) {
+ *   const touches = filterTouchesByTargets(e, myDesidedTarget)
+ * }
  *
  * @param {AnyPointerEvent} event
  * @param {HTMLElement|Array<HTMLElement>} targets
@@ -322,8 +374,12 @@ export const filterTouchesByTargets = (
 }
 
 /**
+ * @function appendChilds
  * Append multiple childs with one line.
  *
+ * @example
+ * appendChilds(containerDom, [myDom1, myDom2])
+ * 
  * @param {HTMLElement} container
  * @param {Array<HTMLElement>} childs
  * @return {void}
