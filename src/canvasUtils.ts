@@ -17,13 +17,14 @@ const bucketWorker: Worker = new Worker('./workers/bucket.ts')
 
 
 /**
+ * @const MATH
  * Local alias for Math object
  */
 const MATH = Math
 
 /**
+ * @const PI
  * Local alias for Math.PI number
- *
  * @type {number}
  */
 const PI = MATH.PI
@@ -84,11 +85,16 @@ interface FrameFunction {
  * I created a standardized way to interact with a html canvas context.
  * All the single frame primitives (circle, particles, etc) take the same input parameters
  * in order to be able to easily exchange between them.
+ * Rotation is in radians.
  */
 
 /**
+ * @function drawCircle
  * Draw a circle on a canvas context, in a standardized way.
  * Takes care of position {x, y}, size, alpha, color and blur.
+ *
+ * @example
+ * drawCircle(myContext, 100, 100, '#123456', 20, 0.5)
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
@@ -96,8 +102,8 @@ interface FrameFunction {
  * @param {string} color
  * @param {number} size
  * @param {number} alpha
- * @param {number} [_]
- * @param {number} [blur]
+ * @param {number} [_ = 0]
+ * @param {number} [blur = 0]
  * @return {void}
  */
 export const drawCircle = (
@@ -132,11 +138,13 @@ export const drawCircle = (
 }
 
 /**
+ * @function _particlesLists
  * Used to cache numbers and make _initParticlesListFor faster.
  */
 const _particlesLists: Record<number, ParticlesListItem> = {}
 
 /**
+ * @function _initParticlesListFor
  * Return a ParticlesListItem to generate a homogeneous spray circle
  *
  * @param {numner} size
@@ -156,8 +164,12 @@ const _initParticlesListFor = (size: number): void => {
 }
 
 /**
+ * @function drawSprayCircle
  * Draw  a spray circle.
  * Takes care of position {x, y}, size, alpha and color.
+ *
+ * @example
+ * drawSprayCircle(myContext, 100, 100, '#123456', 20, 0.5)
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
@@ -201,9 +213,13 @@ export const drawSprayCircle = (
 }
 
 /**
+ * @function drawParticlesRect
  * Draw a rect made of particles
  * Takes care of position {x, y}, size, alpha and color.
  * TODO take care of rotation
+ *
+ * @example
+ * drawParticlesRect(myContext, 100, 100, '#123456', 20, 0.5)
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
@@ -236,8 +252,12 @@ export const drawParticlesRect = (
 }
 
 /**
+ * @function drawParticlesCircle
  * Draw a circle made of particles
  * Takes care of position {x, y}, size, alpha and color.
+ *
+ * @example
+ * drawParticlesCircle(myContext, 100, 100, '#123456', 20, 0.5)
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
@@ -276,11 +296,15 @@ export const drawParticlesCircle = (
 /* DRAW A CURVED FRAME LINE */
 
 /**
+ * @function drawFramesAlongBezierCurveLine
  * Draws a curved line filled with the given frame
  * (bezier curve line defined by three points {x, y})
  * (size, alpha and rotation, change lineraly)
  * (sizeToFramesRatio indicates how many frame should be contained in a `${size}` amount of pixels)
  * (if frameSize === 10 and sizeToFramesRatio === 1/2, frame distance will be 5 px
+ *
+ * @example
+ * drawFramesAlongBezierCurveLine(myContext, drawCircle, '#123456', 10, 20, 0.5, 0.9, PI, PI/2, 3, 1/10, { x: 10, y: 10 }, { x: 30, y: 50 }, { x: 20, y: 40 })
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {FrameFunction} frameFunction
@@ -351,20 +375,26 @@ export const drawFramesAlongBezierCurveLine = (
 }
 
 
-/* CANVAS UTILS */
+/* PURE CANVAS UTILS */
 
 
 /**
+ * @function fillCanvasWithImage
  * Fill a canvas with the given image.
  * It clears the canvas first, and it takes care of x, y, desired width, desired height, and rotation.
  *
+ * @example
+ * fillCanvasWithImage(myContext, myImage) // ==> from 0,0, using image width and height
+ * fillCanvasWithImage(myContext, myImage, 100, 100, 350, 200) // ==> from 100,100, width 350 height 200
+ * fillCanvasWithImage(myContext, myImage, 100, 100, 350, 200, PI/2) // ==> image rotated ba 90 degrees
+ *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {HTMLImageElement} image
- * @param {number} [x]
- * @param {number} [y]
- * @param {number} [w]
- * @param {number} [h]
- * @param {number} [rotation]
+ * @param {number} [x = 0]
+ * @param {number} [y = 0]
+ * @param {number} [w = 0]
+ * @param {number} [h = 0]
+ * @param {number} [rotation = 0]
  * @return {void}
  */
 export const fillCanvasWithImage = (
@@ -394,10 +424,14 @@ export const fillCanvasWithImage = (
 }
 
 /**
+ * @function canvasIsEvenlyColored
  * Checks if the whole canvas is filled with the same rgba color
  * (or if it's all transparent)
  *
- * @param {MyCanvasRenderingContext2D}: destinationContext
+ * @example
+ * canvasIsEvenlyColored(mycontext) // ==> true | false
+ *
+ * @param {MyCanvasRenderingContext2D} destinationContext
  * @return {boolean}
  */
 export const canvasIsEvenlyColored = (destinationContext: MyCanvasRenderingContext2D): boolean => {
@@ -418,7 +452,11 @@ export const canvasIsEvenlyColored = (destinationContext: MyCanvasRenderingConte
 }
 
 /**
+ * @function getCanvasRgbaColorAtPx
  * Get rgba values at the selected canvas coords
+ *
+ * @example
+ * getCanvasRgbaColorAtPx(myContext, 100, 200)
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
@@ -437,15 +475,21 @@ export const getCanvasRgbaColorAtPx = (destinationContext: MyCanvasRenderingCont
 }
 
 /**
+ * @function fillCompletely
  * Fill the whole canvas with the given color
  *
- * @param {MyCanvasRenderingContext2D}: destinationContext
+ * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {string} color
+ * @param {number} [alpha = 1] from 0 to 1
  * @return {void}
  */
-export const fillCompletely = (destinationContext: MyCanvasRenderingContext2D, color: string): void => {
+export const fillCompletely = (
+  destinationContext: MyCanvasRenderingContext2D,
+  color: string,
+  alpha = 1,
+): void => {
   destinationContext.fillStyle = color
-  destinationContext.globalAlpha = 1
+  destinationContext.globalAlpha = alpha
   destinationContext.globalCompositeOperation = 'source-over'
   destinationContext.fillRect(0, 0, destinationContext.canvas.width, destinationContext.canvas.height)
 }
@@ -454,14 +498,15 @@ export const fillCompletely = (destinationContext: MyCanvasRenderingContext2D, c
 /* BUCKET UTILS */
 
 
-const bucketConfig = {
-  bucketColorsHistorySize: 150,
+const _bucketConfig = {
+  _bucketColorsHistorySize: 150,
   bucketColorsToleranceWithTransparency: 24,
   bucketColorsToleranceWithoutTransparency: 4,
 }
-const bucketColorsHistory:Array<RgbaColorObject> = []
+const _bucketColorsHistory:Array<RgbaColorObject> = []
 
 /**
+ * @function fillWithBucket
  * Bucket fill a canvas, at { x, y } coord, with the given color.
  * This will fill the selected shape inside the canvas, starting from the given coords.
  * `boundariesWeekMode` defines if or not fill the border px line at the boundaries of the shape.
@@ -471,18 +516,21 @@ const bucketColorsHistory:Array<RgbaColorObject> = []
  * This allow the caller to know immediately if the bucket is working,
  * and at the same time it can await the fill, or attach something else with .then()
  *
+ * @example
+ * await fillWithBucket(myContext, 100, 200, '#12345')
+ *
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
  * @param {number} y
- * @param {RgbaColorObject} fillColor
- * @return {false || Promise<void>}
+ * @param {string} color
+ * @return {false|Promise<void>}
  */
 export const fillWithBucket = (
   destinationContext: MyCanvasRenderingContext2D,
   x: number,
   y: number,
-  fillColor: RgbaColorObject,
-) => {
+  color: string,
+): false|Promise<void> => {
   const image: ImageData = destinationContext.getImageData(0, 0, destinationContext.canvas.width, destinationContext.canvas.height)
   const i: number = (MATH.floor(x) + MATH.floor(y) * destinationContext.canvas.width) * 4
   const onePxLineArrayLength: number = destinationContext.canvas.width * 4
@@ -495,11 +543,11 @@ export const fillWithBucket = (
   }
   const tolerance: number = (
     targetColor.a < 255 && targetColor.r + targetColor.g + targetColor.b > 0 ?
-      bucketConfig.bucketColorsToleranceWithTransparency :
-      bucketConfig.bucketColorsToleranceWithoutTransparency
+      _bucketConfig.bucketColorsToleranceWithTransparency :
+      _bucketConfig.bucketColorsToleranceWithoutTransparency
   )
 
-  fillColor = colorStringToRgb(fillColor)
+  const fillColor = colorStringToRgb(color) as RgbaColorObject
   fillColor.a = roundNumber(fillColor.a * 255, 0)
 
   // if target color and fill color are the same (within tolerance) I do nothing
@@ -509,7 +557,7 @@ export const fillWithBucket = (
 
   // if target color has a transparency, every pixel to fill will be filled keeping its current transparency
   fillColor.a = targetColor.a === 0 ? 255 : 0
-  const boundariesWeekMode = getBucketBoundariesWeakMode(targetColor, fillColor)
+  const boundariesWeekMode = _getBucketBoundariesWeakMode(targetColor, fillColor)
 
   const id = uuidv4()
   bucketWorker.postMessage({ id, bucketData: image.data, i, onePxLineArrayLength, targetColor, fillColor, boundariesWeekMode, tolerance })
@@ -519,8 +567,8 @@ export const fillWithBucket = (
   })
 }
 
-const bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): boolean => {
-  return !!bucketColorsHistory.find(
+const _bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): boolean => {
+  return !!_bucketColorsHistory.find(
     (c: RgbaColorObject) => !(
       Math.abs(c.r - color.r) > tolerance ||
       Math.abs(c.g - color.g) > tolerance ||
@@ -529,22 +577,22 @@ const bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): bool
   )
 }
 
-const getBucketBoundariesWeakMode = (targetColor: RgbaColorObject, fillColor: RgbaColorObject) => {
+const _getBucketBoundariesWeakMode = (targetColor: RgbaColorObject, fillColor: RgbaColorObject) => {
   if (targetColor.a === 0) {
-    // if (!bucketHistoryContainsColor(fill)) {
-    //   bucketColorsHistory.push(fill)
-    //   bucketColorsHistory.splice(0, bucketColorsHistory.length - bucketConfig.bucketColorsHistorySize)
+    // if (!_bucketHistoryContainsColor(fill)) {
+    //   _bucketColorsHistory.push(fill)
+    //   _bucketColorsHistory.splice(0, _bucketColorsHistory.length - _bucketConfig._bucketColorsHistorySize)
     // }
     return true
   }
 
   const target = { ...targetColor }
   const fill = { ...fillColor }
-  const boundariesWeekMode = (!bucketHistoryContainsColor(target))
+  const boundariesWeekMode = (!_bucketHistoryContainsColor(target))
 
-  if (!bucketHistoryContainsColor(fill)) {
-    bucketColorsHistory.push(fill)
-    bucketColorsHistory.splice(0, bucketColorsHistory.length - bucketConfig.bucketColorsHistorySize)
+  if (!_bucketHistoryContainsColor(fill)) {
+    _bucketColorsHistory.push(fill)
+    _bucketColorsHistory.splice(0, _bucketColorsHistory.length - _bucketConfig._bucketColorsHistorySize)
   }
 
   return boundariesWeekMode
