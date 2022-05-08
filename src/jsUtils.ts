@@ -1,70 +1,23 @@
 import { v4 as uuidv4 } from 'uuid'
 import isEqual from 'lodash.isequal'
 
-/* UTILS WEB WORKERS */
+
 const fileLoaderWorker = new Worker('./workers/fileLoader.ts')
 
 
-/* ARRAY UTILS */
-
 /**
- * Utils to sort an array of number increasing
- *
- * @param {number} a
- * @param {number} b
- * @return {number}
- */
-export const arrayOrderNumberIncreasing = (a: number, b: number): number => a - b
-
-/**
- * Utils to sort an array of number decreasing
- *
- * @param {number} a
- * @param {number} b
- * @return {number}
- */
-export const arrayOrderNumberDecreasing = (a: number, b: number): number => b - a
-
-/**
- * Utils to sort an array of string alphabetically
- *
- * @param {string} a
- * @param {string} b
- * @return {number}
- */
-export const arrayOrderStringAlphabetically = (a: string, b: string): number => {
-  if (a > b) return +1
-  if (a < b) return -1
-  return 0
-}
-
-/**
- * Utils to sort an array of string counter alphabetically
- *
- * @param {string} a
- * @param {string} b
- * @return {number}
- */
-export const arrayOrderStringDown = (a: string, b: string): number => {
-  if (a < b) return +1
-  if (a > b) return -1
-  return 0
-}
-
-
-
-/**
+ * @function deepCopy
  * Utils to make a deep copy of a variable
  *
  * @param {any} value
  * @return {any}
  */
-// eslint-disable-next-line
 export const deepCopy = (value: Record<string, any> | number | string): Record<string, any> | number | string => {
   return JSON.parse(JSON.stringify(value))
 }
 
 /**
+ * @function delay
  * Utils to stop js execution inline with async/await syntax
  *
  * @example
@@ -78,6 +31,7 @@ export const delay = (milliseconds: number): Promise<void> => {
 }
 
 /**
+ * @function delayFn
  * Utils to delay as little as possible a function call
  *
  * @example
@@ -86,16 +40,17 @@ export const delay = (milliseconds: number): Promise<void> => {
  * myFnDelayed(12, 21)
  * console.log('hello world') // <-- this one is printed before
  *
- * @param {Function} fn
- * @return {Function}
+ * @param {() => any} fn
+ * @return {(any|Array<any>) => void}
  */
-export const delayFn = (fn: () => any) => function(...args: Array<any>) {
+export const delayFn = (fn: () => any) => (...args: Array<any>): void => {
   requestAnimationFrame(() => {
     fn(...args as [])
   })
 }
 
 /**
+ * @function iterateFn
  * Utils to iterate one function over multiple elements in parallel
  *
  * @example
@@ -106,14 +61,16 @@ export const delayFn = (fn: () => any) => function(...args: Array<any>) {
  * await iterateFn([10, 20, 30], multiply, 3) // [30, 60, 90]
  * await iterateFn([dom1, dom2], fadeIn)
  *
- * @param {Function} fn
+ * @param {any|Array<any>} els
+ * @param {(el: any, ...args: Array<any>) => any} fn
+ * @param {Array<any>} ...params
  * @return {Function}
  */
 export const iterateFn = async(
-  els: any,
+  els: any|Array<any>,
   fn: (el: any, ...args: Array<any>) => any,
   ...params: Array<any>
-) => {
+): Promise<any> => {
   if (els instanceof Array) {
     const promises = els.map(el => (async(): Promise<any> => {
       return await fn(el, ...params)
@@ -125,6 +82,7 @@ export const iterateFn = async(
 }
 
 /**
+ * @function throttle
  * Trottle a function
  *
  * @example
@@ -155,6 +113,7 @@ export const throttle = (callback: () => any, delay: number) => {
 }
 
 /**
+ * @function callCallbackIfDataChanged
  * Calls the callback everytime its arguments change
  *
  * @example
@@ -171,7 +130,7 @@ export const throttle = (callback: () => any, delay: number) => {
  */
 export const callCallbackIfDataChanged = (callback: () => any) => {
   let lastArguments: Array<any> = []
-  return (...args) => {
+  return (...args: Array<any>) => {
     let changed = false
     for (let i = 0; i < args.length; i++) {
       if (!isEqual(lastArguments[i], args[i])) {
@@ -187,12 +146,13 @@ export const callCallbackIfDataChanged = (callback: () => any) => {
 }
 
 /**
+ * @function copyTextToClipboard
  * Copy a string to device clipboard
  *
  * @param {string} str
  * @return {void}
  */
-export const copyTextToClipboard = (str: string) => {
+export const copyTextToClipboard = (str: string): void => {
   const el = document.createElement('textarea')
   el.value = str
   document.body.appendChild(el)
@@ -205,6 +165,7 @@ export const copyTextToClipboard = (str: string) => {
 /* WEB WORKER UTILS */
 
 /**
+ * @function waitWorkerMessage
  * A standardized way to wait for a worker response.
  * By passing an additional string id to each command, you can await for one specific response.
  * Workers must take in input 'id' from each message, and give it back whitin each response.
@@ -230,6 +191,7 @@ export function waitWorkerMessage (worker: Worker, id: string): any {
 }
 
 /**
+ * @function fetchUrlFileOffThread
  * Retreives a blob from the given url asynchronously in a separate thread, and returns a local ObjectURl pointing to it
  *
  * @params {string} url
@@ -240,4 +202,71 @@ export const fetchUrlFileOffThread = async(url: string): Promise<string> => {
   fileLoaderWorker.postMessage({ id, url })
   const data = await waitWorkerMessage(fileLoaderWorker, id)
   return URL.createObjectURL(data.blob)
+}
+
+
+/* ARRAY UTILS */
+
+/**
+ * @function arrayOrderNumberIncreasing
+ * Utils to sort an array of number increasing
+ *
+ * @example
+ * const myArray = [1, 5, 3, 2]
+ * myArray.sort(arrayOrderNumberIncreasing) // ==> [1, 2, 3, 5]
+ *
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+export const arrayOrderNumberIncreasing = (a: number, b: number): number => a - b
+
+/**
+ * @function arrayOrderNumberDecreasing
+ * Utils to sort an array of number decreasing
+ *
+ * @example
+ * const myArray = [1, 5, 3, 2]
+ * myArray.sort(arrayOrderNumberIncreasing) // ==> [5, 3, 2, 1]
+ *
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+export const arrayOrderNumberDecreasing = (a: number, b: number): number => b - a
+
+/**
+ * @function arrayOrderStringAlphabetically
+ * Utils to sort an array of string alphabetically
+ *
+ * @example
+ * const myArray = ['hello', 'world', 'bonjour']
+ * myArray.sort(arrayOrderStringAlphabetically) // ==> ['bonjour', 'hello', 'world']
+ *
+ * @param {string} a
+ * @param {string} b
+ * @return {number}
+ */
+export const arrayOrderStringAlphabetically = (a: string, b: string): number => {
+  if (a > b) return +1
+  if (a < b) return -1
+  return 0
+}
+
+/**
+ * @function arrayOrderStringDown
+ * Utils to sort an array of string counter alphabetically
+ *
+ * @example
+ * const myArray = ['hello', 'world', 'bonjour']
+ * myArray.sort(arrayOrderStringDown) // ==> ['world', 'hello', 'bonjour']
+ *
+ * @param {string} a
+ * @param {string} b
+ * @return {number}
+ */
+export const arrayOrderStringDown = (a: string, b: string): number => {
+  if (a < b) return +1
+  if (a > b) return -1
+  return 0
 }
