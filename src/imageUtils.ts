@@ -9,9 +9,7 @@ tempImage.crossOrigin = 'Anonymous'
 const tempCanvas = document.createElement('canvas')
 const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
 const detachTempImageEvents = () => {
-  // eslint-disable-next-line
   tempImage.onload = () => {}
-  // eslint-disable-next-line
   tempImage.onerror = () => {}
 }
 
@@ -38,12 +36,12 @@ interface CanvasCoordsResponse {
 
 /**
  * Specify here the default max size for image risizing
- *
  * @type {number}
  */
 let defaultMaxImageSideSize = 400
 
 /**
+ * @function setDefaultMaxImageSideSize
  * Set a different default max image side size
  *
  * @param {number} maxSide
@@ -54,10 +52,11 @@ export const setDefaultMaxImageSideSize = (maxSide: number): void => {
 }
 
 /**
+ * @function resizeBase64AndGetBase64
  * Takes a base64 string, resize the corrisponding image, and returns a new base64
  *
  * @param {string} base64
- * @param {number} [maxSize]
+ * @param {number} [maxSize] Default defaultMaxImageSideSize
  * @return {Promise<string>}
  */
 export const resizeBase64AndGetBase64 = (
@@ -78,10 +77,11 @@ export const resizeBase64AndGetBase64 = (
 }
 
 /**
+ * @function resizeImageAndGetLocalUrl
  * Resize an image, get a Blob, and returns a localURL to load the new resized image
  *
  * @param {HTMLImageElement} image
- * @param {number} [maxSize]
+ * @param {number} [maxSize] Default defaultMaxImageSideSize
  * @return {Promise<string>}
  */
 export const resizeImageAndGetLocalUrl = (
@@ -111,10 +111,11 @@ export const resizeImageAndGetLocalUrl = (
 }
 
 /**
+ * @function resizeImageAndGetBase64
  * Resize an image and returns the corrisponding base64
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @param {number} [maxSize]
+ * @param {number} [maxSize] Default defaultMaxImageSideSize
  * @return {string}
  */
 export const resizeImageAndGetBase64 = (
@@ -142,13 +143,14 @@ export const resizeImageAndGetBase64 = (
 }
 
 /**
+ * @function findImageContentCoords
  * Checks the content of an image (or canvas) and returns coords of the non transparent zone.
  * Returns { minX, minY, maxX, maxY } of the content.
  * You can specify a pixel precision and alpha tolerance.
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @param {number} pxPrecision
- * @param {number} alphaTolerance
+ * @param {number} [pxPrecision = 1]
+ * @param {number} [alphaTolerance = 0.01]
  * @return {Promise<CanvasCoordsResponse>}
  */
 export const findImageContentCoords = async(
@@ -177,6 +179,7 @@ export const findImageContentCoords = async(
 }
 
 /**
+ * @function cropImage
  * Crops an image (or a canvas) and returns a canvas.
  * Crop starts from { x, y }, and takes width * height pixels.
  * Final canvas has a width * height size.
@@ -206,11 +209,12 @@ export const cropImage = (
 }
 
 /**
+ * @function flipImage
  * Takes an image (or a canvas) and flip it vertically or horizontally.
  * Returns a canvas with the same size of the original image.
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @param {boolean} [horizontally] Default true
+ * @param {boolean} [horizontally = true]
  * @return {HTMLCanvasElement}
  */
 export const flipImage = (
@@ -240,6 +244,7 @@ export const flipImage = (
 }
 
 /**
+ * @function getBlobFromBase46
  * Takes a base64, loads it, and returns an image Blob and a local url pointing it
  *
  * @param {string} base64
@@ -265,6 +270,7 @@ export const getBlobFromBase46 = (base64: string): Promise<Array<Blob|string>> =
 }
 
 /**
+ * @function getCanvasBlobAsync
  * Small utils to use canvas.toBlob with async/await
  *
  * @param {HTMLCanvasElement} canvas
@@ -279,6 +285,7 @@ export const getCanvasBlobAsync = (canvas: HTMLCanvasElement): Promise<Blob> => 
 }
 
 /**
+ * @function convertImgToCanvas
  * Takes an image, returns an equivalent canvas
  *
  * @param {HTMLImageElement} img
@@ -295,6 +302,7 @@ export const convertImgToCanvas = (img: HTMLImageElement): HTMLCanvasElement => 
 }
 
 /**
+ * @function getImageBase64Async
  * Takes an image (or a canvas) and returns its base64, asynchronously
  *
  * @params {HTMLCanvasElement|HTMLImageElement} imageDom
@@ -312,14 +320,15 @@ export const getImageBase64Async = async(
 }
 
 /**
+ * @function base64ToImageData
  * Gets the canvas context imageData from a image base64.
  * if x / y / width / height params are given, it returns only the selected portion of the image.
  *
  * @param {string} base64
- * @param {number} [x]
- * @param {number} [y]
- * @param {number} [width]
- * @param {number} [height]
+ * @param {number} [x = 0]
+ * @param {number} [y = 0]
+ * @param {number} [width = 0]
+ * @param {number} [height = 0]
  * @return {Promise<Uint8ClampedArray>}
  */
 export const base64ToImageData = async(
@@ -339,6 +348,7 @@ export const base64ToImageData = async(
 }
 
 /**
+ * @function mergeBase64Images
  * Merges multiple base64 image strings into one base64,
  * merging all the conrrisponding images with transparency.
  *
@@ -367,6 +377,7 @@ export const mergeBase64Images = async(bases64: Array<string>): Promise<string> 
 }
 
 /**
+ * @function blobToBase64Async
  * Async way to extract the base64 string from a image Blob.
  *
  * @param {Blob} blob
@@ -383,11 +394,12 @@ export const blobToBase64Async = (blob: Blob): Promise<string> => {
 }
 
 /**
+ * @function getImageFromUrlAsync
  * Loads the given url and return the corrisponding image asynchronously.
  * if useTempImg === true, use a temp image imageDom (not to be trusted externally).
  *
  * @param {string} url
- * @param {boolean} useTempImg default false
+ * @param {boolean} [useTempImg = false]
  * @return {Promise<HTMLImageElement>}
  */
 export const getImageFromUrlAsync = (url: string, useTempImg = false): Promise<HTMLImageElement> => {
@@ -402,6 +414,7 @@ export const getImageFromUrlAsync = (url: string, useTempImg = false): Promise<H
 }
 
 /**
+ * @function loadImageOffThread
  * Takes an image and the new url to load inside it, and does it asynchronously.
  * Returns true / false to reflect the loading result.
  *
@@ -418,6 +431,7 @@ export const loadImageOffThread = async(img: HTMLImageElement, url: string): Pro
 }
 
 /**
+ * @function setImageSrcAsync
  * Small utils to use img.onload with async/await
  *
  * @param {HTMLImageElement} img
@@ -441,6 +455,7 @@ export const setImageSrcAsync = (img: HTMLImageElement, url: string): Promise<bo
 }
 
 /**
+ * @function checkImageUrlValidity
  * Tries to load an url as an image, and return true / false.
  * If you are offline ==> returns false
  *
@@ -462,6 +477,7 @@ export const checkImageUrlValidity = async(url: string): Promise<boolean> => {
 }
 
 /**
+ * @function addImageWhiteBgAndGetBase64
  * Takes a image (or a canvas), adds a white background, and returns the new base64.
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
@@ -484,6 +500,7 @@ export const addImageWhiteBgAndGetBase64 = (imageDom: HTMLCanvasElement|HTMLImag
 }
 
 /**
+ * @function cropImageWithMargin
  * Crops an image and return the corrisponding canvas, adding a % empty margin to each side.
  * 'margin' === 0.1 means 10% of width and 10% of height.
  *
@@ -492,6 +509,7 @@ export const addImageWhiteBgAndGetBase64 = (imageDom: HTMLCanvasElement|HTMLImag
  * @param {number} t top coord y
  * @param {number} r right coord x
  * @param {number} b bottom coord y
+ * @param {number} [margin = 0.1]
  * @return {Array<HTMLCanvasElement|number>}
  */
 export const cropImageWithMargin = (
@@ -523,11 +541,12 @@ export const cropImageWithMargin = (
 }
 
 /**
+ * @function imageHasUniformBackground
  * Checks if the given image (or canvas) has a uniform background.
  * It compares the 4 coorners, and you can specify the tolerance level [0...255]
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @param {number} tolerance Default 3 [0...255]
+ * @param {number} [tolerance = 3] [0...255]
  * @return {boolean}
  */
 export const imageHasUniformBackground = (
@@ -579,6 +598,7 @@ export const imageHasUniformBackground = (
 }
 
 /**
+ * @function imageHasTransparentBackground
  * Checks if the given image has a transparent background
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
@@ -605,6 +625,7 @@ export const imageHasTransparentBackground = (imageDom: HTMLCanvasElement|HTMLIm
 }
 
 /**
+ * @function addImageOutlineAndGetBase64
  * Adds an outline around the filled part of the image.
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
