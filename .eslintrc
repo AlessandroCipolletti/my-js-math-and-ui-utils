@@ -34,6 +34,10 @@
     "no-unused-vars": [
       "error",
       { "args": "none" }
+    ],
+    "@typescript-eslint/ban-ts-comment": [
+      "warn",
+      { "ts-expect-error": "allow-with-description" }
     ]
   }
 }

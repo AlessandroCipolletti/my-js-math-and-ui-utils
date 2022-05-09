@@ -21,11 +21,29 @@ declare interface HTMLElementWithAnimations extends HTMLElement {
 
 /**
  * @typedef IosTouch
- * Extends a Touch to add the ios prop touchType for 'finger' vs 'stylus'
+ * Extends a Touch to add the ios prop touchType for 'direct' vs 'stylus'
  * @prop {string} touchType
  */
 declare interface IosTouch extends Touch {
   touchType: string,
+}
+
+/**
+ * @typedef PointerEventWithTouchType
+ * Extends a PointerEvent to add the ios prop touchType for 'direct' vs 'stylus'
+ * @prop {string} touchType
+ */
+declare interface PointerEventWithTouchType extends PointerEvent {
+  touchType: 'direct',
+}
+
+/**
+ * @typedef MouseEventWithTouchType
+ * Extends a MouseEvent to add the ios prop touchType for 'direct' vs 'stylus'
+ * @prop {string} touchType
+ */
+declare interface MouseEventWithTouchType extends MouseEvent {
+  touchType: 'direct',
 }
 
 /**
@@ -113,12 +131,12 @@ declare type AnyPointerEventOrArray = MouseEvent | PointerEvent | Touch | TouchE
 declare type OnePointerEvent = MouseEvent | PointerEvent | Touch
 
 /**
- * Custom handler for touchstart touchmove events
+ * Custom handler for touchstart/pointerdown and touchmove/pointermove events
  * @typedef {(e: TouchEvent, touch: IosTouch) => void} TouchHandler
  */
 declare type TouchHandler = (
-  e: TouchEvent,
-  touch: IosTouch,
+  e: AnyPointerEvent,
+  touch: IosTouch | PointerEventWithTouchType | MouseEventWithTouchType,
 ) => void
 
 /**
@@ -126,7 +144,7 @@ declare type TouchHandler = (
  * @typedef {(e: TouchEvent|IosTouch) => void} TouchEndHandler
  */
 declare type TouchEndHandler = (
-  e: TouchEvent|IosTouch,
+  e: AnyPointerEvent|IosTouch,
 ) => void
 
 /**
@@ -134,8 +152,8 @@ declare type TouchEndHandler = (
  * @typedef {(e: TouchEvent, touche:IosTouch) => void} TapHandler
  */
 declare type TapHandler = (
-  e: TouchEvent,
-  touche: IosTouch,
+  e: AnyPointerEvent,
+  touch: IosTouch | PointerEventWithTouchType | MouseEventWithTouchType,
 ) => void
 
 /**
@@ -143,8 +161,8 @@ declare type TapHandler = (
  * @typedef {(e: TouchEvent, touches: Array<IosTouch>) => void} TapsHandler
  */
 declare type TapsHandler = (
-  e: TouchEvent,
-  touches: Array<IosTouch>,
+  e: AnyPointerEvent,
+  touches: Array<IosTouch | PointerEventWithTouchType | MouseEventWithTouchType>,
 ) => void
 
 /**
@@ -187,3 +205,13 @@ declare interface MultiTouchHandlers {
   onThreeFingersSingleTap?: TapsHandler,
   onFourFingersSingleTap?: TapsHandler,
 }
+
+/**
+ * Custom handler for sliders drag callbacks
+ * @typedef {(value: number, inProgress: boolean, dragged: boolean) => void} DragHandler
+ */
+declare type DragHandler = (
+  value: number,
+  inProgress: boolean,
+  dragged: boolean,
+) => void
