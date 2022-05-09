@@ -2,6 +2,7 @@ import { debounce } from 'debounce'
 import { preventDefault, getEventCoordX, getEventCoordY } from '../../domUtils'
 
 /**
+ * @const TIME_TO_END_SCROLL_GESTURE
  * WheelEvent debounce time
  * @type {number}
  */
@@ -24,8 +25,17 @@ interface GestureHandlers {
 
 
 /**
+ * @function handleTrackpadPinchGesture
  * Handles pinch-to-zoom gesture on laptop trackpad.
  * It can handle onGestureStart onGestureChange onGestureEnd with three params: (x, y, scale)
+ *
+ * @example
+ * // for desktop devices:
+ * handleTrackpadPinchGesture(myDom, {
+ *   onGestureStart,
+ *   onGestureChange,
+ *   onGestureEnd,
+ * })
  *
  * @param {HTMLElement} target
  * @param {GestureHandlers} handlers

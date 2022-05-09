@@ -20,6 +20,15 @@ declare interface HTMLElementWithAnimations extends HTMLElement {
 }
 
 /**
+ * @typedef IosTouch
+ * Extends a Touch to add the ios prop touchType for 'finger' vs 'stylus'
+ * @prop {string} touchType
+ */
+declare interface IosTouch extends Touch {
+  touchType: string,
+}
+
+/**
  * @typedef RgbaColorObject
  * @prop {number} r int [0...255]
  * @prop {number} g int [0...255]
@@ -103,10 +112,78 @@ declare type AnyPointerEventOrArray = MouseEvent | PointerEvent | Touch | TouchE
  */
 declare type OnePointerEvent = MouseEvent | PointerEvent | Touch
 
+/**
+ * Custom handler for touchstart touchmove events
+ * @typedef {(e: TouchEvent, touch: IosTouch) => void} TouchHandler
+ */
+declare type TouchHandler = (
+  e: TouchEvent,
+  touch: IosTouch,
+) => void
 
+/**
+ * Custom handler for touchend event
+ * @typedef {(e: TouchEvent|IosTouch) => void} TouchEndHandler
+ */
+declare type TouchEndHandler = (
+  e: TouchEvent|IosTouch,
+) => void
+
+/**
+ * Custom handler for onOneFingerSingleTap event
+ * @typedef {(e: TouchEvent, touche:IosTouch) => void} TapHandler
+ */
+declare type TapHandler = (
+  e: TouchEvent,
+  touche: IosTouch,
+) => void
+
+/**
+ * Custom handler for onOneFingerSingleTap onTwoFingersSingleTap onThreeFingersSingleTap onFourFingersSingleTap events
+ * @typedef {(e: TouchEvent, touches: Array<IosTouch>) => void} TapsHandler
+ */
+declare type TapsHandler = (
+  e: TouchEvent,
+  touches: Array<IosTouch>,
+) => void
+
+/**
+ * Custom handler for gesturestart gesturechange gestureend events
+ * @typedef {(x: number, y: number, scale: number, rotation: number) => void} GestureHandler
+ */
 declare type GestureHandler = (
   x: number,
   y: number,
   scale: number,
   rotation: number,
 ) => void
+
+/**
+ * @typeof MultiTouchHandlers
+ * An object with all the touch handlers needed
+ *
+ * @prop {TouchHandler} onSingleTouchStart
+ * @prop {TouchHandler} onSingleTouchMove
+ * @prop {TouchHandler} onSingleTouchEnd
+ * @prop {GestureHandler} onGestureStart
+ * @prop {GestureHandler} onGestureChange
+ * @prop {GestureHandler} onGestureEnd
+ * @prop {TapHandler} onOneFingerLongPress
+ * @prop {TapHandler} onOneFingerSingleTap
+ * @prop {TapHandler} onTwoFingersSingleTap
+ * @prop {TapHandler} onThreeFingersSingleTap
+ * @prop {TapHandler} onFourFingersSingleTap
+ */
+declare interface MultiTouchHandlers {
+  onSingleTouchStart?: TouchHandler,
+  onSingleTouchMove?: TouchHandler,
+  onSingleTouchEnd?: TouchEndHandler,
+  onGestureStart?: GestureHandler,
+  onGestureChange?: GestureHandler,
+  onGestureEnd?: GestureHandler,
+  onOneFingerLongPress?: TapHandler,
+  onOneFingerSingleTap?: TapHandler,
+  onTwoFingersSingleTap?: TapsHandler,
+  onThreeFingersSingleTap?: TapsHandler,
+  onFourFingersSingleTap?: TapsHandler,
+}

@@ -56,7 +56,7 @@ export const preventDefault = (e: Event): void => {
  * @param {AnyPointerEvent} event
  * @return {void}
  */
-export const preventMoveDefaultIfNeeded = (event: AnyPointerEvent) => {
+export const preventMoveDefaultIfNeeded = (event: AnyPointerEvent): void => {
   const eventMove = 'ontouchstart' in window ? 'touchmove' : 'pointermove'
   const eventEnd = 'ontouchstart' in window ? 'touchend' : 'pointerup'
   let target = event.target as HTMLElement
@@ -154,7 +154,7 @@ export const preventAllDefault = (element: HTMLElement): void => {
  * const span = createDom('span') // ==> <span></span>
  * const headerWithClasses = createDom('header', 'hello', 'world') // ==> <header class="hello world"></header>
  *
- * @param {string} [tagName]
+ * @param {string} [tagName = 'div']
  * @param {...string} [classes]
  * @return {HTMLElement}
  */
@@ -379,7 +379,7 @@ export const filterTouchesByTargets = (
  *
  * @example
  * appendChilds(containerDom, [myDom1, myDom2])
- * 
+ *
  * @param {HTMLElement} container
  * @param {Array<HTMLElement>} childs
  * @return {void}

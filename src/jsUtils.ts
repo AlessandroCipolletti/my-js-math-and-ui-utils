@@ -40,10 +40,10 @@ export const delay = (milliseconds: number): Promise<void> => {
  * myFnDelayed(12, 21)
  * console.log('hello world') // <-- this one is printed before
  *
- * @param {() => any} fn
+ * @param {(...args: any[]) => any} fn
  * @return {(any|Array<any>) => void}
  */
-export const delayFn = (fn: () => any) => (...args: Array<any>): void => {
+export const delayFn = (fn: (...args: any[]) => any) => (...args: Array<any>): void => {
   requestAnimationFrame(() => {
     fn(...args as [])
   })
