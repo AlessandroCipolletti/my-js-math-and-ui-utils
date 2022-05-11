@@ -173,17 +173,19 @@ export const createDom = (tagName = 'div', ...classes: Array<string>): HTMLEleme
  * Gets the coordX of any type of pointer input
  *
  * @example
- * function onMouseMove(e) {
- *   const mouseX = getEventCoordX(e)
+ * function onMouseMove(event) {
+ *   const mouseX = getEventCoordX(event)
  * }
  *
  * @param {AnyPointerEventOrArray} event
  * @param {number} [offset = 0]
+ * @param {boolean} [absoluteByPage = false]
  * @return {number}
  */
 export const getEventCoordX = (
   event: AnyPointerEventOrArray,
   offset = 0,
+  absoluteByPage = false,
 ): number => {
   let selectedEvent: OnePointerEvent
 
@@ -195,7 +197,7 @@ export const getEventCoordX = (
     selectedEvent = event
   }
 
-  const coordX = (typeof selectedEvent.clientX !== undefined) ? selectedEvent.clientX : selectedEvent.pageX
+  const coordX = (absoluteByPage || typeof selectedEvent.clientX === undefined ? selectedEvent.pageX : selectedEvent.clientX)
 
   return roundNumber(coordX - offset, 1)
 }
@@ -205,17 +207,19 @@ export const getEventCoordX = (
  * Gets the coordY of any type of pointer input
  *
  * @example
- * function onMouseMove(e) {
- *   const mouseY = getEventCoordY(e)
+ * function onMouseMove(event) {
+ *   const mouseY = getEventCoordY(event)
  * }
  *
  * @param {AnyPointerEventOrArray} event
  * @param {number} [offset = 0]
+ * @param {boolean} [absoluteByPage = false]
  * @return {number}
  */
 export const getEventCoordY = (
   event: AnyPointerEventOrArray,
   offset = 0,
+  absoluteByPage = false,
 ): number => {
   let selectedEvent: OnePointerEvent
 
@@ -227,7 +231,7 @@ export const getEventCoordY = (
     selectedEvent = event
   }
 
-  const coordY = (typeof selectedEvent.clientY !== undefined) ? selectedEvent.clientY : selectedEvent.pageY
+  const coordY = (absoluteByPage || typeof selectedEvent.clientY === undefined ? selectedEvent.pageY : selectedEvent.clientY)
 
   return roundNumber(coordY - offset, 1)
 }

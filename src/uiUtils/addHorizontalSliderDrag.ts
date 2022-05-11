@@ -67,7 +67,7 @@ export const addHorizontalSliderDrag = (
   const onTouchStart = (event: AnyPointerEvent): void => {
     preventDefault(event)
     dragged = false
-    // @ts-expect-error it doesn't like an variable event name
+    // @ts-expect-error it doesn't like a variable event name
     document.addEventListener(eventMove, onTouchMove)
     document.addEventListener(eventEnd, onTouchEnd)
     const sliderDomRect = sliderDom.getBoundingClientRect()
@@ -106,13 +106,13 @@ export const addHorizontalSliderDrag = (
 
   const onTouchEnd = () => {
     onDrag(lastValue, false, dragged)
-    // @ts-expect-error it doesn't like an variable event name
+    // @ts-expect-error it doesn't like a variable event name
     document.removeEventListener(eventMove, onTouchMove)
     document.removeEventListener(eventEnd, onTouchEnd)
   }
 
-  // @ts-expect-error it doesn't like an variable event name
+  // @ts-expect-error it doesn't like a variable event name
   draggableDom.addEventListener(eventStart, onTouchStart)
-  // @ts-expect-error it doesn't like an variable event name
+  // @ts-expect-error it doesn't like a variable event name
   sliderDom.addEventListener(eventStart, onTouchStart)
 }

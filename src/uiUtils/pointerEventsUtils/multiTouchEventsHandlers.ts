@@ -159,11 +159,11 @@ export const multiTouchEventsHandlers = (
     if (!touches.length) return
 
     if (isFirstTouch) {
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.addEventListener(eventMove, handleTouchMove)
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.addEventListener(eventEnd, handleTouchEnd)
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.addEventListener(eventCancel, handleTouchCanceled)
       ratedTouchEvents.push(_fixAndroidTouchEvent(touches[0]))
 
@@ -237,11 +237,11 @@ export const multiTouchEventsHandlers = (
     touches = filterTouchesByTargets(event, []) as Array<IosTouch>
 
     if (!touches.length) {
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.removeEventListener(eventMove, handleTouchMove)
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.removeEventListener(eventEnd, handleTouchEnd)
-      // @ts-expect-error it doesn't like an variable event name
+      // @ts-expect-error it doesn't like a variable event name
       document.removeEventListener(eventCancel, handleTouchCanceled)
 
       if (usedForSingleTouch) {
@@ -290,14 +290,14 @@ export const multiTouchEventsHandlers = (
     }
 
     reset()
-    // @ts-expect-error it doesn't like an variable event name
+    // @ts-expect-error it doesn't like a variable event name
     document.removeEventListener(eventMove, handleTouchMove)
-    // @ts-expect-error it doesn't like an variable event name
+    // @ts-expect-error it doesn't like a variable event name
     document.removeEventListener(eventEnd, handleTouchEnd)
-    // @ts-expect-error it doesn't like an variable event name
+    // @ts-expect-error it doesn't like a variable event name
     document.removeEventListener(eventCancel, handleTouchCanceled)
   }
   
-  // @ts-expect-error it doesn't like an variable event name
+  // @ts-expect-error it doesn't like a variable event name
   target.addEventListener(eventStart, handleTouchStart)
 }
