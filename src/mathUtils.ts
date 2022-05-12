@@ -51,14 +51,14 @@ export const roundNumber = (number: number, decimals: number = defaultDecimalDig
 
 /**
  * @function getNumberInBetween
- * Force a number to be between a min and a max value, and then rounds it
+ * Force a number to be between a min and a max value, and then rounds it.
+ * It's like clamp, but the params order here doesn't matter.
  *
  * @example
- * // returns 5
  * const currentValue = 12
  * const minAcceptableValue = 2
  * const maxAcceptableValue = 5
- * getNumberInBetween(currentValue, minAcceptableValue, maxAcceptableValue)
+ * getNumberInBetween(currentValue, minAcceptableValue, maxAcceptableValue)// returns 5
  *
  * @param {number} a
  * @param {number} b
@@ -69,6 +69,46 @@ export const roundNumber = (number: number, decimals: number = defaultDecimalDig
 export const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)
 }
+
+/**
+ * @function clamp
+ * @alias getNumberInBetween
+ * 
+ * @param {number} value
+ * @param {number} min
+ * @param {number} max
+ * @param {number} [decimals] Default defaultDecimalDigits
+ * @return {number}
+ */
+export const clamp = getNumberInBetween
+
+/**
+ * @function linerarInterpolation
+ * Returns linear interpolation between two numbers.
+ * 
+ * @example
+ * linerarInterpolation(5, 15, 0.5) // returns 10
+ * linerarInterpolation(5, 15, 0.1) // returns 6
+ * 
+ * @param {number} min
+ * @param {number} max
+ * @param {number} t number between 0 and 1
+ * @return {number}
+ */
+export const linerarInterpolation = (min: number, max: number, t: number): number => {
+  return min + (max - min) * t
+}
+
+/**
+ * @function lerp
+ * @alias linerarInterpolation
+ * 
+ * @param {number} min
+ * @param {number} max
+ * @param {number} t number between 0 and 1
+ * @return {number}
+ */
+export const lerp = linerarInterpolation
 
 /**
  * @function getRandomNumber
