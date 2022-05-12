@@ -25,20 +25,20 @@ type Handler = (element: HTMLElement, newIndex: number, dragInProgress: boolean)
  * Works better if the whole list is visible on the screen.
  * On mobile it works better if used with addTapAndLongPressHandlers inside a LongPress handler.
  * It needs a css class 'displayNone' ==> display: none;
- * 
+ *
  * @example
  * const onListElementMouseDown = (event) => {
  *   const clickedListElement = event.target
  *   handleElementsListDragAndDrop(event, listDom, clickedListElement, saveListDrag)
  * }
- * 
+ *
  * @param {AnyPointerEvent} event
  * @param {HTMLElement} list
  * @param {HTMLElement} element
  * @param {Handler} callback
  * @param {boolean} [verticalScroll = true]
  */
-export const addListDragAndDropHandler = ((): void => {
+export const addListDragAndDropHandler = (() => {
   let moveEventX = 0
   let moveEventY = 0
   let listMaxScrollTop = 0
@@ -148,7 +148,7 @@ export const addListDragAndDropHandler = ((): void => {
     if (!draggedElement) {
       return
     }
-    
+
     if (!isDesktop) {
       divPreventEvents.remove()
       divPreventEvents.removeEventListener(eventStart, preventDefault)
