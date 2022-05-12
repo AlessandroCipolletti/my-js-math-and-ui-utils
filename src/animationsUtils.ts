@@ -235,7 +235,7 @@ export const fadeInElements = async(
  * @param {boolean} commitResult
  * @return {Promise<void>}
  */
- const _fadeOutEl = async(
+const _fadeOutEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
@@ -290,7 +290,7 @@ export const fadeOutElements = async(
  * @param {boolean} commitResult
  * @return {Promise<void>}
  */
- const _toggleFadeEl = async(
+const _toggleFadeEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
@@ -396,7 +396,7 @@ export const addInElements = async(
  * @param {boolean} commitResult
  * @return {Promise<void>}
  */
- export const _removeOutEl = async(
+export const _removeOutEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
@@ -535,11 +535,11 @@ const _moveToEl = async(
  * moveToElements(myDom, 500, 800, 800, 400, 400, 1.5)
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
- * @param {number} duration 
- * @param {number} fromX 
- * @param {number} fromY 
- * @param {number} toX 
- * @param {number} toY 
+ * @param {number} duration
+ * @param {number} fromX
+ * @param {number} fromY
+ * @param {number} toX
+ * @param {number} toY
  * @param {number} [fromScale = 1]
  * @return {Promise<void>}
  */
