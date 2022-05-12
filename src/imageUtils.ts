@@ -13,7 +13,7 @@ const detachTempImageEvents = () => {
   tempImage.onerror = () => {}
 }
 
-const canvasContentCoordsWorker = new Worker('./workers/canvasContentCoords.ts')
+const canvasContentCoordsWorker = new Worker('./workers/canvasContentCoords.js')
 
 /**
  * @typedef CanvasCoordsResponse

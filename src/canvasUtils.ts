@@ -13,7 +13,7 @@ import { waitWorkerMessage } from './jsUtils'
 import { colorStringToRgb, compareRgbColorsWithTolerance } from './colorsUtils'
 
 
-const bucketWorker: Worker = new Worker('./workers/bucket.ts')
+const bucketWorker: Worker = new Worker('./workers/bucket.js')
 
 
 /**

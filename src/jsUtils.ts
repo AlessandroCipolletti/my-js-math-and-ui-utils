@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import isEqual from 'lodash.isequal'
 
 
-const fileLoaderWorker = new Worker('./workers/fileLoader.ts')
+const fileLoaderWorker = new Worker('./workers/fileLoader.js')
 
 
 /**
@@ -116,7 +116,7 @@ export const throttle = (callback: () => any, delay: number) => {
 /**
  * @function debounceThrottle
  * Trottle a function but at the end it executes the last callback call arrived during the waiting time too
- * 
+ *
  * * @example
  * const myFn = (string) => console.log(string)
  * const myFnTrottled = trottle(myFn, 100)
@@ -124,10 +124,10 @@ export const throttle = (callback: () => any, delay: number) => {
  * myFnTrottled('world') // nothing
  * myFnTrottled('bonjour') // nothing yet
  * await delay(100) // <-- now 'bonjour' appears
- * 
- * @param {Function} callback 
- * @param {number} limit 
- * @returns 
+ *
+ * @param {Function} callback
+ * @param {number} limit
+ * @returns
  */
 export const debounceThrottle = (callback: () => any, limit: number) => {
   let waiting = false

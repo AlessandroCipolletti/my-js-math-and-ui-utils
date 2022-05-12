@@ -1,6 +1,6 @@
 {
   "name": "js-math-and-ui-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of Math, Dom, UI, Images, Canvas, Animations, Colors utils that I usually need in my projects",
   "repository": {
     "type": "git",
