@@ -1,10 +1,10 @@
 {
-  "name": "uiun-js",
+  "name": "js-math-and-ui-utils",
   "version": "1.0.0",
   "description": "A set of Math, Dom, UI, Images, Canvas, Animations, Colors utils that I usually need in my projects",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlessandroCipolletti/uiun-js.git"
+    "url": "git+https://github.com/AlessandroCipolletti/js-math-and-ui-utils.git"
   },
   "keywords": [
     "utils",
@@ -16,10 +16,10 @@
   "author": "Alessandro Cipolletti <cipolletti.alessandro@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlessandroCipolletti/uiun-js/issues",
+    "url": "https://github.com/AlessandroCipolletti/js-math-and-ui-utils/issues",
     "email": "cipolletti.alessandro@gmail.com"
   },
-  "homepage": "https://github.com/AlessandroCipolletti/uiun-js#readme",
+  "homepage": "https://github.com/AlessandroCipolletti/js-math-and-ui-utils#readme",
   "main": "src/index.js",
   "scripts": {
     "test": "test",
