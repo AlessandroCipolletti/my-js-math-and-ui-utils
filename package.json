@@ -1,6 +1,6 @@
 {
   "name": "js-math-and-ui-utils",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A set of Math, Dom, UI, Images, Canvas, Animations, Colors utils that I usually need in my projects",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
     "math",
     "dom",
     "animations",
-    "canvas"
+    "canvas",
+    "bezier curve"
   ],
   "author": "Alessandro Cipolletti <cipolletti.alessandro@gmail.com>",
   "license": "MIT",
@@ -21,15 +22,18 @@
     "email": "cipolletti.alessandro@gmail.com"
   },
   "homepage": "https://github.com/AlessandroCipolletti/js-math-and-ui-utils#readme",
-  "main": "build/index.js",
-  "files": ["build/**/*"],
-  "types": "build/index.d.ts",
+  "main": "./index.js",
+  "files": [
+    "./**/*"
+  ],
+  "types": "./index.d.ts",
   "scripts": {
     "test": "test",
     "lint": "eslint . --ext .ts",
     "lint:quiet": "eslint . --ext .ts --quiet",
     "lint:fix": "eslint . --ext .ts --fix",
-    "compile": "tsc"
+    "compile": "rm -rf ./build && tsc",
+    "deploy": "cp ./package.json build && npm publish build"
   },
   "devDependencies": {
     "@types/debounce": "^1.2.1",
