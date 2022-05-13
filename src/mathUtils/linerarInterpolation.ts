@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -16,7 +16,7 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const linerarInterpolation = (
+const linerarInterpolation = (
   min: number,
   max: number,
   t: number,
@@ -24,3 +24,6 @@ export const linerarInterpolation = (
 ): number => {
   return roundNumber(min + (max - min) * t, decimals)
 }
+
+
+export default linerarInterpolation

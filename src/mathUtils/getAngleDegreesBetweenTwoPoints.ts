@@ -1,5 +1,5 @@
-import { convertAngleRadiansToDegrees } from './convertAngleRadiansToDegrees'
-import { getAngleRadiansBetweenTwoPoints } from './getAngleRadiansBetweenTwoPoints'
+import convertAngleRadiansToDegrees from './convertAngleRadiansToDegrees'
+import getAngleRadiansBetweenTwoPoints from './getAngleRadiansBetweenTwoPoints'
 
 
 /**
@@ -17,6 +17,9 @@ import { getAngleRadiansBetweenTwoPoints } from './getAngleRadiansBetweenTwoPoin
  * @param {number} y2
  * @return {number}
  */
-export const getAngleDegreesBetweenTwoPoints = (x1: number, y1: number, x2: number, y2: number): number => {
+const getAngleDegreesBetweenTwoPoints = (x1: number, y1: number, x2: number, y2: number): number => {
   return convertAngleRadiansToDegrees(getAngleRadiansBetweenTwoPoints(x1, y1, x2, y2))
 }
+
+
+export default getAngleDegreesBetweenTwoPoints

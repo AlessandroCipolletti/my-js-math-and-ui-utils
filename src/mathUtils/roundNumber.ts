@@ -14,7 +14,11 @@ import { defaultDecimalDigits } from './setDefaultDecimalDigits'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const roundNumber = (number: number, decimals: number = defaultDecimalDigits): number => {
+const roundNumber = (number: number, decimals: number = defaultDecimalDigits): number => {
   const factor = Math.pow(10, decimals)
+
   return Math.round(number * factor) / factor
 }
+
+
+export default roundNumber

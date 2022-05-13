@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -19,18 +19,23 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const getLogarithmicPercentageOfValue = (
+const getLogarithmicPercentageOfValue = (
   value: number,
   minValue: number,
   maxValue: number,
   decimals: number = defaultDecimalDigits,
 ): number => {
+
   minValue = Math.log(minValue)
   maxValue = Math.log(maxValue)
   const scale = ((maxValue - minValue) / 100)
+
   if (scale > 0) {
     return roundNumber((Math.log(value) - minValue) / scale, decimals)
   } else {
     return 100
   }
 }
+
+
+export default getLogarithmicPercentageOfValue

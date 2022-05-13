@@ -1,6 +1,6 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
-import { getDistanceBetweenTwoPoints } from './getDistanceBetweenTwoPoints'
+import roundNumber from './roundNumber'
+import getDistanceBetweenTwoPoints from './getDistanceBetweenTwoPoints'
 
 
 /**
@@ -19,7 +19,7 @@ import { getDistanceBetweenTwoPoints } from './getDistanceBetweenTwoPoints'
  * @param {number} [decimals] Defalut defaultDecimalDigits
  * @return {number}
  */
-export const getDistanceBetweenThreePoints = (
+const getDistanceBetweenThreePoints = (
   x1: number,
   y1: number,
   x2: number,
@@ -28,7 +28,12 @@ export const getDistanceBetweenThreePoints = (
   y3: number,
   decimals: number = defaultDecimalDigits,
 ): number => {
+
   const firstDistance = getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0
   const secondDistance = getDistanceBetweenTwoPoints(x2, y2, x3, y3, decimals) || 0
+
   return roundNumber(firstDistance + secondDistance, decimals)
 }
+
+
+export default getDistanceBetweenThreePoints

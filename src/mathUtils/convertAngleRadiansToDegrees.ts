@@ -1,3 +1,4 @@
+
 /**
  * @function convertAngleRadiansToDegrees
  * Converts radians to degrees
@@ -8,6 +9,9 @@
  * @param {number} radians
  * @return {number}
  */
-export const convertAngleRadiansToDegrees = (radians: number): number => {
+const convertAngleRadiansToDegrees = (radians: number): number => {
   return radians * 180 / Math.PI
 }
+
+
+export default convertAngleRadiansToDegrees

@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 import { arrayOrderNumberIncreasing } from '../jsUtils'
 
 
@@ -20,6 +20,9 @@ import { arrayOrderNumberIncreasing } from '../jsUtils'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalDigits): number => {
+const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)
 }
+
+
+export default getNumberInBetween

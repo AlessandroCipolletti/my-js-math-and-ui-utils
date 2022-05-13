@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -17,9 +17,12 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {Array<number>} Array with [x, y] rotated coords
  */
-export const rotateCoords = (x: number, y: number, angleRadians: number, decimals: number = defaultDecimalDigits): Array<number> => {
+const rotateCoords = (x: number, y: number, angleRadians: number, decimals: number = defaultDecimalDigits): Array<number> => {
   return [
     roundNumber(x * Math.cos(angleRadians) + y * Math.sin(angleRadians), decimals),
     roundNumber(-x * Math.sin(angleRadians) + y * Math.cos(angleRadians), decimals),
   ]
 }
+
+
+export default rotateCoords

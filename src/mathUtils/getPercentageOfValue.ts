@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -18,6 +18,9 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const getPercentageOfValue = (value: number, total: number, decimals: number = defaultDecimalDigits): number => {
+const getPercentageOfValue = (value: number, total: number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(value * 100 / total, decimals)
 }
+
+
+export default getPercentageOfValue

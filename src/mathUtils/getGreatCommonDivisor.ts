@@ -1,3 +1,4 @@
+
 const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number => {
   x = Math.abs(x)
   y = Math.abs(y)
@@ -7,7 +8,7 @@ const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number =
     y = x % y
     x = t
   }
-  
+
   return x
 }
 
@@ -21,11 +22,15 @@ const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number =
  * @param {array} numbers
  * @return {Array} Array with [x, y] middle point's coords
  */
-export const getGreatCommonDivisor = (numbers: Array<number>): number => {
+const getGreatCommonDivisor = (numbers: Array<number>): number => {
   while (numbers.length > 2) {
     const x = numbers.pop() as number
     const y = numbers.pop() as number
     numbers.push(_getGreatCommonDivisorBetweenTwoNumbers(x, y))
   }
+
   return _getGreatCommonDivisorBetweenTwoNumbers(numbers[0], numbers[1])
 }
+
+
+export default getGreatCommonDivisor

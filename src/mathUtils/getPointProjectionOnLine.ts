@@ -1,6 +1,6 @@
-import { getPerpendicularLineFunctionPassingByPoint } from './getPerpendicularLineFunctionPassingByPoint'
-import { getSlopeCoefficientBetweenTwoPoints } from './getSlopeCoefficientBetweenTwoPoints'
-import { getIntersectionBetween4Points } from './getIntersectionBetween4Points'
+import getPerpendicularLineFunctionPassingByPoint from './getPerpendicularLineFunctionPassingByPoint'
+import getSlopeCoefficientBetweenTwoPoints from './getSlopeCoefficientBetweenTwoPoints'
+import getIntersectionBetween4Points from './getIntersectionBetween4Points'
 
 
 /**
@@ -15,7 +15,7 @@ import { getIntersectionBetween4Points } from './getIntersectionBetween4Points'
  * @param {number} y3
  * @return {Array<number>} Array with [x, y] coords
  */
-export const getPointProjectionOnLine = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number): Array<number> => {
+const getPointProjectionOnLine = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number): Array<number> => {
   // points {x1, y1} and {x2, y2} define the line
   // point {x3, y3} is the point to project on the line
   let x4, y4
@@ -35,5 +35,9 @@ export const getPointProjectionOnLine = (x1: number, y1: number, x2: number, y2:
     x4 = x1
     y4 = y3
   }
+
   return getIntersectionBetween4Points(x1, y1, x2, y2, x3, y3, x4, y4)
 }
+
+
+export default getPointProjectionOnLine

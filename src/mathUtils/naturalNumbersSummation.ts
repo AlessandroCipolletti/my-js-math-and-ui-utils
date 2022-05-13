@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -13,7 +13,10 @@ import { roundNumber } from './roundNumber'
  * @param {number} n
  * @return {number}
  */
-export const naturalNumbersSummation = (n: number): number => {
+const naturalNumbersSummation = (n: number): number => {
   // return n === 1 ? 1 : n + naturalNumbersSummation(n - 1)
   return roundNumber((n * (n + 1)) / 2, defaultDecimalDigits)
 }
+
+
+export default naturalNumbersSummation

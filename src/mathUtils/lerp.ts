@@ -1,4 +1,4 @@
-import { linerarInterpolation } from './linerarInterpolation'
+import linerarInterpolation from './linerarInterpolation'
 
 
 /**
@@ -16,4 +16,7 @@ import { linerarInterpolation } from './linerarInterpolation'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const lerp = linerarInterpolation
+const lerp = linerarInterpolation
+
+
+export default lerp

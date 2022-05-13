@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -21,7 +21,7 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const getRandomNumber = (n1: number, n2?: number, decimals: number = defaultDecimalDigits): number => {
+const getRandomNumber = (n1: number, n2?: number, decimals: number = defaultDecimalDigits): number => {
   let min, max
   if (typeof n2 === 'undefined') {
     min = 0
@@ -32,3 +32,6 @@ export const getRandomNumber = (n1: number, n2?: number, decimals: number = defa
   }
   return roundNumber((Math.random() * (max - min)) + min, decimals)
 }
+
+
+export default getRandomNumber

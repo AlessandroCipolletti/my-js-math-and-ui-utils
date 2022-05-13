@@ -10,6 +10,9 @@
  * @param {number} n
  * @return {number}
  */
-export const factorial = (n: number): number => {
+const factorial = (n: number): number => {
   return n <= 1 ? 1 : n * factorial(n - 1)
 }
+
+
+export default factorial

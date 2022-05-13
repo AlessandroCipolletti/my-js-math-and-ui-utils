@@ -1,4 +1,4 @@
-import { getNumberInBetween } from './getNumberInBetween'
+import getNumberInBetween from './getNumberInBetween'
 
 
 /**
@@ -19,4 +19,7 @@ import { getNumberInBetween } from './getNumberInBetween'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const clamp = getNumberInBetween
+const clamp = getNumberInBetween
+
+
+export default clamp

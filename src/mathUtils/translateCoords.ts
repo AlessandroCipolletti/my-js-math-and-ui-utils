@@ -12,9 +12,12 @@
  * @param {number} dy
  * @return {Array<number>} Array with [x, y] translated coords
  */
-export const translateCoords = (x: number, y: number, dx: number, dy: number): Array<number> => {
+const translateCoords = (x: number, y: number, dx: number, dy: number): Array<number> => {
   return [
     x + dx,
     y + dy,
   ]
 }
+
+
+export default translateCoords

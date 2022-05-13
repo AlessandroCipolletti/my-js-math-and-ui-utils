@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -16,7 +16,7 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {Array<number>} Array of [x, y] coords
  */
-export const getQuadraticBezierCurvePointAtTime = (
+const getQuadraticBezierCurvePointAtTime = (
   t: number,
   x1: number,
   y1: number,
@@ -26,8 +26,12 @@ export const getQuadraticBezierCurvePointAtTime = (
   y3: number,
   decimals: number = defaultDecimalDigits,
 ): Array<number> => {
+
   return [
     roundNumber((1 - t) * (1 - t) * x1 + 2 * (1 - t) * t * x2 + t * t * x3, decimals), // curve x at time t
     roundNumber((1 - t) * (1 - t) * y1 + 2 * (1 - t) * t * y2 + t * t * y3, decimals), // curve y at time t
   ]
 }
+
+
+export default getQuadraticBezierCurvePointAtTime

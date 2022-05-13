@@ -14,9 +14,16 @@
  * @param {number} y2
  * @return {number}
  */
-export const getAngleRadiansBetweenTwoPoints = (x1: number, y1: number, x2: number, y2: number): number => {
+const getAngleRadiansBetweenTwoPoints = (
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+): number => {
+
   const m1 = x2 - x1
   const m2 = y2 - y1
+
   if (m1 > 0 && m2 > 0) { // first quadrant
     return (Math.atan(m2 / m1))
   } else if (m1 < 0 && m2 > 0) { // second quadrant
@@ -42,3 +49,6 @@ export const getAngleRadiansBetweenTwoPoints = (x1: number, y1: number, x2: numb
     }
   }
 }
+
+
+export default getAngleRadiansBetweenTwoPoints

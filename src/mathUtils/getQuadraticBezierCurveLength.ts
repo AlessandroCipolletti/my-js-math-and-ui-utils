@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -15,7 +15,7 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {number}
  */
-export const getQuadraticBezierCurveLength = (
+const getQuadraticBezierCurveLength = (
   x1: number,
   y1: number,
   x2: number,
@@ -24,6 +24,7 @@ export const getQuadraticBezierCurveLength = (
   y3: number,
   decimals: number = defaultDecimalDigits,
 ): number => {
+
   const a = {
     x: x1 - 2 * x2 + x3,
     y: y1 - 2 * y2 + y3,
@@ -44,5 +45,9 @@ export const getQuadraticBezierCurveLength = (
     BA += 1
   }
   const length = (A_32 * Sabc + A_2 * B * (Sabc - C_2) + (4 * C * A - B * B) * Math.log((2 * A_2 + BA + Sabc) / (BA + C_2))) / (4 * A_32)
+
   return roundNumber(length, decimals)
 }
+
+
+export default getQuadraticBezierCurveLength

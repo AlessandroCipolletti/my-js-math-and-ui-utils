@@ -1,4 +1,4 @@
-import { convertAngleRadiansToDegrees } from './convertAngleRadiansToDegrees'
+import convertAngleRadiansToDegrees from './convertAngleRadiansToDegrees'
 
 
 /**
@@ -12,4 +12,7 @@ import { convertAngleRadiansToDegrees } from './convertAngleRadiansToDegrees'
  * @param {number} radians
  * @return {number}
  */
-export const degrees = convertAngleRadiansToDegrees
+const degrees = convertAngleRadiansToDegrees
+
+
+export default degrees

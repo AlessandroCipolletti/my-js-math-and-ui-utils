@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -17,7 +17,7 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {Array<number>} Array with [x, y] coords
  */
-export const getIntersectionBetween4Points = (
+const getIntersectionBetween4Points = (
   x1: number,
   y1: number,
   x2: number,
@@ -40,3 +40,6 @@ export const getIntersectionBetween4Points = (
     roundNumber(y1 + ua * (y2 - y1), decimals),
   ]
 }
+
+
+export default getIntersectionBetween4Points

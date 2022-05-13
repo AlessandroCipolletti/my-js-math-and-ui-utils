@@ -12,8 +12,11 @@
  * @param {number} [tolerance] Default = 0
  * @return {boolean}
  */
-export const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean => {
+const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean => {
   const max = Math.max(...values)
   const min = Math.min(...values)
   return Math.abs(max - min) <= tolerance
 }
+
+
+export default valuesAreSimilar

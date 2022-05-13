@@ -1,5 +1,5 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
-import { roundNumber } from './roundNumber'
+import roundNumber from './roundNumber'
 
 
 /**
@@ -16,15 +16,19 @@ import { roundNumber } from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @return {Array<number>} Array with [x, y] middle point's coords
  */
-export const getMiddlePointCoords = (
+const getMiddlePointCoords = (
   x1: number,
   y1: number,
   x2: number,
   y2: number,
   decimals: number = defaultDecimalDigits,
 ): Array<number> => {
+
   return [
     roundNumber((x1 + x2) / 2, decimals),
     roundNumber((y1 + y2) / 2, decimals),
   ]
 }
+
+
+export default getMiddlePointCoords
