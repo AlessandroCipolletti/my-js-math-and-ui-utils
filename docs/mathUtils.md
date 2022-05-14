@@ -1,4 +1,6 @@
-# Members
+[< Back](https://github.com/AlessandroCipolletti/js-math-and-ui-utils)
+
+# Math Utils
 
 ## defaultDecimalDigits : <code>number</code>
 <p>Specify how many decimal digits you want in all results</p>
