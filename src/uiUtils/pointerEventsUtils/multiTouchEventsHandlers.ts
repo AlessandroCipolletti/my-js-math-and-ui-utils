@@ -1,8 +1,14 @@
 import { isAndroid } from 'mobile-device-detect'
 
-import { roundNumber, getAngleDegreesBetweenTwoPoints, getDistanceBetweenTwoPoints, getMiddlePointCoords } from '../../mathUtils'
-import { preventDefault, getEventCoordX, getEventCoordY, filterTouchesByTargets } from '../../domUtils'
-import { delay } from '../../jsUtils'
+import roundNumber from '../../mathUtils/roundNumber'
+import getAngleDegreesBetweenTwoPoints from '../../mathUtils/getAngleDegreesBetweenTwoPoints'
+import getDistanceBetweenTwoPoints from '../../mathUtils/getDistanceBetweenTwoPoints'
+import getMiddlePointCoords from '../../mathUtils/getMiddlePointCoords'
+import preventDefault from '../../domUtils/preventDefault'
+import getEventCoordX from '../../domUtils/getEventCoordX'
+import getEventCoordY from '../../domUtils/getEventCoordY'
+import filterTouchesByTargets from '../../domUtils/filterTouchesByTargets'
+import delay from '../../jsUtils/delay'
 import { getPointerEventForThisDevice } from '../utils'
 
 const TIME_TO_WAIT_FOR_SECOND_FINGER = 40
@@ -41,7 +47,7 @@ const _fixAndroidTouchEvent = (touchEvent: IosTouch): IosTouch => {
  * @param {MultiTouchHandlers} handlers
  * @return {void}
  */
-export const multiTouchEventsHandlers = (
+const multiTouchEventsHandlers = (
   target: HTMLElement,
   handlers: MultiTouchHandlers,
 ): void => {
@@ -297,7 +303,10 @@ export const multiTouchEventsHandlers = (
     // @ts-expect-error it doesn't like a variable event name
     document.removeEventListener(eventCancel, handleTouchCanceled)
   }
-  
+
   // @ts-expect-error it doesn't like a variable event name
   target.addEventListener(eventStart, handleTouchStart)
 }
+
+
+export default multiTouchEventsHandlers

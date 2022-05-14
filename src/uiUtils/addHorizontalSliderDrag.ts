@@ -1,5 +1,9 @@
-import { roundNumber, getNumberInBetween } from '../mathUtils'
-import { getEventCoordX, preventDefault, getDomRect } from '../domUtils'
+import roundNumber from '../mathUtils/roundNumber'
+import getNumberInBetween from '../mathUtils/getNumberInBetween'
+import getEventCoordX from '../domUtils/getEventCoordX'
+import getEventCoordY from '../domUtils/getEventCoordY'
+import preventDefault from '../domUtils/preventDefault'
+import getDomRect from '../domUtils/getDomRect'
 import { getPointerEventForThisDevice } from './utils'
 
 
@@ -10,18 +14,18 @@ import { getPointerEventForThisDevice } from './utils'
       So it goes negative if you drag to the left, and positive to the right.
   if returnRelativeDiff === false: it return the value corresponding at che current mouse event coordinates.
       So it's always a number between 0 and valueMax.
- * 
- * @param {HTMLElement} draggableDom 
- * @param {HTMLElement} sliderDom 
- * @param {DragHandler} onDrag 
- * @param {number} valueMax 
- * @param {number} valueMin 
+ *
+ * @param {HTMLElement} draggableDom
+ * @param {HTMLElement} sliderDom
+ * @param {DragHandler} onDrag
+ * @param {number} valueMax
+ * @param {number} valueMin
  * @param {boolean} [returnRelativeDiff = false]
  * @param {number} [decimals = 4]
  * @param {number} [waitingTime = 0]
  * @return {void}
  */
-export const addHorizontalSliderDrag = (
+const addHorizontalSliderDrag = (
   draggableDom: HTMLElement,
   sliderDom: HTMLElement,
   onDrag: DragHandler,
@@ -116,3 +120,6 @@ export const addHorizontalSliderDrag = (
   // @ts-expect-error it doesn't like a variable event name
   sliderDom.addEventListener(eventStart, onTouchStart)
 }
+
+
+export default addHorizontalSliderDrag

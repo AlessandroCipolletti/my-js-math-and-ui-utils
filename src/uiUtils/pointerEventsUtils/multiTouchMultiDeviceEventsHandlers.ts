@@ -1,13 +1,13 @@
 import { isTablet, isMobile, isBrowser } from 'mobile-device-detect'
 
-import { multiTouchEventsHandlers } from './multiTouchEventsHandlers'
-import { handleTrackpadPinchGesture } from './trackpadGestureHandlers'
-import { preventDefault } from '../../domUtils'
-import { delayFn } from '../../jsUtils'
+import multiTouchEventsHandlers from './multiTouchEventsHandlers'
+import trackpadGestureHandlers from './trackpadGestureHandlers'
+import preventDefault from '../../domUtils/preventDefault'
+import delayFn from '../../jsUtils/delayFn'
 
 
 /**
- * @function multiDeviceEventsHandlers
+ * @function multiTouchMultiDeviceEventsHandlers
  * Allows to attach multiple multitouch handlers to multiple targets, on multiple kinds of devices, at the same time.
  * If you pass gestures handlers, they will be treated as needed for both touch devices and desktop (with trackpads).
  * NB. Mobile first: handlers are named like onSingleTouchStart, onSingleTouchMove and onSingleTouchEnd,
@@ -15,7 +15,7 @@ import { delayFn } from '../../jsUtils'
  *
  * @example
  * // on any type of device:
- * multiDeviceEventsHandlers([myDom1, myDom2], {
+ * multiTouchMultiDeviceEventsHandlers([myDom1, myDom2], {
  *   onSingleTouchStart,
  *   onSingleTouchMove,
  *   onSingleTouchEnd,
@@ -25,7 +25,7 @@ import { delayFn } from '../../jsUtils'
  * })
  *
  */
-export const multiDeviceEventsHandlers = (
+const multiTouchMultiDeviceEventsHandlers = (
   targets: HTMLElement|Array<HTMLElement>,
   handlers: MultiTouchHandlers,
 ): void => {
@@ -60,7 +60,7 @@ export const multiDeviceEventsHandlers = (
         const onGestureChange = delayedHandlers.onGestureChange || (() => {})
         const onGestureEnd = delayedHandlers.onGestureEnd || (() => {})
 
-        handleTrackpadPinchGesture(el, {
+        trackpadGestureHandlers(el, {
           onGestureStart,
           onGestureChange,
           onGestureEnd,
@@ -73,3 +73,6 @@ export const multiDeviceEventsHandlers = (
     }
   })
 }
+
+
+export default multiTouchMultiDeviceEventsHandlers

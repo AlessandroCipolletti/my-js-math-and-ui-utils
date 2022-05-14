@@ -1,9 +1,13 @@
 import { isTablet, isMobile, isBrowser } from 'mobile-device-detect'
 
 import { fadeInElements, fadeOutElements, cancelElementAnimationIfExists, bouncingElements, moveToElements } from '../animationsUtils'
-import { getEventCoordX, getEventCoordY, preventDefault, redrawDomElement } from '../domUtils'
-import { roundNumber } from '../mathUtils'
-import { debounceThrottle, callCallbackIfDataChanged } from '../jsUtils'
+import getEventCoordX from '../domUtils/getEventCoordX'
+import getEventCoordY from '../domUtils/getEventCoordY'
+import preventDefault from '../domUtils/preventDefault'
+import redrawDomElement from '../domUtils/redrawDomElement'
+import roundNumber from '../mathUtils/roundNumber'
+import debounceThrottle from '../jsUtils/debounceThrottle'
+import callCallbackIfDataChanged from '../jsUtils/callCallbackIfDataChanged'
 import { getPointerEventForThisDevice } from './utils'
 
 const MARGE_TO_START_SCROLLING = 100
@@ -20,10 +24,10 @@ type Handler = (element: HTMLElement, newIndex: number, dragInProgress: boolean)
 
 
 /**
- * @function addListDragAndDropHandler
+ * @function addListDragAndDrop
  * Handles list elements drag and drop (using shaow dom and animations).
  * Works better if the whole list is visible on the screen.
- * On mobile it works better if used with addTapAndLongPressHandlers inside a LongPress handler.
+ * On mobile it works better if used with addTapAndLongPress inside a LongPress handler.
  * It needs a css class 'displayNone' ==> display: none;
  *
  * @example
@@ -38,7 +42,7 @@ type Handler = (element: HTMLElement, newIndex: number, dragInProgress: boolean)
  * @param {Handler} callback
  * @param {boolean} [verticalScroll = true]
  */
-export const addListDragAndDropHandler = (() => {
+const addListDragAndDrop = (() => {
   let moveEventX = 0
   let moveEventY = 0
   let listMaxScrollTop = 0
@@ -371,3 +375,6 @@ export const addListDragAndDropHandler = (() => {
     document.addEventListener(eventEnd, onDragEnd)
   }
 })()
+
+
+export default addListDragAndDrop

@@ -1,5 +1,8 @@
 import { debounce } from 'debounce'
-import { preventDefault, getEventCoordX, getEventCoordY } from '../../domUtils'
+
+import preventDefault from '../../domUtils/preventDefault'
+import getEventCoordX from '../../domUtils/getEventCoordX'
+import getEventCoordY from '../../domUtils/getEventCoordY'
 
 /**
  * @const TIME_TO_END_SCROLL_GESTURE
@@ -25,13 +28,13 @@ interface GestureHandlers {
 
 
 /**
- * @function handleTrackpadPinchGesture
+ * @function trackpadGestureHandlers
  * Handles pinch-to-zoom gesture on laptop trackpad.
  * It can handle onGestureStart onGestureChange onGestureEnd with three params: (x, y, scale)
  *
  * @example
  * // for desktop devices:
- * handleTrackpadPinchGesture(myDom, {
+ * trackpadGestureHandlers(myDom, {
  *   onGestureStart,
  *   onGestureChange,
  *   onGestureEnd,
@@ -41,7 +44,7 @@ interface GestureHandlers {
  * @param {GestureHandlers} handlers
  * @return {void}
  */
-export const handleTrackpadPinchGesture = (target: HTMLElement, handlers: GestureHandlers): void => {
+const trackpadGestureHandlers = (target: HTMLElement, handlers: GestureHandlers): void => {
   const onGestureStart = handlers.onGestureStart
   const onGestureChange = handlers.onGestureChange
   const onGestureEnd = handlers.onGestureEnd
@@ -86,3 +89,6 @@ export const handleTrackpadPinchGesture = (target: HTMLElement, handlers: Gestur
     debouncedStopScrolling()
   })
 }
+
+
+export default trackpadGestureHandlers

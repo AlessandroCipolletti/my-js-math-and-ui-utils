@@ -1,5 +1,8 @@
-import { roundNumber, getNumberInBetween } from '../mathUtils'
-import { getEventCoordY, preventDefault, getDomRect } from '../domUtils'
+import roundNumber from '../mathUtils/roundNumber'
+import getNumberInBetween from '../mathUtils/getNumberInBetween'
+import getEventCoordY from '../domUtils/getEventCoordY'
+import preventDefault from '../domUtils/preventDefault'
+import getDomRect from '../domUtils/getDomRect'
 import { getPointerEventForThisDevice } from './utils'
 
 
@@ -21,7 +24,7 @@ import { getPointerEventForThisDevice } from './utils'
  * @param {number} [waitingTime = 0]
  * @return {void}
  */
-export const addVerticalSliderDrag = (
+const addVerticalSliderDrag = (
   draggableDom: HTMLElement,
   sliderDom: HTMLElement,
   onDrag: DragHandler,
@@ -116,3 +119,6 @@ export const addVerticalSliderDrag = (
   // @ts-expect-error it doesn't like a variable event name
   sliderDom.addEventListener(eventStart, onTouchStart)
 }
+
+
+export default addVerticalSliderDrag

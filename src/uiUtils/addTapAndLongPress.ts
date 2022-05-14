@@ -1,6 +1,7 @@
-
-import { getEventCoordX, getEventCoordY, preventDefault } from '../domUtils'
-import { getDistanceBetweenTwoPoints } from '../mathUtils'
+import getEventCoordX from '../domUtils/getEventCoordX'
+import getEventCoordY from '../domUtils/getEventCoordY'
+import preventDefault from '../domUtils/preventDefault'
+import getDistanceBetweenTwoPoints from '../mathUtils/getDistanceBetweenTwoPoints'
 import { getPointerEventForThisDevice } from './utils'
 
 
@@ -10,23 +11,23 @@ const LONG_PRESS_DURATION = 250
 type Handler = (event: AnyPointerEvent) => void
 
 /**
- * @function addTapAndLongPressHandlers
+ * @function addTapAndLongPress
  * Given a element, it handles (and distinguishes) Tap and LongPress event.
  * It's optimised for lists, and fixes an annoying ios bug about scrolling a list of elements;
  * but it can be used on any type of html element.
  * Callbacks are called with the native pointer event as the only param.
  * You can specify how many px are needed to handle the 'scroll' event, and how many ms should pass to call the LongPress handler.
- * 
+ *
  * @example
- * addTapAndLongPressHandlers(myListDom, onTapHandler, onLongPressHandler)
- * 
+ * addTapAndLongPress(myListDom, onTapHandler, onLongPressHandler)
+ *
  * @param {HTMLElement} listElement
- * @param {Handler} onTap 
- * @param {Handler} onLongPress 
+ * @param {Handler} onTap
+ * @param {Handler} onLongPress
  * @param {number} [maxPxToMove = 20]
  * @param {number} [minMsToLongPress = 250]
  */
-export const addTapAndLongPressHandlers = (
+const addTapAndLongPress = (
   listElement: HTMLElement,
   onTap: Handler,
   onLongPress: Handler,
@@ -161,3 +162,6 @@ export const addTapAndLongPressHandlers = (
   // @ts-expect-error it doesn't like a variable event name
   listElement.addEventListener(eventStart, onTouchStart)
 }
+
+
+export default addTapAndLongPress

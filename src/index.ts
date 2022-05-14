@@ -57,7 +57,7 @@ export {
   canvasIsEvenlyColored,
   getCanvasRgbaColorAtPx,
   fillCompletely,
-  fillWithBucket,
+  fillCanvasWithBucket,
 } from './canvasUtils'
 
 export {
@@ -101,7 +101,7 @@ export {
   findImageContentCoords,
   cropImage,
   flipImage,
-  getBlobFromBase46,
+  getBlobFromBase64,
   getCanvasBlobAsync,
   convertImgToCanvas,
   getImageBase64Async,
@@ -136,11 +136,10 @@ export {
   arrayOrderStringDown,
 } from './jsUtils'
 
-export { multiTouchEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchEventsHandlers'
-export { multiDeviceEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchMultiDeviceEventsHandlers'
-export { handleTrackpadPinchGesture } from './uiUtils/pointerEventsUtils/trackpadGestureHandlers'
-
-export { addHorizontalSliderDrag } from './uiUtils/addHorizontalSliderDrag'
-export { addVerticalSliderDrag } from './uiUtils/addVerticalSliderDrag'
-export { addTapAndLongPressHandlers } from './uiUtils/addTapAndLongPress'
-export { addListDragAndDropHandler } from './uiUtils/addListDragAndDrop'
+export { default as multiTouchEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchEventsHandlers'
+export { default as multiTouchMultiDeviceEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchMultiDeviceEventsHandlers'
+export { default as trackpadGestureHandlers } from './uiUtils/pointerEventsUtils/trackpadGestureHandlers'
+export { default as addHorizontalSliderDrag } from './uiUtils/addHorizontalSliderDrag'
+export { default as addVerticalSliderDrag } from './uiUtils/addVerticalSliderDrag'
+export { default as addTapAndLongPress } from './uiUtils/addTapAndLongPress'
+export { default as addListDragAndDrop } from './uiUtils/addListDragAndDrop'

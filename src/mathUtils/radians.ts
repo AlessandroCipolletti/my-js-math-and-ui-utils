@@ -1,4 +1,4 @@
-import convertAngleDegreesToRadians  from './convertAngleDegreesToRadians'
+import convertAngleDegreesToRadians from './convertAngleDegreesToRadians'
 
 /**
  * @function radians

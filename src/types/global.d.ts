@@ -215,3 +215,9 @@ declare type DragHandler = (
   inProgress: boolean,
   dragged: boolean,
 ) => void
+
+/**
+ * Array of keyframe key-value objects
+ * @typedef {Array<Record<string, any>>} Keyframes
+ */
+declare type Keyframes = Array<Record<string, any>>
