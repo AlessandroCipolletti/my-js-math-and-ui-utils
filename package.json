@@ -32,9 +32,16 @@
     "lint": "eslint . --ext .ts",
     "lint:quiet": "eslint . --ext .ts --quiet",
     "lint:fix": "eslint . --ext .ts --fix",
+    "build:doc": "jsdoc2md --files ./src/**/*.ts --configure ./jsdoc2md.json > ./docs/doc.md",
     "compile": "rm -rf ./build && tsc && cp ./package.json build && cp ./LICENSE build && cp ./readme.md build"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/debounce": "^1.2.1",
     "@types/lodash.isequal": "^4.5.6",
     "@types/node": "^14.11.2",
@@ -42,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "eslint": "^8.14.0",
+    "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^7.1.1",
     "typescript": "^4.6.4"
   },

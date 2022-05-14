@@ -19,8 +19,8 @@ const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number =
  * @example
  * getGreatCommonDivisor([12, 24, 6]) // ==> 6
  *
- * @param {array} numbers
- * @returns {Array} Array with [x, y] middle point's coords
+ * @param {Array<number>} numbers
+ * @returns {number}
  */
 const getGreatCommonDivisor = (numbers: Array<number>): number => {
   while (numbers.length > 2) {
