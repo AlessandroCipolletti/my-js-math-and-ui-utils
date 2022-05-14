@@ -22,7 +22,7 @@ import { getPointerEventForThisDevice } from './utils'
  * @param {boolean} [returnRelativeDiff = false]
  * @param {number} [decimals = 4]
  * @param {number} [waitingTime = 0]
- * @return {void}
+ * @returns {void}
  */
 const addVerticalSliderDrag = (
   draggableDom: HTMLElement,

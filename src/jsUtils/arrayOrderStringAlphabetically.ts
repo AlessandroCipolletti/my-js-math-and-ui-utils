@@ -9,7 +9,7 @@
  *
  * @param {string} a
  * @param {string} b
- * @return {number}
+ * @returns {number}
  */
 const arrayOrderStringAlphabetically = (a: string, b: string): number => {
   if (a > b) return +1

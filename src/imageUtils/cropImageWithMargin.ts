@@ -13,7 +13,7 @@ import cropImage from './cropImage'
  * @param {number} r right coord x
  * @param {number} b bottom coord y
  * @param {number} [margin = 0.1]
- * @return {Array<HTMLCanvasElement|number>}
+ * @returns {Array<HTMLCanvasElement|number>}
  */
 const cropImageWithMargin = (
   imageDom: HTMLCanvasElement|HTMLImageElement,

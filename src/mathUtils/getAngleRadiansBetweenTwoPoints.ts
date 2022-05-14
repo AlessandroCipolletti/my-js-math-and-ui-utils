@@ -12,7 +12,7 @@
  * @param {number} y1
  * @param {number} x2
  * @param {number} y2
- * @return {number}
+ * @returns {number}
  */
 const getAngleRadiansBetweenTwoPoints = (
   x1: number,

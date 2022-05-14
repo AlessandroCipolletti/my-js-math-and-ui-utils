@@ -11,7 +11,7 @@ export let defaultDecimalDigits = 4
  * Set a different default decimal digit amount
  *
  * @param {number} digits
- * @return {void}
+ * @returns {void}
  */
 const setDefaultDecimalDigits = (digits: number):  void => {
   defaultDecimalDigits = digits

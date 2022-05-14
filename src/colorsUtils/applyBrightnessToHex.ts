@@ -11,7 +11,7 @@ import rgbToHex from './rgbToHex'
  *
  * @param {string} hex
  * @param {number} brightness
- * @return {string}
+ * @returns {string}
  */
 const applyBrightnessToHex = (hex: string, brightness: number): string => {
   const rgb: RgbaColorObject = hexToRgba(hex)

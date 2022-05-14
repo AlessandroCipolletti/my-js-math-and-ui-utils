@@ -16,7 +16,7 @@ import hslaStringToRgba from './hslaStringToRgba'
  * colorStringToRgba('hsl(100, 50%, 50%)') // ==> { r: 106, g: 149, b: 191, a: 1 }
  *
  * @param {string} colorString
- * @return {RgbaColorObject|string}
+ * @returns {RgbaColorObject|string}
  */
 const colorStringToRgb = (colorString: string): RgbaColorObject|string => {
   if (colorString.startsWith('#')) {

@@ -17,7 +17,7 @@ import getNumberInBetween from './getNumberInBetween'
  * @param {number} min
  * @param {number} max
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const clamp = getNumberInBetween
 

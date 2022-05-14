@@ -10,7 +10,7 @@ import hslaToRgba from './hslaToRgba'
  * hslaStringToRgba('hsl(100, 50%, 50%)') // ==> { r: 106, g: 149, b: 191, a: 1 }
  *
  * @param {string} hslaString
- * @return {RgbaColorObject}
+ * @returns {RgbaColorObject}
  */
 const hslaStringToRgba = (hslaString: string): RgbaColorObject => {
   const [h, s, l, a] = hslaString

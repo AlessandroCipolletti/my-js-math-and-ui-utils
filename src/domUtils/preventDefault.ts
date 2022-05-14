@@ -9,7 +9,7 @@
  * }
  *
  * @param {Event} e
- * @return {void}
+ * @returns {void}
  */
 const preventDefault = (e: Event): void => {
   if (e) {

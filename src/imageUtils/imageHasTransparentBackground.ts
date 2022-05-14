@@ -8,7 +8,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  * Checks if the given image has a transparent background
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @return {boolean}
+ * @returns {boolean}
  */
 const imageHasTransparentBackground = (imageDom: HTMLCanvasElement|HTMLImageElement): boolean => {
   if (imageDom instanceof HTMLCanvasElement) {

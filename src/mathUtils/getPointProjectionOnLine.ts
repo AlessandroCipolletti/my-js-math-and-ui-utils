@@ -13,7 +13,7 @@ import getIntersectionBetween4Points from './getIntersectionBetween4Points'
  * @param {number} y2
  * @param {number} x3
  * @param {number} y3
- * @return {Array<number>} Array with [x, y] coords
+ * @returns {Array<number>} Array with [x, y] coords
  */
 const getPointProjectionOnLine = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number): Array<number> => {
   // points {x1, y1} and {x2, y2} define the line

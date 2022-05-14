@@ -11,7 +11,7 @@ import roundNumber from './roundNumber'
  * naturalNumbersSummation(5) // ==> 15 = 5 + 4 + 3 + 2 + 1
  *
  * @param {number} n
- * @return {number}
+ * @returns {number}
  */
 const naturalNumbersSummation = (n: number): number => {
   // return n === 1 ? 1 : n + naturalNumbersSummation(n - 1)

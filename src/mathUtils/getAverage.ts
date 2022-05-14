@@ -11,7 +11,7 @@ import roundNumber from './roundNumber'
  *
  * @param {array} values
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getAverage = (values: Array<number>, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(values.reduce((t, v) => t + v, 0) / values.length, decimals)

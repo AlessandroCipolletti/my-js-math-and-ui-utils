@@ -19,7 +19,7 @@ import roundNumber from './roundNumber'
  * @param {number} n1
  * @param {number} [n2]
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getRandomNumber = (n1: number, n2?: number, decimals: number = defaultDecimalDigits): number => {
   let min, max

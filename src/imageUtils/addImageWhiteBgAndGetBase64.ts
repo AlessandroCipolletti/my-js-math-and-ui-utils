@@ -7,7 +7,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  * Takes a image (or a canvas), adds a white background, and returns the new base64.
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
- * @return {string}
+ * @returns {string}
  */
 const addImageWhiteBgAndGetBase64 = (imageDom: HTMLCanvasElement|HTMLImageElement): string => {
   if (imageDom instanceof HTMLCanvasElement) {

@@ -7,7 +7,7 @@
  * convertAngleRadiansToDegrees(Math.Math.PI) // ==> 180
  *
  * @param {number} radians
- * @return {number}
+ * @returns {number}
  */
 const convertAngleRadiansToDegrees = (radians: number): number => {
   return radians * 180 / Math.PI

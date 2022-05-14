@@ -12,7 +12,7 @@ import getRandomNumber from '../mathUtils/getRandomNumber'
  * getRandomRgbaColor(0.356) // ==> 'rgba(22, 13, 26, 0.356)'
  *
  * @param {boolean|number} [alpha = false]
- * @return {string}
+ * @returns {string}
  */
 const getRandomRgbaColor = (alpha: boolean|number = false): string => {
   if (alpha === false) alpha = 1

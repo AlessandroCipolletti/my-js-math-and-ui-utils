@@ -4,7 +4,7 @@
  * Copy a string to device clipboard
  *
  * @param {string} str
- * @return {void}
+ * @returns {void}
  */
 const copyTextToClipboard = (str: string): void => {
   const el = document.createElement('textarea')

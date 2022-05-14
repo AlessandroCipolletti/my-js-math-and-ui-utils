@@ -8,7 +8,7 @@ import getCanvasBlobAsync from './getCanvasBlobAsync'
  * Takes an image (or a canvas) and returns its base64, asynchronously
  *
  * @params {HTMLCanvasElement|HTMLImageElement} imageDom
- * @return {Promise<string>}
+ * @returns {Promise<string>}
  */
 const getImageBase64Async = async(
   imageDom: HTMLCanvasElement|HTMLImageElement,

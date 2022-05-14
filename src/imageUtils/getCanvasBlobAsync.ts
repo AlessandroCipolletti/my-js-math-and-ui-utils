@@ -4,7 +4,7 @@
  * Small utils to use canvas.toBlob with async/await
  *
  * @param {HTMLCanvasElement} canvas
- * @return {Promise<Blob>}
+ * @returns {Promise<Blob>}
  */
 const getCanvasBlobAsync = (canvas: HTMLCanvasElement): Promise<Blob> => {
   return new Promise((resolve) => {

@@ -27,7 +27,7 @@ interface ParticlesListItem {
  * @param {string} color
  * @param {number} size
  * @param {number} alpha
- * @return {void}
+ * @returns {void}
  */
 const drawSprayCircle = (
   destinationContext: MyCanvasRenderingContext2D,
@@ -76,7 +76,7 @@ const _particlesLists: Record<number, ParticlesListItem> = {}
  * Return a ParticlesListItem to generate a homogeneous spray circle
  *
  * @param {numner} size
- * @return {ParticlesListItem}
+ * @returns {ParticlesListItem}
  */
 const _initParticlesListFor = (size: number): void => {
   _particlesLists[size] = {

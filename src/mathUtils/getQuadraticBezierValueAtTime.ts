@@ -11,7 +11,7 @@ import roundNumber from './roundNumber'
  * @param {number} p2
  * @param {number} p3
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getQuadraticBezierValueAtTime = (
   t: number,

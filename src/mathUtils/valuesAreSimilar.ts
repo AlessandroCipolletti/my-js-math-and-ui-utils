@@ -10,7 +10,7 @@
  *
  * @param {Array<number>} values
  * @param {number} [tolerance] Default = 0
- * @return {boolean}
+ * @returns {boolean}
  */
 const valuesAreSimilar = (values: Array<number>, tolerance = 0): boolean => {
   const max = Math.max(...values)

@@ -17,7 +17,7 @@ import roundNumber from './roundNumber'
  * @param {number} minValue must be > 0
  * @param {number} maxValue must be > 0
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getLogarithmicValueOfPercentage = (
   percentage: number,

@@ -28,7 +28,7 @@ interface BouncingOptions {
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
  * @params {BouncingOptions} options
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const bouncingElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -51,7 +51,7 @@ const bouncingElements = async(
  * @param {number} duration
  * @param {number} animationScale
  * @param {number} rotationDegrees
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const _bouncingEl = async(
   element: HTMLElementWithAnimations,

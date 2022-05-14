@@ -7,7 +7,7 @@
  * @param {RgbColorObject} rgb1
  * @param {RgbColorObject} rgb2
  * @param {number} [tolerance = 10]
- * @return {boolean}
+ * @returns {boolean}
  */
 const compareRgbColorsWithTolerance = (
   rgb1: RgbColorObject,

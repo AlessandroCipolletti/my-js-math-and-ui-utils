@@ -14,7 +14,7 @@ import roundNumber from './roundNumber'
  * @param {number} x3
  * @param {number} y3
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {Array<number>} Array of [x, y] coords
+ * @returns {Array<number>} Array of [x, y] coords
  */
 const getQuadraticBezierCurvePointAtTime = (
   t: number,

@@ -14,7 +14,7 @@ import linerarInterpolation from './linerarInterpolation'
  * @param {number} max
  * @param {number} t number between 0 and 1
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const lerp = linerarInterpolation
 

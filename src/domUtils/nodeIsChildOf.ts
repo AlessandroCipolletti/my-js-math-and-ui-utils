@@ -8,7 +8,7 @@
  *
  * @param {HTMLElement} node
  * @param {HTMLElement} container
- * @return {boolean}
+ * @returns {boolean}
  */
 const nodeIsChildOf = (node: HTMLElement, container: HTMLElement): boolean => {
   let result = false

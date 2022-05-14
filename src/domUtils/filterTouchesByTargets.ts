@@ -10,7 +10,7 @@
  *
  * @param {AnyPointerEvent} event
  * @param {HTMLElement|Array<HTMLElement>} targets
- * @return {Array<OnePointerEvent>}
+ * @returns {Array<OnePointerEvent>}
  */
 const filterTouchesByTargets = (
   event: AnyPointerEvent,

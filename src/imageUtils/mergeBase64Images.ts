@@ -12,7 +12,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  * merging all the conrrisponding images with transparency.
  *
  * @param {Array<string>} bases64
- * @return {Promise<string>}
+ * @returns {Promise<string>}
  */
 const mergeBase64Images = async(bases64: Array<string>): Promise<string> => {
   const imgs: Array<HTMLImageElement> = await Promise.all(bases64.map((base64) => {

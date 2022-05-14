@@ -8,7 +8,7 @@
  * redrawDomElement(myDom)
  *
  * @param {HTMLElement} element
- * @return {void}
+ * @returns {void}
  */
 const redrawDomElement = (element: HTMLElement): void => {
   if (element instanceof HTMLElement) {

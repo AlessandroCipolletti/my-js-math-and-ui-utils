@@ -42,7 +42,7 @@ interface GestureHandlers {
  *
  * @param {HTMLElement} target
  * @param {GestureHandlers} handlers
- * @return {void}
+ * @returns {void}
  */
 const trackpadGestureHandlers = (target: HTMLElement, handlers: GestureHandlers): void => {
   const onGestureStart = handlers.onGestureStart

@@ -13,7 +13,7 @@ import roundNumber from '../mathUtils/roundNumber'
  * @param {number} g
  * @param {number} b
  * @param {number} [a]
- * @return {HslaColorObject}
+ * @returns {HslaColorObject}
  */
 const rgbaToHsla = (
   r: number,

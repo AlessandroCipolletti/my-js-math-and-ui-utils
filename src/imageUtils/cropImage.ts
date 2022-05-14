@@ -10,7 +10,7 @@
  * @param {number} y
  * @param {number} width
  * @param {number} height
- * @return {HTMLCanvasElement}
+ * @returns {HTMLCanvasElement}
  */
 const cropImage = (
   imageDom: HTMLCanvasElement|HTMLImageElement,

@@ -34,7 +34,7 @@ interface RemoveOutOptions {
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
  * @params {RemoveOutOptions} options
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const removeOutElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -57,7 +57,7 @@ const removeOutElements = async(
  * @param {number} duration
  * @param {number} maxFadeIn
  * @param {boolean} commitResult
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 export const _removeOutEl = async(
   element: HTMLElementWithAnimations,

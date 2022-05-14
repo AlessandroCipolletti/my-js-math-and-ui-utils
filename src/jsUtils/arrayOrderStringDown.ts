@@ -9,7 +9,7 @@
  *
  * @param {string} a
  * @param {string} b
- * @return {number}
+ * @returns {number}
  */
 const arrayOrderStringDown = (a: string, b: string): number => {
   if (a < b) return +1

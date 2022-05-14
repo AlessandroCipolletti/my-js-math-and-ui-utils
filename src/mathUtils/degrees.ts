@@ -10,7 +10,7 @@ import convertAngleRadiansToDegrees from './convertAngleRadiansToDegrees'
  * degrees(Math.PI) // ==> 180
  *
  * @param {number} radians
- * @return {number}
+ * @returns {number}
  */
 const degrees = convertAngleRadiansToDegrees
 

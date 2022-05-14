@@ -10,7 +10,7 @@ import preventDefault from './preventDefault'
  * preventDefaultTouchOnEls([myDom1, myDom2])
  *
  * @param {Array<HTMLElement>} els
- * @return {void}
+ * @returns {void}
  */
 const preventDefaultTouchOnEls = (...els: Array<HTMLElement>): void => {
   els = els.filter(e => e instanceof HTMLElement)

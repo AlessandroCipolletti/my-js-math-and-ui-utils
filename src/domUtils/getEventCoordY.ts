@@ -13,7 +13,7 @@ import roundNumber from '../mathUtils/roundNumber'
  * @param {AnyPointerEventOrArray} event
  * @param {number} [offset = 0]
  * @param {boolean} [absoluteByPage = false]
- * @return {number}
+ * @returns {number}
  */
 const getEventCoordY = (
   event: AnyPointerEventOrArray,

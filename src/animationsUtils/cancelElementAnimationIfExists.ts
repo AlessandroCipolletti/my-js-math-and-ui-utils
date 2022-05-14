@@ -10,7 +10,7 @@ import elementHasAnimation from './elementHasAnimation'
  *
  * @param {HTMLElementWithAnimations} element
  * @param {string} animName
- * @return {void}
+ * @returns {void}
  */
 const cancelElementAnimationIfExists = (
   element: HTMLElementWithAnimations,

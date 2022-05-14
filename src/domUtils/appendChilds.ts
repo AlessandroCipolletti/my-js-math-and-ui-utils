@@ -8,7 +8,7 @@
  *
  * @param {HTMLElement} container
  * @param {Array<HTMLElement>} childs
- * @return {void}
+ * @returns {void}
  */
 const appendChilds = (container: HTMLElement, childs: Array<HTMLElement>): void => {
   Array.prototype.forEach.call(childs, Node.prototype.appendChild.bind(container))

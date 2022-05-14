@@ -14,7 +14,7 @@ import getRandomNumber from '../mathUtils/getRandomNumber'
  * @param {boolean|number} [alpha = false]
  * @param {boolean|number} [defaultSat = true]
  * @param {boolean|number} [defaultLight = true]
- * @return {string}
+ * @returns {string}
  */
 const getRandomHslaColor = (
   alpha: boolean|number = false,

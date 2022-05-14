@@ -11,7 +11,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  *
  * @param {HTMLImageElement} image
  * @param {number} [maxSize] Default defaultMaxImageSideSize
- * @return {Promise<string>}
+ * @returns {Promise<string>}
  */
 const resizeImageAndGetLocalUrl = (
   image: HTMLImageElement,

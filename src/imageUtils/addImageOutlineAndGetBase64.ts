@@ -9,7 +9,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
  * @param {string} outlineColor
- * @return {string}
+ * @returns {string}
  */
 const addImageOutlineAndGetBase64 = (
   imageDom: HTMLCanvasElement|HTMLImageElement,

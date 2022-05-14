@@ -7,7 +7,7 @@ import setImageSrcAsync from './setImageSrcAsync'
  * If you are offline ==> returns false
  *
  * @params {string} url
- * @return {Promise<boolean>}
+ * @returns {Promise<boolean>}
  */
 const checkImageUrlValidity = async(url: string): Promise<boolean> => {
   let res = false

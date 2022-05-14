@@ -5,7 +5,7 @@
  * Json alternative to structuredClone()
  *
  * @param {any} value
- * @return {any}
+ * @returns {any}
  */
 const deepCopy = (
   value: Record<string, any> | number | string,

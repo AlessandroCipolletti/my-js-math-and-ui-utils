@@ -18,7 +18,7 @@ import arrayOrderNumberIncreasing from '../jsUtils/arrayOrderNumberIncreasing'
  * @param {number} b
  * @param {number} c
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getNumberInBetween = (a:number, b:number, c:number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber([a, b, c].sort(arrayOrderNumberIncreasing)[1], decimals)

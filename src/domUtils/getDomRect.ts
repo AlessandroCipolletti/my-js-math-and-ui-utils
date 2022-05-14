@@ -13,7 +13,7 @@ import roundNumber from '../mathUtils/roundNumber'
  * @param {HTMLElement} element
  * @param {number} [offsetX]
  * @param {number} [offsetY]
- * @return {DomRect}
+ * @returns {DomRect}
  */
 const getDomRect = (element: HTMLElement, offsetX = 0, offsetY = 0): DomRect => {
   const rect = JSON.parse(JSON.stringify(element.getBoundingClientRect()))

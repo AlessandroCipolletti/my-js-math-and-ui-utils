@@ -10,7 +10,7 @@
  *
  * @param {string} [tagName = 'div']
  * @param {...string} [classes]
- * @return {HTMLElement}
+ * @returns {HTMLElement}
  */
 const createDom = (tagName = 'div', ...classes: Array<string>): HTMLElement => {
   const dom = document.createElement(tagName)

@@ -33,7 +33,7 @@ interface FadeOutOptions {
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
  * @params {FadeOutOptions} options
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const fadeOutElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -56,7 +56,7 @@ const fadeOutElements = async(
  * @param {number} duration
  * @param {number} maxFadeIn
  * @param {boolean} commitResult
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 export const _fadeOutEl = async(
   element: HTMLElementWithAnimations,

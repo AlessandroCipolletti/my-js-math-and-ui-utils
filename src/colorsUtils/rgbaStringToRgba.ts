@@ -8,7 +8,7 @@
  * rgbaStringToRgba('rgb(10, 20, 30)') // ==> { r: 10, b: 20, b: 30, a: 1 }
  *
  * @param {string} rgbaString
- * @return RgbaColorObject
+ * @returns RgbaColorObject
  */
 const rgbaStringToRgba = (rgbaString: string): RgbaColorObject => {
   const [r, g, b, a] = rgbaString

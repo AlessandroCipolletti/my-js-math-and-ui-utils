@@ -15,7 +15,7 @@ import isEqual from 'lodash.isequal'
  * myFnOnlyWhenChange('hello') // <-- 'hello'
  *
  * @param {Function} callback
- * @return {Function}
+ * @returns {Function}
  */
 const callCallbackIfDataChanged = (callback: () => any) => {
   let lastArguments: Array<any> = []

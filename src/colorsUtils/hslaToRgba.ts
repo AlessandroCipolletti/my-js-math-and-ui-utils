@@ -13,7 +13,7 @@ import roundNumber from '../mathUtils/roundNumber'
  * @param {number} sat
  * @param {number} light
  * @param {number} [alpha = 1]
- * @return {RgbaColorObject}
+ * @returns {RgbaColorObject}
  */
 const hslaToRgba = (
   hue: number,

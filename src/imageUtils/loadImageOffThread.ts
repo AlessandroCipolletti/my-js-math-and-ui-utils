@@ -9,7 +9,7 @@ import setImageSrcAsync from './setImageSrcAsync'
  *
  * @param {HTMLImageElement} img
  * @param {string} url
- * @return {Promise<boolean>}
+ * @returns {Promise<boolean>}
  */
 const loadImageOffThread = async(img: HTMLImageElement, url: string): Promise<boolean> => {
   const blobUrl = await fetchUrlFileOffThread(url)

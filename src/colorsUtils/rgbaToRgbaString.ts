@@ -11,7 +11,7 @@
  * @param {number} g
  * @param {number} b
  * @param {number} [a = 1]
- * @return {string}
+ * @returns {string}
  */
 const rgbaToRgbaString = (r: number, g: number, b: number, a = 1): string => {
   return `rgba(${r}, ${g}, ${b}, ${a})`

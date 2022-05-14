@@ -15,7 +15,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  * @param {number} [y = 0]
  * @param {number} [width = 0]
  * @param {number} [height = 0]
- * @return {Promise<Uint8ClampedArray>}
+ * @returns {Promise<Uint8ClampedArray>}
  */
 const base64ToImageData = async(
   base64: string,

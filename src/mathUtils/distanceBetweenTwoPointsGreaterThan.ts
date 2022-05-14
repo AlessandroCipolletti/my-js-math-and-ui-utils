@@ -11,7 +11,7 @@
  * @param {number} x2
  * @param {number} y2
  * @param {number} distance
- * @return {boolean}
+ * @returns {boolean}
  */
 const distanceBetweenTwoPointsGreaterThan = (
   x1: number,

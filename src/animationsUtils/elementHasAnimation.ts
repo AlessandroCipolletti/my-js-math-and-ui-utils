@@ -9,7 +9,7 @@
  *
  * @param {HTMLElementWithAnimations} element
  * @param {string} animName
- * @return {boolean}
+ * @returns {boolean}
  */
 const elementHasAnimation = (
   element: HTMLElementWithAnimations,

@@ -7,7 +7,7 @@ import rgbaToHsla from './rgbaToHsla'
  * Allows to read the brightness of an hex rgb string like it was an hsl color.
  *
  * @param {string} hex
- * @return {number}
+ * @returns {number}
  */
 const getHexBrightness = (hex: string): number => {
   const rgb: RgbaColorObject = hexToRgba(hex)

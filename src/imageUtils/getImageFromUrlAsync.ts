@@ -12,7 +12,7 @@ tempImage.crossOrigin = 'Anonymous'
  *
  * @param {string} url
  * @param {boolean} [useTempImg = false]
- * @return {Promise<HTMLImageElement>}
+ * @returns {Promise<HTMLImageElement>}
  */
 const getImageFromUrlAsync = (url: string, useTempImg = false): Promise<HTMLImageElement> => {
   if (useTempImg) {

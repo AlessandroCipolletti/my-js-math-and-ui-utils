@@ -5,7 +5,7 @@
  *
  * @param {HTMLImageElement} img
  * @param {string} url
- * @return {Promise<boolean>}
+ * @returns {Promise<boolean>}
  */
 const setImageSrcAsync = (img: HTMLImageElement, url: string): Promise<boolean> => {
   return new Promise((resolve) => {

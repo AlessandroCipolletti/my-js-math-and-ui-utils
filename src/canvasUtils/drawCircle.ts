@@ -15,7 +15,7 @@
  * @param {number} alpha
  * @param {number} [_ = 0]
  * @param {number} [blur = 0]
- * @return {void}
+ * @returns {void}
  */
 const drawCircle = (
   destinationContext: MyCanvasRenderingContext2D,

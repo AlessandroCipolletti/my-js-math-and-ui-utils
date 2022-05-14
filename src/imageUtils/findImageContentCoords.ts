@@ -35,7 +35,7 @@ interface CanvasCoordsResponse {
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
  * @param {number} [pxPrecision = 1]
  * @param {number} [alphaTolerance = 0.01]
- * @return {Promise<CanvasCoordsResponse>}
+ * @returns {Promise<CanvasCoordsResponse>}
  */
 const findImageContentCoords = async(
   imageDom: HTMLCanvasElement|HTMLImageElement,

@@ -15,7 +15,7 @@ const _detachTempImageEvents = () => {
  * Takes a base64, loads it, and returns an image Blob and a local url pointing it
  *
  * @param {string} base64
- * @return {Promise<[Blob, localObjectURL]>}
+ * @returns {Promise<[Blob, localObjectURL]>}
  */
 const getBlobFromBase64 = (base64: string): Promise<Array<Blob|string>> => {
   return new Promise((resolve, reject) => {

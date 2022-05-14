@@ -12,7 +12,7 @@ import { defaultDecimalDigits } from './setDefaultDecimalDigits'
  *
  * @param {number} number
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const roundNumber = (number: number, decimals: number = defaultDecimalDigits): number => {
   const factor = Math.pow(10, decimals)

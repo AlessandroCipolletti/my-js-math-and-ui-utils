@@ -16,7 +16,7 @@ import distanceBetweenTwoPointsGreaterThan from '../mathUtils/distanceBetweenTwo
  * @prop {number} alpha
  * @prop {number} [rotation]
  * @prop {number} [blur]
- * @return {void}
+ * @returns {void}
  */
 interface FrameFunction {
   (
@@ -67,7 +67,7 @@ interface PointCoords {
  * @param {PointCoords} p1
  * @param {PointCoords} p2
  * @param {PointCoords} p3
- * @return {boolean} if it drew something
+ * @returns {boolean} if it drew something
  */
 const drawFramesAlongBezierCurveLine = (
   destinationContext: MyCanvasRenderingContext2D,

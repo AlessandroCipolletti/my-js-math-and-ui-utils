@@ -9,7 +9,7 @@
  *
  * @param {number} a
  * @param {number} b
- * @return {number}
+ * @returns {number}
  */
 const arrayOrderNumberIncreasing = (a: number, b: number): number => a - b
 

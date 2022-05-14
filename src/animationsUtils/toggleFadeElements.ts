@@ -33,7 +33,7 @@ import { _fadeInEl } from './fadeInElements'
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
  * @params {ToggleFadeOptions} options
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const toggleFadeElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -56,7 +56,7 @@ const toggleFadeElements = async(
  * @param {number} duration
  * @param {number} maxFadeIn
  * @param {boolean} commitResult
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const _toggleFadeEl = async(
   element: HTMLElementWithAnimations,

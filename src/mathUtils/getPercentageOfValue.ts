@@ -16,7 +16,7 @@ import roundNumber from './roundNumber'
  * @param {number} value
  * @param {number} total
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getPercentageOfValue = (value: number, total: number, decimals: number = defaultDecimalDigits): number => {
   return roundNumber(value * 100 / total, decimals)

@@ -17,7 +17,7 @@ import elementHasAnimation from './elementHasAnimation'
  * @param {number} toX
  * @param {number} toY
  * @param {number} [fromScale = 1]
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const moveToElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -43,7 +43,7 @@ const moveToElements = async(
  * @param {number} toX
  * @param {number} toY
  * @param {number} fromScale
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const _moveToEl = async(
   element: HTMLElementWithAnimations,

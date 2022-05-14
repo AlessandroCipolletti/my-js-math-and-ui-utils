@@ -45,7 +45,7 @@ const _fixAndroidTouchEvent = (touchEvent: IosTouch): IosTouch => {
  *
  * @param {HTMLElement} target
  * @param {MultiTouchHandlers} handlers
- * @return {void}
+ * @returns {void}
  */
 const multiTouchEventsHandlers = (
   target: HTMLElement,

@@ -9,7 +9,7 @@
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {number} x
  * @param {number} y
- * @return {RgbaColorObject}
+ * @returns {RgbaColorObject}
  */
 const getCanvasRgbaColorAtPx = (
   destinationContext: MyCanvasRenderingContext2D,

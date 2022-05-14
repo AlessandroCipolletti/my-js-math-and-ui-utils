@@ -34,7 +34,7 @@ interface AddInOptions {
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
  * @params {AddInOptions} options
- * @return {void}
+ * @returns {void}
  */
 const addInElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
@@ -57,7 +57,7 @@ const addInElements = async(
  * @param {number} duration
  * @param {number} maxFadeIn
  * @param {boolean} commitResult
- * @return {Promise<void>}
+ * @returns {Promise<void>}
  */
 const _addInEl = async(
   element: HTMLElementWithAnimations,

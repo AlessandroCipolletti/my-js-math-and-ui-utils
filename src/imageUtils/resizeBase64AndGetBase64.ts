@@ -16,7 +16,7 @@ const _detachTempImageEvents = () => {
  *
  * @param {string} base64
  * @param {number} [maxSize] Default defaultMaxImageSideSize
- * @return {Promise<string>}
+ * @returns {Promise<string>}
  */
 const resizeBase64AndGetBase64 = (
   base64: string,

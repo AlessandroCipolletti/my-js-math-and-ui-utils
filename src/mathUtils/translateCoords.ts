@@ -10,7 +10,7 @@
  * @param {number} y
  * @param {number} dx
  * @param {number} dy
- * @return {Array<number>} Array with [x, y] translated coords
+ * @returns {Array<number>} Array with [x, y] translated coords
  */
 const translateCoords = (x: number, y: number, dx: number, dy: number): Array<number> => {
   return [

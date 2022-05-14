@@ -14,7 +14,7 @@ export const DEFAULT_FADE_TRANSITION_DURATION = 250 // ms
  * @param {number} duration Default = 200 ms
  * @param {Record<string, any>} otherNativeOptions
  * @param {boolean} commitResult Default = true
- * @return {Promise<boolean>}
+ * @returns {Promise<boolean>}
  */
 const animateElement = async(
   element: HTMLElementWithAnimations,

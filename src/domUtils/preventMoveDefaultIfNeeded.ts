@@ -15,7 +15,7 @@ import preventDefault from './preventDefault'
  * }, false)
  *
  * @param {AnyPointerEvent} event
- * @return {void}
+ * @returns {void}
  */
 const preventMoveDefaultIfNeeded = (event: AnyPointerEvent): void => {
   const eventMove = 'ontouchstart' in window ? 'touchmove' : 'pointermove'

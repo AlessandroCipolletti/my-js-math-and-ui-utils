@@ -8,7 +8,7 @@ import getRandomNumber from '../mathUtils/getRandomNumber'
  * @example
  * getRandomHexColor() // ==> '#adc398'
  *
- * @return {string}
+ * @returns {string}
  */
 const getRandomHexColor = (): string => {
   const a = getRandomNumber(255, 0, 0)

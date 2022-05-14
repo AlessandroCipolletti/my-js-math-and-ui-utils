@@ -14,7 +14,7 @@ import roundNumber from './roundNumber'
  * @param {number} x2
  * @param {number} y2
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getDistanceBetweenTwoPoints = (
   x1: number,

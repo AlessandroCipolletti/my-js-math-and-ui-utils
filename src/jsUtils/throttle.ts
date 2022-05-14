@@ -15,7 +15,7 @@
  *
  * @param {Function} callback
  * @param {number} delay
- * @return {Function}
+ * @returns {Function}
  */
 const throttle = (callback: () => any, delay: number) => {
   let waiting = false

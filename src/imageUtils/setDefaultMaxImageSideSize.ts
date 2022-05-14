@@ -11,7 +11,7 @@ export let defaultMaxImageSideSize = 400
  * Set a different default max image side size
  *
  * @param {number} maxSide
- * @return {void}
+ * @returns {void}
  */
 const setDefaultMaxImageSideSize = (maxSide: number): void => {
   defaultMaxImageSideSize = maxSide

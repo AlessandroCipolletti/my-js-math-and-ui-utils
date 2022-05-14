@@ -13,7 +13,7 @@ import roundNumber from './roundNumber'
  * @param {number} x3
  * @param {number} y3
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getQuadraticBezierCurveLength = (
   x1: number,

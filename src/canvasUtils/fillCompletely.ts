@@ -6,7 +6,7 @@
  * @param {MyCanvasRenderingContext2D} destinationContext
  * @param {string} color
  * @param {number} [alpha = 1] from 0 to 1
- * @return {void}
+ * @returns {void}
  */
 const fillCompletely = (
   destinationContext: MyCanvasRenderingContext2D,

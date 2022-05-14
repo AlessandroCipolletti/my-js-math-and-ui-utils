@@ -15,7 +15,7 @@ import roundNumber from './roundNumber'
  * @param {number} x4
  * @param {number} y4
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {Array<number>} Array with [x, y] coords
+ * @returns {Array<number>} Array with [x, y] coords
  */
 const getIntersectionBetween4Points = (
   x1: number,

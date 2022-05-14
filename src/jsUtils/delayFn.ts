@@ -10,7 +10,7 @@
  * console.log('hello world') // <-- this one is printed before
  *
  * @param {(...args: any[]) => any} fn
- * @return {(any|Array<any>) => void}
+ * @returns {(any|Array<any>) => void}
  */
 const delayFn = (fn: (...args: any[]) => any) => (...args: Array<any>): void => {
   requestAnimationFrame(() => {

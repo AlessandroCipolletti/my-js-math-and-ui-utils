@@ -14,7 +14,7 @@
  * @param {any|Array<any>} els
  * @param {(el: any, ...args: Array<any>) => any} fn
  * @param {Array<any>} ...params
- * @return {Function}
+ * @returns {Function}
  */
 const iterateFn = async(
   els: any|Array<any>,

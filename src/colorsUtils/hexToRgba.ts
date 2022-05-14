@@ -10,7 +10,7 @@ import roundNumber from '../mathUtils/roundNumber'
  * hexToRgba('#aabbccdd') // ==> { r: 0, g: 0, b: 0, a: 0.8667 }
  *
  * @param {string} hex
- * @return RgbaColorObject
+ * @returns RgbaColorObject
  */
 const hexToRgba = (hex: string): RgbaColorObject => ({
   r: parseInt(hex.substring(1, 3), 16),

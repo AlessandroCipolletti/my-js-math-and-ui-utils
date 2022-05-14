@@ -6,7 +6,7 @@
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
  * @param {boolean} [horizontally = true]
- * @return {HTMLCanvasElement}
+ * @returns {HTMLCanvasElement}
  */
 const flipImage = (
   imageDom: HTMLCanvasElement|HTMLImageElement,

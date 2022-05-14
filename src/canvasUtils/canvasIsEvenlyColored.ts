@@ -8,7 +8,7 @@
  * canvasIsEvenlyColored(mycontext) // ==> true | false
  *
  * @param {MyCanvasRenderingContext2D} destinationContext
- * @return {boolean}
+ * @returns {boolean}
  */
 const canvasIsEvenlyColored = (destinationContext: MyCanvasRenderingContext2D): boolean => {
   const data = destinationContext.getImageData(

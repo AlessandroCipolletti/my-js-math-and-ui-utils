@@ -14,7 +14,7 @@ import roundNumber from './roundNumber'
  * @param {number} x2
  * @param {number} y2
  * @param {number} [decimals] Default defaultDecimalDigits
- * @return {Array<number>} Array with [x, y] middle point's coords
+ * @returns {Array<number>} Array with [x, y] middle point's coords
  */
 const getMiddlePointCoords = (
   x1: number,

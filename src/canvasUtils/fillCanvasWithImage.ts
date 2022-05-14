@@ -16,7 +16,7 @@
  * @param {number} [w = 0]
  * @param {number} [h = 0]
  * @param {number} [rotation = 0]
- * @return {void}
+ * @returns {void}
  */
 const fillCanvasWithImage = (
   destinationContext: MyCanvasRenderingContext2D,

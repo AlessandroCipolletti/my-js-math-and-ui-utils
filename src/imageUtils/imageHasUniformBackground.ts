@@ -12,7 +12,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  *
  * @param {HTMLCanvasElement|HTMLImageElement} imageDom
  * @param {number} [tolerance = 3] [0...255]
- * @return {boolean}
+ * @returns {boolean}
  */
 const imageHasUniformBackground = (
   imageDom: HTMLCanvasElement|HTMLImageElement,

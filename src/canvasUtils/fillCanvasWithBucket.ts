@@ -34,7 +34,7 @@ const _bucketColorsHistory:Array<RgbaColorObject> = []
  * @param {number} x
  * @param {number} y
  * @param {string} color
- * @return {false|Promise<void>}
+ * @returns {false|Promise<void>}
  */
 const fillCanvasWithBucket = (
   destinationContext: MyCanvasRenderingContext2D,
@@ -101,7 +101,7 @@ const fillCanvasWithBucket = (
  *
  * @param {RgbaColorObject} color
  * @param {number} [tolerance = 1]
- * @return {boolean}
+ * @returns {boolean}
  */
 const _bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): boolean => {
   return !!_bucketColorsHistory.find(
@@ -121,7 +121,7 @@ const _bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): boo
  *
  * @param {RgbaColorObject} targetColor The clicled color
  * @param {RgbaColorObject} fillColor The desider color
- * @return {boolean}
+ * @returns {boolean}
  */
 const _getBucketBoundariesWeakMode = (
   targetColor: RgbaColorObject,

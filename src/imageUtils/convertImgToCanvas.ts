@@ -4,7 +4,7 @@
  * Takes an image, returns an equivalent canvas
  *
  * @param {HTMLImageElement} img
- * @return {HTMLCanvasElement}
+ * @returns {HTMLCanvasElement}
  */
 const convertImgToCanvas = (img: HTMLImageElement): HTMLCanvasElement => {
   const canvas: HTMLCanvasElement = document.createElement('canvas')

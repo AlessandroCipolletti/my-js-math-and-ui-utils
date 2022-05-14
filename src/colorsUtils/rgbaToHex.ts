@@ -13,7 +13,7 @@ import rgbToHex from './rgbToHex'
  * @param {number} g
  * @param {number} b
  * @param {number} a
- * @return {string}
+ * @returns {string}
  */
 const rgbaToHex = (r: number, g: number, b: number, a: number): string => {
   return `${rgbToHex(r, g, b)}${roundNumber(a * 255, 0).toString(16).padStart(2, '0')}`

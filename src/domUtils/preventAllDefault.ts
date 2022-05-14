@@ -9,7 +9,7 @@ import preventDefault from './preventDefault'
  * preventAllDefault(myDom)
  *
  * @param {HTMLElement} element
- * @return {void}
+ * @returns {void}
  */
 const preventAllDefault = (element: HTMLElement): void => {
   element.addEventListener('pointerdown', preventDefault)

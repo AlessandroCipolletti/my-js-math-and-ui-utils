@@ -17,7 +17,7 @@ import getRandomNumber from '../mathUtils/getRandomNumber'
  * @param {string} color
  * @param {number} size
  * @param {number} alpha
- * @return {void}
+ * @returns {void}
  */
 const drawParticlesRect = (
   destinationContext: MyCanvasRenderingContext2D,

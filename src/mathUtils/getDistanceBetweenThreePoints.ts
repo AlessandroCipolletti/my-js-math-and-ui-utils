@@ -17,7 +17,7 @@ import getDistanceBetweenTwoPoints from './getDistanceBetweenTwoPoints'
  * @param {number} x3
  * @param {number} y3
  * @param {number} [decimals] Defalut defaultDecimalDigits
- * @return {number}
+ * @returns {number}
  */
 const getDistanceBetweenThreePoints = (
   x1: number,

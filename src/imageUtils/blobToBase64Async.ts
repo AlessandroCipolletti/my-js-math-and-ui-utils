@@ -4,7 +4,7 @@
  * Async way to extract the base64 string from a image Blob.
  *
  * @param {Blob} blob
- * @return Promise<string>
+ * @returns Promise<string>
  */
 const blobToBase64Async = (blob: Blob): Promise<string> => {
   return new Promise((resolve) => {

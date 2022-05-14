@@ -13,7 +13,7 @@
  *
  * @param {Function} callback
  * @param {number} limit
- * @returns
+ * @returnss
  */
 const debounceThrottle = (callback: () => any, limit: number) => {
   let waiting = false

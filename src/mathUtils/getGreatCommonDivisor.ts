@@ -20,7 +20,7 @@ const _getGreatCommonDivisorBetweenTwoNumbers = (x: number, y: number): number =
  * getGreatCommonDivisor([12, 24, 6]) // ==> 6
  *
  * @param {array} numbers
- * @return {Array} Array with [x, y] middle point's coords
+ * @returns {Array} Array with [x, y] middle point's coords
  */
 const getGreatCommonDivisor = (numbers: Array<number>): number => {
   while (numbers.length > 2) {
