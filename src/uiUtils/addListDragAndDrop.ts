@@ -1,6 +1,10 @@
 import { isTablet, isMobile, isBrowser } from 'mobile-device-detect'
 
-import { fadeInElements, fadeOutElements, cancelElementAnimationIfExists, bouncingElements, moveToElements } from '../animationsUtils'
+import fadeInElements from '../animationsUtils/fadeInElements'
+import fadeOutElements from '../animationsUtils/fadeOutElements'
+import cancelElementAnimationIfExists from '../animationsUtils/cancelElementAnimationIfExists'
+import bouncingElements from '../animationsUtils/bouncingElements'
+import moveToElements from '../animationsUtils/moveToElements'
 import getEventCoordX from '../domUtils/getEventCoordX'
 import getEventCoordY from '../domUtils/getEventCoordY'
 import preventDefault from '../domUtils/preventDefault'

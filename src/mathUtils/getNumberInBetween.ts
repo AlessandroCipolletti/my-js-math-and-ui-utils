@@ -1,6 +1,6 @@
 import { defaultDecimalDigits } from './setDefaultDecimalDigits'
 import roundNumber from './roundNumber'
-import { arrayOrderNumberIncreasing } from '../jsUtils'
+import arrayOrderNumberIncreasing from '../jsUtils/arrayOrderNumberIncreasing'
 
 
 /**
