@@ -32,7 +32,7 @@ import { _fadeInEl } from './fadeInElements'
  * toggleFadeElements(myDom, { duration: 400, commitResult: false })
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
- * @params {ToggleFadeOptions} options
+ * @param {ToggleFadeOptions} options
  * @returns {Promise<void>}
  */
 const toggleFadeElements = async(

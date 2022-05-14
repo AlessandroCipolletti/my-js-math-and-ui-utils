@@ -32,7 +32,7 @@ interface FadeInOptions {
  * fadeInElements(myDom, { duration: 400, commitResult: false })
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
- * @params {FadeInOptions} options
+ * @param {FadeInOptions} options
  * @returns {Promise<void>}
  */
 const fadeInElements = async(

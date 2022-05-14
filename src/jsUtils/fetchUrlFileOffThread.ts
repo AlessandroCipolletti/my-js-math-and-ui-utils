@@ -9,7 +9,7 @@ const fileLoaderWorker = new Worker('../workers/fileLoader.js')
  * @function fetchUrlFileOffThread
  * Retreives a blob from the given url asynchronously in a separate thread, and returns a local ObjectURl pointing to it
  *
- * @params {string} url
+ * @param {string} url
  * @returns {Promise<string>}
  */
 const fetchUrlFileOffThread = async(url: string): Promise<string> => {

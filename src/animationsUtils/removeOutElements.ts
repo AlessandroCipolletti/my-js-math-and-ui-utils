@@ -33,7 +33,7 @@ interface RemoveOutOptions {
  * removeOutElements(myDom, { duration: 400, commitResult: false })
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
- * @params {RemoveOutOptions} options
+ * @param {RemoveOutOptions} options
  * @returns {Promise<void>}
  */
 const removeOutElements = async(

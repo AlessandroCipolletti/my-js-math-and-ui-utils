@@ -33,7 +33,7 @@ interface AddInOptions {
  * addInElements(myDom, { duration: 400, commitResult: false })
  *
  * @param {HTMLElementWithAnimations|Array<HTMLElementWithAnimations>} elements
- * @params {AddInOptions} options
+ * @param {AddInOptions} options
  * @returns {void}
  */
 const addInElements = async(

@@ -6,7 +6,7 @@ import setImageSrcAsync from './setImageSrcAsync'
  * Tries to load an url as an image, and return true / false.
  * If you are offline ==> returns false
  *
- * @params {string} url
+ * @param {string} url
  * @returns {Promise<boolean>}
  */
 const checkImageUrlValidity = async(url: string): Promise<boolean> => {
