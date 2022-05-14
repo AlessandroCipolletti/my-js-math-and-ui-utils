@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import waitWorkerMessage from './waitWorkerMessage'
 
-const fileLoaderWorker = new Worker('./workers/fileLoader.js')
+const fileLoaderWorker = new Worker('../workers/fileLoader.js')
 
 
 /**

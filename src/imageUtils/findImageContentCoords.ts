@@ -5,7 +5,7 @@ import waitWorkerMessage from '../jsUtils/waitWorkerMessage'
 import convertImgToCanvas from './convertImgToCanvas'
 
 
-const canvasContentCoordsWorker = new Worker('./workers/canvasContentCoords.js')
+const canvasContentCoordsWorker = new Worker('../workers/canvasContentCoords.js')
 
 /**
  * @typedef CanvasCoordsResponse
