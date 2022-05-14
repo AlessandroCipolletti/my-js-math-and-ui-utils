@@ -20,23 +20,28 @@ const getEventCoordY = (
   offset = 0,
   absoluteByPage = false,
 ): number => {
-  let selectedEvent: OnePointerEvent
 
-  if (event instanceof Array || event instanceof TouchList) {
-    selectedEvent = event[0]
-  } else if (event instanceof TouchEvent) {
-    selectedEvent = event.touches[0]
+  if (event) {
+    let selectedEvent: OnePointerEvent
+
+    if (event instanceof Array || event instanceof TouchList) {
+      selectedEvent = event[0]
+    } else if (event instanceof TouchEvent) {
+      selectedEvent = event.touches[0]
+    } else {
+      selectedEvent = event
+    }
+
+    const coordY: number = (
+      absoluteByPage || typeof selectedEvent.clientY === undefined
+      ? selectedEvent.pageY
+      : selectedEvent.clientY
+    )
+
+    return roundNumber(coordY - offset, 1)
   } else {
-    selectedEvent = event
+    return 0
   }
-
-  const coordY: number = (
-    absoluteByPage || typeof selectedEvent.clientY === undefined
-    ? selectedEvent.pageY
-    : selectedEvent.clientY
-  )
-
-  return roundNumber(coordY - offset, 1)
 }
 
 
