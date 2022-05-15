@@ -2,6 +2,26 @@
 
 # Dom Utils reference
 
+## Importing
+```js
+// whole module
+import { * as DomUtils } from 'js-math-and-ui-utils/domUtils'
+
+// single methods
+import appendChilds from 'js-math-and-ui-utils/domUtils/appendChilds'
+import attachDomEvents from 'js-math-and-ui-utils/domUtils/attachDomEvents'
+import createDom from 'js-math-and-ui-utils/domUtils/createDom'
+import filterTouchesByTargets from 'js-math-and-ui-utils/domUtils/filterTouchesByTargets'
+import getDomRect from 'js-math-and-ui-utils/domUtils/getDomRect'
+import getEventCoordX from 'js-math-and-ui-utils/domUtils/getEventCoordX'
+import getEventCoordY from 'js-math-and-ui-utils/domUtils/getEventCoordY'
+import nodeIsChildOf from 'js-math-and-ui-utils/domUtils/nodeIsChildOf'
+import preventAllDefault from 'js-math-and-ui-utils/domUtils/preventAllDefault'
+import preventDefault from 'js-math-and-ui-utils/domUtils/preventDefault'
+import preventDefaultTouchOnEls from 'js-math-and-ui-utils/domUtils/preventDefaultTouchOnEls'
+import preventScrollDefaultIfNeeded from 'js-math-and-ui-utils/domUtils/preventScrollDefaultIfNeeded'
+import redrawDomElement from 'js-math-and-ui-utils/domUtils/redrawDomElement'
+```
 
 <a name="appendChilds
 Append multiple childs with one line."></a>

@@ -2,6 +2,24 @@
 
 # Canvas Utils reference
 
+## Importing
+```js
+// whole module
+import { * as CanvasUtils } from 'js-math-and-ui-utils/canvasUtils'
+
+// single methods
+import canvasIsEvenlyColored from 'js-math-and-ui-utils/canvasUtils/canvasIsEvenlyColored'
+import drawCircle from 'js-math-and-ui-utils/canvasUtils/drawCircle'
+import drawFramesAlongBezierCurveLine from 'js-math-and-ui-utils/canvasUtils/drawFramesAlongBezierCurveLine'
+import drawParticlesCircle from 'js-math-and-ui-utils/canvasUtils/drawParticlesCircle'
+import drawParticlesRect from 'js-math-and-ui-utils/canvasUtils/drawParticlesRect'
+import drawSprayCircle from 'js-math-and-ui-utils/canvasUtils/drawSprayCircle'
+import fillWithBucket from 'js-math-and-ui-utils/canvasUtils/fillWithBucket'
+import fillCanvasWithImage from 'js-math-and-ui-utils/canvasUtils/fillCanvasWithImage'
+import fillCompletely from 'js-math-and-ui-utils/canvasUtils/fillCompletely'
+import getCanvasRgbaColorAtPx from 'js-math-and-ui-utils/canvasUtils/getCanvasRgbaColorAtPx'
+```
+
 <a name="canvasIsEvenlyColored
 Checks if the whole canvas is filled with the same rgba color
 (or if its all transparent)"></a>

@@ -2,6 +2,36 @@
 
 # Image Utils reference
 
+## Importing
+```js
+// whole module
+import { * as ImageUtils } from 'js-math-and-ui-utils/imageUtils'
+
+// single methods
+import setDefaultMaxImageSideSize from 'js-math-and-ui-utils/imageUtils/setDefaultMaxImageSideSize'
+import addImageOutlineAndGetBase64 from 'js-math-and-ui-utils/imageUtils/addImageOutlineAndGetBase64'
+import addImageWhiteBgAndGetBase64 from 'js-math-and-ui-utils/imageUtils/addImageWhiteBgAndGetBase64'
+import base64ToImageData from 'js-math-and-ui-utils/imageUtils/base64ToImageData'
+import blobToBase64Async from 'js-math-and-ui-utils/imageUtils/blobToBase64Async'
+import checkImageUrlValidity from 'js-math-and-ui-utils/imageUtils/checkImageUrlValidity'
+import convertImgToCanvas from 'js-math-and-ui-utils/imageUtils/convertImgToCanvas'
+import cropImage from 'js-math-and-ui-utils/imageUtils/cropImage'
+import cropImageWithMargin from 'js-math-and-ui-utils/imageUtils/cropImageWithMargin'
+import findImageContentCoords from 'js-math-and-ui-utils/imageUtils/findImageContentCoords'
+import flipImage from 'js-math-and-ui-utils/imageUtils/flipImage'
+import getBlobFromBase64 from 'js-math-and-ui-utils/imageUtils/getBlobFromBase64'
+import getCanvasBlobAsync from 'js-math-and-ui-utils/imageUtils/getCanvasBlobAsync'
+import getImageBase64Async from 'js-math-and-ui-utils/imageUtils/getImageBase64Async'
+import getImageFromUrlAsync from 'js-math-and-ui-utils/imageUtils/getImageFromUrlAsync'
+import imageHasTransparentBackground from 'js-math-and-ui-utils/imageUtils/imageHasTransparentBackground'
+import imageHasUniformBackground from 'js-math-and-ui-utils/imageUtils/imageHasUniformBackground'
+import loadImageOffThread from 'js-math-and-ui-utils/imageUtils/loadImageOffThread'
+import mergeBase64Images from 'js-math-and-ui-utils/imageUtils/mergeBase64Images'
+import resizeBase64AndGetBase64 from 'js-math-and-ui-utils/imageUtils/resizeBase64AndGetBase64'
+import resizeImageAndGetBase64 from 'js-math-and-ui-utils/imageUtils/resizeImageAndGetBase64'
+import resizeImageAndGetLocalUrl from 'js-math-and-ui-utils/imageUtils/resizeImageAndGetLocalUrl'
+import setImageSrcAsync from 'js-math-and-ui-utils/imageUtils/setImageSrcAsync'
+```
 
 <a name="setDefaultMaxImageSideSize
 Set a different default max image side size"></a>

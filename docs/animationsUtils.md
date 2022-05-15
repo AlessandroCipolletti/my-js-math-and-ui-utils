@@ -2,6 +2,24 @@
 
 # Animations Utils reference
 
+## Importing
+```js
+// whole module
+import { * as AnimationsUtils } from 'js-math-and-ui-utils/animationsUtils'
+
+// single methods
+import addInElements from 'js-math-and-ui-utils/animationsUtils/addInElements'
+import removeOutElements from 'js-math-and-ui-utils/animationsUtils/removeOutElements'
+import animateElement from 'js-math-and-ui-utils/animationsUtils/animateElement'
+import bouncingElements from 'js-math-and-ui-utils/animationsUtils/bouncingElements'
+import cancelElementAnimationIfExists from 'js-math-and-ui-utils/animationsUtils/cancelElementAnimationIfExists'
+import elementHasAnimation from 'js-math-and-ui-utils/animationsUtils/elementHasAnimation'
+import toggleFadeElements from 'js-math-and-ui-utils/animationsUtils/toggleFadeElements'
+import fadeInElements from 'js-math-and-ui-utils/animationsUtils/fadeInElements'
+import fadeOutElements from 'js-math-and-ui-utils/animationsUtils/fadeOutElements'
+import moveToElements from 'js-math-and-ui-utils/animationsUtils/moveToElements'
+```
+
 <a name="addInElements
 Performs a addIn animation on one or multiple Dom elements at the same time."></a>
 

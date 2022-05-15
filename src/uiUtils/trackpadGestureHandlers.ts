@@ -1,8 +1,8 @@
 import { debounce } from 'debounce'
 
-import preventDefault from '../../domUtils/preventDefault'
-import getEventCoordX from '../../domUtils/getEventCoordX'
-import getEventCoordY from '../../domUtils/getEventCoordY'
+import preventDefault from '../domUtils/preventDefault'
+import getEventCoordX from '../domUtils/getEventCoordX'
+import getEventCoordY from '../domUtils/getEventCoordY'
 
 /**
  * @const TIME_TO_END_SCROLL_GESTURE

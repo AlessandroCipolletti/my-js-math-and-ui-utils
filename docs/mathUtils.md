@@ -2,6 +2,62 @@
 
 # Math Utils reference
 
+## Importing
+```js
+// whole module
+import { * as MathUtils } from 'js-math-and-ui-utils/mathUtils'
+
+// sub modules
+import { * as ArithmeticUtils } from 'js-math-and-ui-utils/mathUtils/arithmeticUtils'
+import { * as BezierCurveUtils } from 'js-math-and-ui-utils/mathUtils/bezierCurveUtils'
+import { * as CartesianPlaneUtils } from 'js-math-and-ui-utils/mathUtils/cartesianPlaneUtils'
+
+// single methods
+
+// ArithmeticUtils
+import setDefaultDecimalDigits from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/setDefaultDecimalDigits'
+import roundNumber from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/roundNumber'
+import getNumberInBetween from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getNumberInBetween'
+import clamp from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/clamp'
+import getLinerarInterpolation from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getLinerarInterpolation'
+import lerp from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/lerp'
+import getRandomNumber from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getRandomNumber'
+import getPercentageOfValue from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getPercentageOfValue'
+import getValueOfPercentage from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getValueOfPercentage'
+import getLogarithmicValueOfPercentage from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getLogarithmicValueOfPercentage'
+import getLogarithmicPercentageOfValue from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getLogarithmicPercentageOfValue'
+import getAverage from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getAverage'
+import getGreatCommonDivisor from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getGreatCommonDivisor'
+import valuesAreSimilar from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/valuesAreSimilar'
+import factorial from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/factorial'
+import naturalNumbersSummation from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/naturalNumbersSummation'
+
+// BezierCurveUtils
+import getQuadraticBezierCurveLength from 'js-math-and-ui-utils/mathUtils/bezierCurveUtils/getQuadraticBezierCurveLength'
+import getQuadraticBezierValueAtTime from 'js-math-and-ui-utils/mathUtils/bezierCurveUtils/getQuadraticBezierValueAtTime'
+import getQuadraticBezierCurvePointAtTime from 'js-math-and-ui-utils/mathUtils/bezierCurveUtils/getQuadraticBezierCurvePointAtTime'
+
+// CartesianPlaneUtils
+import convertAngleRadiansToDegrees from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/convertAngleRadiansToDegrees'
+import convertAngleDegreesToRadians from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/convertAngleDegreesToRadians'
+import degrees from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/degrees'
+import radians from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/radians'
+import getDistanceBetweenTwoPoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getDistanceBetweenTwoPoints'
+import getDistanceBetweenThreePoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getDistanceBetweenThreePoints'
+import distanceBetweenTwoPointsGreaterThan from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/distanceBetweenTwoPointsGreaterThan'
+import getAngleDegreesBetweenTwoPoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getAngleDegreesBetweenTwoPoints'
+import getAngleRadiansBetweenTwoPoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getAngleRadiansBetweenTwoPoints'
+import rotateCoords from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/rotateCoords'
+import translateCoords from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/translateCoords'
+import getMiddlePointCoords from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getMiddlePointCoords'
+import getSlopeCoefficientBetweenTwoPoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getSlopeCoefficientBetweenTwoPoints'
+import getLineFunctionBetweenTwoPoints from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getLineFunctionBetweenTwoPoints'
+import getPerpendicularLineFunctionPassingByPoint from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getPerpendicularLineFunctionPassingByPoint'
+import getIntersectionBetween4Points from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getIntersectionBetween4Points'
+import getPointProjectionOnLine from 'js-math-and-ui-utils/mathUtils/arithmeticUtils/getPointProjectionOnLine'
+
+```
+
 ## let defaultDecimalDigits : <code>number</code>
 <p>Specify how many decimal digits you want in all results</p>
 
@@ -68,10 +124,10 @@ getNumberInBetween(currentValue, minAcceptableValue, maxAcceptableValue) // retu
 
 Alias of  **getNumberInBetween**
 
-<a name="linerarInterpolation
+<a name="getLinerarInterpolation
 Returns linear interpolation between two numbers."></a>
 
-## linerarInterpolation
+## getLinerarInterpolation
 Returns linear interpolation between two numbers.
 
 (min, max, t) ⇒ <code>number</code>
@@ -84,14 +140,14 @@ Returns linear interpolation between two numbers.
 
 **Example**
 ```js
-linerarInterpolation(5, 15, 0.5) // returns 10
-linerarInterpolation(5, 15, 0.1) // returns 6
+getLinerarInterpolation(5, 15, 0.5) // returns 10
+getLinerarInterpolation(5, 15, 0.1) // returns 6
 ```
 <a name="lerp"></a>
 
 ## lerp
 
-Alias for **linerarInterpolation**
+Alias for **getLinerarInterpolation**
 
 <a name="getRandomNumber
 Get a random number, between min and max included, and then rounds it"></a>

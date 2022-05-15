@@ -1,6 +1,27 @@
 [< Back](https://github.com/AlessandroCipolletti/js-math-and-ui-utils)
 
-# Animations Utils reference
+# Js Utils reference
+
+## Importing
+```js
+// whole module
+import { * as JsUtils } from 'js-math-and-ui-utils/jsUtils'
+
+// single methods
+import arrayOrderNumberDecreasing from 'js-math-and-ui-utils/jsUtils/arrayOrderNumberDecreasing'
+import arrayOrderNumberIncreasing from 'js-math-and-ui-utils/jsUtils/arrayOrderNumberIncreasing'
+import arrayOrderStringAlphabetically from 'js-math-and-ui-utils/jsUtils/arrayOrderStringAlphabetically'
+import arrayOrderStringDown from 'js-math-and-ui-utils/jsUtils/arrayOrderStringDown'
+import callCallbackIfDataChanged from 'js-math-and-ui-utils/jsUtils/callCallbackIfDataChanged'
+import copyTextToClipboard from 'js-math-and-ui-utils/jsUtils/copyTextToClipboard'
+import debounceThrottle from 'js-math-and-ui-utils/jsUtils/debounceThrottle'
+import deepCopy from 'js-math-and-ui-utils/jsUtils/deepCopy'
+import delayFn from 'js-math-and-ui-utils/jsUtils/delayFn'
+import fetchUrlFileOffThread from 'js-math-and-ui-utils/jsUtils/fetchUrlFileOffThread'
+import iterateFn from 'js-math-and-ui-utils/jsUtils/iterateFn'
+import throttle from 'js-math-and-ui-utils/jsUtils/throttle'
+import waitWorkerMessage from 'js-math-and-ui-utils/jsUtils/waitWorkerMessage'
+```
 
 <a name="arrayOrderNumberDecreasing
 Utils to sort an array of number decreasing"></a>

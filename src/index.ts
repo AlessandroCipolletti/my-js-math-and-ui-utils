@@ -3,7 +3,7 @@ export {
   roundNumber,
   getNumberInBetween,
   clamp,
-  linerarInterpolation,
+  getLinerarInterpolation,
   lerp,
   getRandomNumber,
   getPercentageOfValue,
@@ -136,9 +136,9 @@ export {
   arrayOrderStringDown,
 } from './jsUtils'
 
-export { default as multiTouchEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchEventsHandlers'
-export { default as multiTouchMultiDeviceEventsHandlers } from './uiUtils/pointerEventsUtils/multiTouchMultiDeviceEventsHandlers'
-export { default as trackpadGestureHandlers } from './uiUtils/pointerEventsUtils/trackpadGestureHandlers'
+export { default as multiTouchEventsHandlers } from './uiUtils/multiTouchEventsHandlers'
+export { default as multiTouchMultiDeviceEventsHandlers } from './uiUtils/multiTouchMultiDeviceEventsHandlers'
+export { default as trackpadGestureHandlers } from './uiUtils/trackpadGestureHandlers'
 export { default as addHorizontalSliderDrag } from './uiUtils/addHorizontalSliderDrag'
 export { default as addVerticalSliderDrag } from './uiUtils/addVerticalSliderDrag'
 export { default as addTapAndLongPress } from './uiUtils/addTapAndLongPress'

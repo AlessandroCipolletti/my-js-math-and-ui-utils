@@ -1,9 +1,9 @@
-import linerarInterpolation from './linerarInterpolation'
+import getLinerarInterpolation from './getLinerarInterpolation'
 
 
 /**
  * @function lerp
- * @alias linerarInterpolation
+ * @alias getLinerarInterpolation
  * Returns linear interpolation between two numbers.
  *
  * @example
@@ -16,7 +16,7 @@ import linerarInterpolation from './linerarInterpolation'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @returns {number}
  */
-const lerp = linerarInterpolation
+const lerp = getLinerarInterpolation
 
 
 export default lerp

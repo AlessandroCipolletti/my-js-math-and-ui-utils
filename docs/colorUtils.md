@@ -2,6 +2,30 @@
 
 # Colors Utils reference
 
+## Importing
+```js
+// whole module
+import { * as ColorsUtils } from 'js-math-and-ui-utils/colorsUtils'
+
+// single methods
+import applyBrightnessToHex from 'js-math-and-ui-utils/colorsUtils/applyBrightnessToHex'
+import colorStringToRgb from 'js-math-and-ui-utils/colorsUtils/colorStringToRgb'
+import compareRgbColorsWithTolerance from 'js-math-and-ui-utils/colorsUtils/compareRgbColorsWithTolerance'
+import getHexBrightness from 'js-math-and-ui-utils/colorsUtils/getHexBrightness'
+import getRandomHexColor from 'js-math-and-ui-utils/colorsUtils/getRandomHexColor'
+import getRandomHslaColor from 'js-math-and-ui-utils/colorsUtils/getRandomHslaColor'
+import getRandomRgbaColor from 'js-math-and-ui-utils/colorsUtils/getRandomRgbaColor'
+import hexToRgba from 'js-math-and-ui-utils/colorsUtils/hexToRgba'
+import hslaStringToRgba from 'js-math-and-ui-utils/colorsUtils/hslaStringToRgba'
+import hslaToRgba from 'js-math-and-ui-utils/colorsUtils/hslaToRgba'
+import rgbaStringToRgba from 'js-math-and-ui-utils/colorsUtils/rgbaStringToRgba'
+import rgbaToHex from 'js-math-and-ui-utils/colorsUtils/rgbaToHex'
+import rgbaToHsla from 'js-math-and-ui-utils/colorsUtils/rgbaToHsla'
+import rgbaToRgbaString from 'js-math-and-ui-utils/colorsUtils/rgbaToRgbaString'
+import rgbToHex from 'js-math-and-ui-utils/colorsUtils/rgbToHex'
+```
+
+
 <a name="applyBrightnessToHex
 Allows to chenge brightness to an hex rgb color like it was an hsl color.
 It returns a new hex rgb string."></a>

@@ -3,12 +3,12 @@ import roundNumber from './roundNumber'
 
 
 /**
- * @function linerarInterpolation
+ * @function getLinerarInterpolation
  * Returns linear interpolation between two numbers.
  *
  * @example
- * linerarInterpolation(5, 15, 0.5) // returns 10
- * linerarInterpolation(5, 15, 0.1) // returns 6
+ * getLinerarInterpolation(5, 15, 0.5) // returns 10
+ * getLinerarInterpolation(5, 15, 0.1) // returns 6
  *
  * @param {number} min
  * @param {number} max
@@ -16,7 +16,7 @@ import roundNumber from './roundNumber'
  * @param {number} [decimals] Default defaultDecimalDigits
  * @returns {number}
  */
-const linerarInterpolation = (
+const getLinerarInterpolation = (
   min: number,
   max: number,
   t: number,
@@ -26,4 +26,4 @@ const linerarInterpolation = (
 }
 
 
-export default linerarInterpolation
+export default getLinerarInterpolation

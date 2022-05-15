@@ -1,14 +1,14 @@
 import { isAndroid } from 'mobile-device-detect'
 
-import roundNumber from '../../mathUtils/roundNumber'
-import getAngleDegreesBetweenTwoPoints from '../../mathUtils/getAngleDegreesBetweenTwoPoints'
-import getDistanceBetweenTwoPoints from '../../mathUtils/getDistanceBetweenTwoPoints'
-import getMiddlePointCoords from '../../mathUtils/getMiddlePointCoords'
-import preventDefault from '../../domUtils/preventDefault'
-import getEventCoordX from '../../domUtils/getEventCoordX'
-import getEventCoordY from '../../domUtils/getEventCoordY'
-import filterTouchesByTargets from '../../domUtils/filterTouchesByTargets'
-import delay from '../../jsUtils/delay'
+import roundNumber from '../mathUtils/roundNumber'
+import getAngleDegreesBetweenTwoPoints from '../mathUtils/getAngleDegreesBetweenTwoPoints'
+import getDistanceBetweenTwoPoints from '../mathUtils/getDistanceBetweenTwoPoints'
+import getMiddlePointCoords from '../mathUtils/getMiddlePointCoords'
+import preventDefault from '../domUtils/preventDefault'
+import getEventCoordX from '../domUtils/getEventCoordX'
+import getEventCoordY from '../domUtils/getEventCoordY'
+import filterTouchesByTargets from '../domUtils/filterTouchesByTargets'
+import delay from '../jsUtils/delay'
 import { getPointerEventForThisDevice } from '../utils'
 
 const TIME_TO_WAIT_FOR_SECOND_FINGER = 40

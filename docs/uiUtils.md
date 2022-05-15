@@ -1,7 +1,21 @@
 [< Back](https://github.com/AlessandroCipolletti/js-math-and-ui-utils)
 
-# Animations Utils reference
+# UI Utils reference
 
+## Importing
+```js
+// whole module
+import { * as UiUtils } from 'js-math-and-ui-utils/uiUtils'
+
+// single methods
+import multiTouchEventsHandlers from 'js-math-and-ui-utils/uiUtils/multiTouchEventsHandlers'
+import multiTouchMultiDeviceEventsHandlers from 'js-math-and-ui-utils/uiUtils/multiTouchMultiDeviceEventsHandlers'
+import trackpadGestureHandlers from 'js-math-and-ui-utils/uiUtils/trackpadGestureHandlers'
+import addHorizontalSliderDrag from 'js-math-and-ui-utils/uiUtils/addHorizontalSliderDrag'
+import addListDragAndDrop from 'js-math-and-ui-utils/uiUtils/addListDragAndDrop'
+import addTapAndLongPress from 'js-math-and-ui-utils/uiUtils/addTapAndLongPress'
+import addVerticalSliderDrag from 'js-math-and-ui-utils/uiUtils/addVerticalSliderDrag'
+```
 
 <a name="multiTouchEventsHandlers
 Takes care of all the annoying and strage behaviors related to touch events,

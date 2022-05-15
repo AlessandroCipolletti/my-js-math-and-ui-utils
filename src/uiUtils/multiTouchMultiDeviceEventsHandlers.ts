@@ -2,8 +2,8 @@ import { isTablet, isMobile, isBrowser } from 'mobile-device-detect'
 
 import multiTouchEventsHandlers from './multiTouchEventsHandlers'
 import trackpadGestureHandlers from './trackpadGestureHandlers'
-import preventDefault from '../../domUtils/preventDefault'
-import delayFn from '../../jsUtils/delayFn'
+import preventDefault from '../domUtils/preventDefault'
+import delayFn from '../jsUtils/delayFn'
 
 
 /**
