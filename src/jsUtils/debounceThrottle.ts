@@ -5,7 +5,7 @@
  *
  * * @example
  * const myFn = (string) => console.log(string)
- * const myFnTrottled = trottle(myFn, 100)
+ * const myFnTrottled = debounceThrottle(myFn, 100)
  * myFnTrottled('hello') // <-- 'hello'
  * myFnTrottled('world') // nothing
  * myFnTrottled('bonjour') // nothing yet
