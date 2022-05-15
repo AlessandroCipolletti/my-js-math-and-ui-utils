@@ -80,7 +80,7 @@ export {
 export {
   preventDefaultTouchOnEls,
   preventDefault,
-  preventMoveDefaultIfNeeded,
+  preventScrollDefaultIfNeeded,
   preventAllDefault,
   createDom,
   getEventCoordX,

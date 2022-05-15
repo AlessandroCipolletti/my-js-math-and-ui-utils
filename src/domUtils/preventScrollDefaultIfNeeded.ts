@@ -3,7 +3,7 @@ import preventDefault from './preventDefault'
 
 
 /**
- * @function preventMoveDefaultIfNeeded
+ * @function preventScrollDefaultIfNeeded
  * This fixes an annoying iOS15+ behavior on apple devices.
  * Prevents 'pull down to refresh' if the element you are pulling down has a scroll.
  * I used a css class "scrollable" to identify the dom elements who needs to prevent 'pull to refresh'.
@@ -11,13 +11,13 @@ import preventDefault from './preventDefault'
  *
  * @example
  * appContainer.addEventListener('touchstart', (e) => {
- *   preventMoveDefaultIfNeeded(e)
+ *   preventScrollDefaultIfNeeded(e)
  * }, false)
  *
  * @param {AnyPointerEvent} event
  * @returns {void}
  */
-const preventMoveDefaultIfNeeded = (event: AnyPointerEvent): void => {
+const preventScrollDefaultIfNeeded = (event: AnyPointerEvent): void => {
   const eventMove = 'ontouchstart' in window ? 'touchmove' : 'pointermove'
   const eventEnd = 'ontouchstart' in window ? 'touchend' : 'pointerup'
   let target = event.target as HTMLElement
@@ -82,4 +82,4 @@ const preventMoveDefaultIfNeeded = (event: AnyPointerEvent): void => {
 }
 
 
-export default preventMoveDefaultIfNeeded
+export default preventScrollDefaultIfNeeded

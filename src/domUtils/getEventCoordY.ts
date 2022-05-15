@@ -34,8 +34,8 @@ const getEventCoordY = (
 
     const coordY: number = (
       absoluteByPage || typeof selectedEvent.clientY === undefined
-      ? selectedEvent.pageY
-      : selectedEvent.clientY
+        ? selectedEvent.pageY
+        : selectedEvent.clientY
     )
 
     return roundNumber(coordY - offset, 1)
