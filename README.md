@@ -11,8 +11,9 @@ Each one with its own module and documentation.
 npm i --save js-math-and-ui-utils
 ```
 ### Importing
-<p>You can import the whole library, just one module, as well as each method one by one.</p>
-<p>This allows you to keep your javascript bundle as small as possible.</p>
+You can import the whole library, just one module, as well as each method one by one.
+This allows you to keep your javascript bundle as small as possible.
+
 ```
 import { * as Utils } from 'js-math-and-ui-utils'
 Utils.roundNumber(myNumberVar, requiredDecimals)
@@ -23,7 +24,6 @@ MathUtils.roundNumber(myNumberVar, requiredDecimals)
 import roundNumber from 'js-math-and-ui-utils/mathUtils/roundNumber'
 roundNumber(myNumberVar, requiredDecimals)
 ```
-
 ## Modules
 Check the docs for each module:
 
