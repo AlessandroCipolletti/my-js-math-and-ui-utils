@@ -9,7 +9,8 @@ import getEventCoordX from '../domUtils/getEventCoordX'
 import getEventCoordY from '../domUtils/getEventCoordY'
 import filterTouchesByTargets from '../domUtils/filterTouchesByTargets'
 import delay from '../jsUtils/delay'
-import { getPointerEventForThisDevice } from '../utils'
+import { getPointerEventForThisDevice } from './utils'
+
 
 const TIME_TO_WAIT_FOR_SECOND_FINGER = 40
 const TIME_TO_WAIT_FOR_TAP_END = 50
