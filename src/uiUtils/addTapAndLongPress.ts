@@ -26,6 +26,7 @@ type Handler = (event: AnyPointerEvent) => void
  * @param {Handler} onLongPress
  * @param {number} [maxPxToMove = 20]
  * @param {number} [minMsToLongPress = 250]
+ * @return {void}
  */
 const addTapAndLongPress = (
   listElement: HTMLElement,
@@ -33,7 +34,7 @@ const addTapAndLongPress = (
   onLongPress: Handler,
   maxPxToMove = 20,
   minMsToLongPress = LONG_PRESS_DURATION,
-) => {
+): void => {
 
   const [eventStart, eventMove, eventEnd] = getPointerEventForThisDevice()
 

@@ -24,6 +24,9 @@ import delayFn from '../../jsUtils/delayFn'
  *   onGestureEnd,
  * })
  *
+ * @param {HTMLElement|Array<HTMLElement>} targets
+ * @param {MultiTouchHandlers} handlers
+ * @returns {void}
  */
 const multiTouchMultiDeviceEventsHandlers = (
   targets: HTMLElement|Array<HTMLElement>,

@@ -45,6 +45,7 @@ type Handler = (element: HTMLElement, newIndex: number, dragInProgress: boolean)
  * @param {HTMLElement} element
  * @param {Handler} callback
  * @param {boolean} [verticalScroll = true]
+ * @returns {void}
  */
 const addListDragAndDrop = (() => {
   let moveEventX = 0
