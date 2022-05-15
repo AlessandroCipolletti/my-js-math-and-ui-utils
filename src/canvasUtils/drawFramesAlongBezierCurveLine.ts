@@ -48,7 +48,7 @@ interface PointCoords {
  * (bezier curve line defined by three points {x, y})
  * (size, alpha and rotation, change lineraly)
  * (sizeToFramesRatio indicates how many frame should be contained in a `${size}` amount of pixels)
- * (if frameSize === 10 and sizeToFramesRatio === 1/2, frame distance will be 5 px
+ * (if frameSize === 10 and sizeToFramesRatio === 1/2, frame distance will be 5 px)
  *
  * @example
  * drawFramesAlongBezierCurveLine(myContext, drawCircle, '#123456', 10, 20, 0.5, 0.9, Math.PI, Math.PI/2, 3, 1/10, { x: 10, y: 10 }, { x: 30, y: 50 }, { x: 20, y: 40 })

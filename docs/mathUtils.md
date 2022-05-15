@@ -7,10 +7,11 @@
 
 **Kind**: global variable
 
-# Functions
 
 ## setDefaultDecimalDigits
-Set a different default decimal digit amount(digits) ⇒ <code>void</code>
+Set a different default decimal digit amount.
+
+(digits) ⇒ <code>void</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

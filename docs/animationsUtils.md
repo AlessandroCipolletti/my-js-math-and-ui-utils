@@ -1,4 +1,6 @@
-## Functions
+[< Back](https://github.com/AlessandroCipolletti/js-math-and-ui-utils)
+
+# Animations Utils reference
 
 <a name="addInElements
 Performs a addIn animation on one or multiple Dom elements at the same time."></a>
