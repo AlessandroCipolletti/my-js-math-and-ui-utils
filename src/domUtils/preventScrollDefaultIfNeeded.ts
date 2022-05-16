@@ -10,7 +10,7 @@ import preventDefault from './preventDefault'
  * You can do it by using getComputedStyle(target).overflow === 'auto'|'scroll', but it's more demanding in terms of performance.
  *
  * @example
- * appContainer.addEventListener('touchstart', (e) => {
+ * mainContainer.addEventListener('touchstart', (e) => {
  *   preventScrollDefaultIfNeeded(e)
  * }, false)
  *
@@ -53,9 +53,9 @@ const preventScrollDefaultIfNeeded = (event: AnyPointerEvent): void => {
     }
   }
 
-  const onTouchMove = (e: AnyPointerEvent) => {
+  const onTouchMove = (event: AnyPointerEvent) => {
     if (!hasVerticalScroll && !hasHorizontalScroll) {
-      preventDefault(e)
+      preventDefault(event)
       if (document.activeElement && document.activeElement instanceof HTMLElement) {
         const elementTag: string = document.activeElement.tagName.toLowerCase()
         const elementType: string = (document.activeElement.getAttribute('type') || '').toLowerCase()
@@ -65,9 +65,9 @@ const preventScrollDefaultIfNeeded = (event: AnyPointerEvent): void => {
         }
       }
     } else if (hasVerticalScroll && scrollStartedFromTop) {
-      const moveY = getEventCoordY(e, 0)
+      const moveY = getEventCoordY(event, 0)
       if (moveY > startY) {
-        preventDefault(e)
+        preventDefault(event)
       }
     }
   }
