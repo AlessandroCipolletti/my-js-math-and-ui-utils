@@ -1,6 +1,6 @@
 {
   "name": "js-math-and-ui-utils",
-  "version": "1.1.20",
+  "version": "1.1.21",
   "description": "A set of Math, Dom, UI, Images, Canvas, Animations, Colors utils that I usually need in my projects",
   "repository": {
     "type": "git",
@@ -18,10 +18,10 @@
   "author": "Alessandro Cipolletti <cipolletti.alessandro@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlessandroCipolletti/js-math-and-ui-utils/issues",
+    "url": "https://github.com/AlessandroCipolletti/my-js-math-and-ui-utils/issues",
     "email": "cipolletti.alessandro@gmail.com"
   },
-  "homepage": "https://github.com/AlessandroCipolletti/js-math-and-ui-utils#readme",
+  "homepage": "https://github.com/AlessandroCipolletti/my-js-math-and-ui-utils#readme",
   "main": "./index.js",
   "files": [
     "./**/*"
