@@ -4,7 +4,7 @@
  * Converts radians to degrees
  *
  * @example
- * convertAngleRadiansToDegrees(Math.Math.PI) // ==> 180
+ * convertAngleRadiansToDegrees(Math.PI) // ==> 180
  *
  * @param {number} radians
  * @returns {number}
