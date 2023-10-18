@@ -20,7 +20,7 @@ const getLinerarInterpolation = (
   min: number,
   max: number,
   t: number,
-  decimals = defaultDecimalDigits,
+  decimals = defaultDecimalDigits
 ): number => {
   return roundNumber(min + (max - min) * t, decimals)
 }

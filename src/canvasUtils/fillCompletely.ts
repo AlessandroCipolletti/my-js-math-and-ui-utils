@@ -11,7 +11,7 @@
 const fillCompletely = (
   destinationContext: MyCanvasRenderingContext2D,
   color: string,
-  alpha = 1,
+  alpha = 1
 ): void => {
 
   destinationContext.fillStyle = color

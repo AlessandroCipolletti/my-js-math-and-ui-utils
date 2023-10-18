@@ -22,7 +22,7 @@ const base64ToImageData = async(
   x = 0,
   y = 0,
   width = 0,
-  height = 0,
+  height = 0
 ): Promise<Uint8ClampedArray> => {
 
   const img = await getImageFromUrlAsync(base64, true)

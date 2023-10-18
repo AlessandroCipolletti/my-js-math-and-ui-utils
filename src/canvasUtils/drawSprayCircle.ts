@@ -35,9 +35,9 @@ const drawSprayCircle = (
   y: number,
   color: string,
   size: number,
-  alpha: number,
+  alpha: number
 ): void => {
-  
+
   destinationContext.lastDrawCoordX = x
   destinationContext.lastDrawCoordY = y
   size = roundNumber(size, 0)

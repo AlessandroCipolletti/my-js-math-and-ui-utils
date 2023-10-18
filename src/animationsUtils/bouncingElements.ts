@@ -32,7 +32,7 @@ interface BouncingOptions {
  */
 const bouncingElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
-  options: BouncingOptions = {},
+  options: BouncingOptions = {}
 ): Promise<void> => {
 
   const duration = options.duration || 200
@@ -57,7 +57,7 @@ const _bouncingEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   animationScale: number,
-  rotationDegrees: number,
+  rotationDegrees: number
 ): Promise<void> => {
 
   if (element instanceof HTMLElement) {

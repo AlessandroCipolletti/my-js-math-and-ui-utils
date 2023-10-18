@@ -15,9 +15,9 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  */
 const resizeImageAndGetBase64 = (
   imageDom: HTMLCanvasElement|HTMLImageElement,
-  maxSize: number = defaultMaxImageSideSize,
+  maxSize: number = defaultMaxImageSideSize
 ): string => {
-  
+
   let imgRatio: number
   if (imageDom instanceof HTMLCanvasElement) {
     imgRatio = imageDom.width / imageDom.height

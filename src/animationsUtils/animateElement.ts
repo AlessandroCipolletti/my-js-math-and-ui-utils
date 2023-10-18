@@ -22,7 +22,7 @@ const animateElement = async(
   keyframes: Keyframes = [],
   duration = 200,
   otherNativeOptions: Record<string, any> = {},
-  commitResult = true,
+  commitResult = true
 ): Promise<boolean>  => {
   if (
     !(element instanceof HTMLElement) ||

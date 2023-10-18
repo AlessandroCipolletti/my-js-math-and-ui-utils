@@ -40,7 +40,7 @@ const fillCanvasWithBucket = (
   destinationContext: MyCanvasRenderingContext2D,
   x: number,
   y: number,
-  color: string,
+  color: string
 ): false|Promise<void> => {
 
   const i: number = (Math.floor(x) + Math.floor(y) * destinationContext.canvas.width) * 4
@@ -49,7 +49,7 @@ const fillCanvasWithBucket = (
     0,
     0,
     destinationContext.canvas.width,
-    destinationContext.canvas.height,
+    destinationContext.canvas.height
   )
   const targetColor: RgbaColorObject = {
     r: image.data[i + 0],
@@ -125,7 +125,7 @@ const _bucketHistoryContainsColor = (color: RgbaColorObject, tolerance = 1): boo
  */
 const _getBucketBoundariesWeakMode = (
   targetColor: RgbaColorObject,
-  fillColor: RgbaColorObject,
+  fillColor: RgbaColorObject
 ): boolean => {
 
   if (targetColor.a === 0) {

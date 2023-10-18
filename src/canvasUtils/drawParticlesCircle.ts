@@ -24,7 +24,7 @@ const drawParticlesCircle = (
   y: number,
   color: string,
   size: number,
-  alpha: number,
+  alpha: number
 ): void => {
 
   destinationContext.lastDrawCoordX = x

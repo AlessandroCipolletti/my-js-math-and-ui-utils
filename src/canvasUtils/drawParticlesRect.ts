@@ -25,7 +25,7 @@ const drawParticlesRect = (
   y: number,
   color: string,
   size: number,
-  alpha: number,
+  alpha: number
 ): void => {
 
   destinationContext.lastDrawCoordX = x
@@ -34,7 +34,7 @@ const drawParticlesRect = (
   destinationContext.globalAlpha = alpha
   destinationContext.fillStyle = color
   const s2 = size / 2
-  
+
   for (let i = 0, l = size * (size + 1); i < l; i++) {
     x = roundNumber(x + getRandomNumber(size) - s2, 1)
     y = roundNumber(y + getRandomNumber(size) - s2, 1)

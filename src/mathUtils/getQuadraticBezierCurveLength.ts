@@ -22,7 +22,7 @@ const getQuadraticBezierCurveLength = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): number => {
 
   const a = {

@@ -18,7 +18,7 @@ const getQuadraticBezierValueAtTime = (
   p1: number,
   p2: number,
   p3: number,
-  decimals = defaultDecimalDigits,
+  decimals = defaultDecimalDigits
 ): number => {
   return roundNumber((1 - t) * (1 - t) * p1 + 2 * (1 - t) * t * p2 + t * t * p3, decimals)
 }

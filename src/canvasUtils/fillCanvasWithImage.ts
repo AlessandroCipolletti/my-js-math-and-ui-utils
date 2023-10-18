@@ -25,7 +25,7 @@ const fillCanvasWithImage = (
   y = 0,
   w = 0,
   h = 0,
-  rotation = 0,
+  rotation = 0
 ): void => {
 
   destinationContext.clearRect(0, 0, destinationContext.canvas.width, destinationContext.canvas.height)

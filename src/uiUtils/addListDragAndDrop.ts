@@ -171,7 +171,7 @@ const addListDragAndDrop = (() => {
       moveEventY,
       roundNumber((listElementsRects[finalNewIndex].left + listElementsRects[finalNewIndex].right) / 2, 0),
       roundNumber((listElementsRects[finalNewIndex].top + listElementsRects[finalNewIndex].bottom) / 2, 0),
-      animationScale,
+      animationScale
     )
     await fadeOutElements(draggedElement, {
       duration: 300,
@@ -354,7 +354,7 @@ const addListDragAndDrop = (() => {
     list: HTMLElement,
     element: HTMLElement,
     callback: Handler,
-    verticalScroll = true,
+    verticalScroll = true
   ): void => {
 
     preventDefault(event)

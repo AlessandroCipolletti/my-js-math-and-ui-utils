@@ -15,9 +15,9 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  */
 const resizeImageAndGetLocalUrl = (
   image: HTMLImageElement,
-  maxSize: number = defaultMaxImageSideSize,
+  maxSize: number = defaultMaxImageSideSize
 ): Promise<string> => {
-  
+
   return new Promise<string>((resolve) => {
     const imgRatio: number = (image.naturalWidth || image.width) / (image.naturalHeight || image.height)
 

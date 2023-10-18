@@ -37,7 +37,7 @@ import { _fadeInEl } from './fadeInElements'
  */
 const toggleFadeElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
-  options: ToggleFadeOptions = {},
+  options: ToggleFadeOptions = {}
 ): Promise<void> => {
 
   const duration = options.duration || DEFAULT_FADE_TRANSITION_DURATION
@@ -62,7 +62,7 @@ const _toggleFadeEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
-  commitResult: boolean,
+  commitResult: boolean
 ): Promise<void> => {
 
   if (element) {

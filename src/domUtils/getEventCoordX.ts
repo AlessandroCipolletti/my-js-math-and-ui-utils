@@ -18,7 +18,7 @@ import roundNumber from '../mathUtils/roundNumber'
 const getEventCoordX = (
   event: AnyPointerEventOrArray,
   offset = 0,
-  absoluteByPage = false,
+  absoluteByPage = false
 ): number => {
 
   if (event) {

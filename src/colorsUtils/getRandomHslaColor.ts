@@ -19,9 +19,9 @@ import getRandomNumber from '../mathUtils/getRandomNumber'
 const getRandomHslaColor = (
   alpha: boolean|number = false,
   defaultSat = true,
-  defaultLight = true,
+  defaultLight = true
 ): string => {
-  
+
   if (alpha === false) alpha = 1
   else if (alpha === true) alpha = 0.7
   else if (typeof(alpha) !== 'number') alpha = 1

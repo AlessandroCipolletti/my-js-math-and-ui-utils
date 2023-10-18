@@ -37,7 +37,7 @@ interface FadeInOptions {
  */
 const fadeInElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
-  options: FadeInOptions = {},
+  options: FadeInOptions = {}
 ): Promise<void> => {
 
   const duration = options.duration || DEFAULT_FADE_TRANSITION_DURATION
@@ -62,7 +62,7 @@ export const _fadeInEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
-  commitResult: boolean,
+  commitResult: boolean
 ): Promise<void> => {
 
   if (element instanceof HTMLElement) {

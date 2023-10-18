@@ -23,7 +23,7 @@ const getLogarithmicPercentageOfValue = (
   value: number,
   minValue: number,
   maxValue: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): number => {
 
   minValue = Math.log(minValue)

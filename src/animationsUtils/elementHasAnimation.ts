@@ -13,7 +13,7 @@
  */
 const elementHasAnimation = (
   element: HTMLElementWithAnimations,
-  animName: string,
+  animName: string
 ): boolean => {
 
   if (element.animationsInProgress) {

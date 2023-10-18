@@ -12,7 +12,7 @@ const pixelCompare = (
   targetColor: RgbaColorObject,
   bucketData: Uint8ClampedArray,
   bucketDataLength: number,
-  tolerance: number,
+  tolerance: number
 ): boolean => {
 
   if (i < 0 || i >= bucketDataLength) return false //out of bounds
@@ -33,7 +33,7 @@ const pixelCompareAndSet = (
   bucketData: Uint8ClampedArray,
   bucketDataLength: number,
   tolerance: number,
-  boundariesWeekMode: boolean,
+  boundariesWeekMode: boolean
 ): boolean => {
 
   const res = pixelCompare(i, targetColor, bucketData, bucketDataLength, tolerance)

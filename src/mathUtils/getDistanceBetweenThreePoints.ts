@@ -26,7 +26,7 @@ const getDistanceBetweenThreePoints = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): number => {
 
   const firstDistance = getDistanceBetweenTwoPoints(x1, y1, x2, y2, decimals) || 0

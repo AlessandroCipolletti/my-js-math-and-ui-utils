@@ -15,7 +15,7 @@ const canvasIsEvenlyColored = (destinationContext: MyCanvasRenderingContext2D): 
     0,
     0,
     destinationContext.canvas.width,
-    destinationContext.canvas.height,
+    destinationContext.canvas.height
   ).data
 
   return !imageData.some((color, i, data) => color !== data[i % 4])

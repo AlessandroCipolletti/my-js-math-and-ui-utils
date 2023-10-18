@@ -33,7 +33,7 @@ const addTapAndLongPress = (
   onTap: Handler,
   onLongPress: Handler,
   maxPxToMove = 20,
-  minMsToLongPress = LONG_PRESS_DURATION,
+  minMsToLongPress = LONG_PRESS_DURATION
 ): void => {
 
   const [eventStart, eventMove, eventEnd] = getPointerEventForThisDevice()

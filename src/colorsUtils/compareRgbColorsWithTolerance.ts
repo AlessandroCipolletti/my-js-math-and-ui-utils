@@ -12,7 +12,7 @@
 const compareRgbColorsWithTolerance = (
   rgb1: RgbColorObject,
   rgb2: RgbColorObject,
-  tolerance = 10,
+  tolerance = 10
 ): boolean => !(
   Math.abs(rgb1.r - rgb2.r) > tolerance ||
   Math.abs(rgb1.g - rgb2.g) > tolerance ||

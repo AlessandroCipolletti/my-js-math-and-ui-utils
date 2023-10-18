@@ -14,7 +14,7 @@
 const getCanvasRgbaColorAtPx = (
   destinationContext: MyCanvasRenderingContext2D,
   x: number,
-  y: number,
+  y: number
 ): RgbaColorObject => {
 
   const pxIndex = (Math.floor(x) + Math.floor(y) * destinationContext.canvas.width) * 4
@@ -22,7 +22,7 @@ const getCanvasRgbaColorAtPx = (
     0,
     0,
     destinationContext.canvas.width,
-    destinationContext.canvas.height,
+    destinationContext.canvas.height
   )
 
   return {

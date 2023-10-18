@@ -33,7 +33,7 @@ const addHorizontalSliderDrag = (
   valueMin: number,
   returnRelativeDiff = false,
   decimals = 4,
-  waitingTime = 0,
+  waitingTime = 0
 ): void => {
 
   const [eventStart, eventMove, eventEnd] = getPointerEventForThisDevice()

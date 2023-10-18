@@ -10,7 +10,7 @@
  */
 const flipImage = (
   imageDom: HTMLCanvasElement|HTMLImageElement,
-  horizontally = true,
+  horizontally = true
 ): HTMLCanvasElement => {
 
   const canvas: HTMLCanvasElement = document.createElement('canvas')

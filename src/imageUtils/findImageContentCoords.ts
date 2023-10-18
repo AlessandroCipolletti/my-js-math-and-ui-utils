@@ -40,7 +40,7 @@ interface CanvasCoordsResponse {
 const findImageContentCoords = async(
   imageDom: HTMLCanvasElement|HTMLImageElement,
   pxPrecision = 1,
-  alphaTolerance = 0.01,
+  alphaTolerance = 0.01
 ): Promise<CanvasCoordsResponse> => {
 
   alphaTolerance = roundNumber(255 * alphaTolerance, 0)

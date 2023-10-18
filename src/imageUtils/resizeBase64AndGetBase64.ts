@@ -20,9 +20,9 @@ const _detachTempImageEvents = () => {
  */
 const resizeBase64AndGetBase64 = (
   base64: string,
-  maxSize: number = defaultMaxImageSideSize,
+  maxSize: number = defaultMaxImageSideSize
 ): Promise<string> => {
-  
+
   return new Promise<string>((resolve, reject) => {
     tempImage.onload = () => {
       _detachTempImageEvents()

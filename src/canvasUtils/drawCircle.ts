@@ -25,7 +25,7 @@ const drawCircle = (
   size: number,
   alpha: number,
   _ = 0,
-  blur = 0,
+  blur = 0
 ): void => {
 
   destinationContext.beginPath()

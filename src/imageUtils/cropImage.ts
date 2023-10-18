@@ -17,9 +17,9 @@ const cropImage = (
   x: number,
   y: number,
   width: number,
-  height: number,
+  height: number
 ): HTMLCanvasElement => {
-  
+
   const canvas: HTMLCanvasElement = document.createElement('canvas')
   const context = canvas.getContext('2d') as CanvasRenderingContext2D
 

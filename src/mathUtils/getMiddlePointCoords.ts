@@ -21,7 +21,7 @@ const getMiddlePointCoords = (
   y1: number,
   x2: number,
   y2: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): Array<number> => {
 
   return [

@@ -19,7 +19,7 @@ const hslaToRgba = (
   hue: number,
   sat: number,
   light: number,
-  alpha = 1,
+  alpha = 1
 ): RgbaColorObject => {
 
   let t2: number

@@ -8,9 +8,9 @@
  * @returns {any}
  */
 const deepCopy = (
-  value: Record<string, any> | number | string,
+  value: Record<string, any> | number | string
 ): Record<string, any> | number | string => {
-  
+
   return JSON.parse(JSON.stringify(value))
 }
 

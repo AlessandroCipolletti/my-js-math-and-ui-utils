@@ -21,9 +21,9 @@ const cropImageWithMargin = (
   t: number,
   r: number,
   b: number,
-  margin = 0.1,
+  margin = 0.1
 ): Array<HTMLCanvasElement|number> => {
-  
+
   let imageWidth: number, imageHeight: number
 
   if (imageDom instanceof HTMLCanvasElement) {

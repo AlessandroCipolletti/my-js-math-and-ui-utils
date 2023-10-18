@@ -23,7 +23,7 @@ const getLogarithmicValueOfPercentage = (
   percentage: number,
   minValue: number,
   maxValue: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): number => {
 
   if (percentage < 0 || minValue <= 0 || maxValue <= 0) {

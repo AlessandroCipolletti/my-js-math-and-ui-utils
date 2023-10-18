@@ -38,7 +38,7 @@ interface RemoveOutOptions {
  */
 const removeOutElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
-  options: RemoveOutOptions = {},
+  options: RemoveOutOptions = {}
 ): Promise<void> => {
 
   const duration = options.duration || DEFAULT_FADE_TRANSITION_DURATION
@@ -63,7 +63,7 @@ export const _removeOutEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
-  commitResult: boolean,
+  commitResult: boolean
 ): Promise<void> => {
 
   if (element instanceof HTMLElement) {

@@ -26,7 +26,7 @@ const moveToElements = async(
   fromY: number,
   toX: number,
   toY: number,
-  fromScale = 1,
+  fromScale = 1
 ): Promise<void> => {
   await iterateFn(elements, _moveToEl, [duration, fromX, fromY, toX, toY, fromScale])
 }
@@ -52,14 +52,14 @@ const _moveToEl = async(
   fromY: number,
   toX: number,
   toY: number,
-  fromScale: number,
+  fromScale: number
 ): Promise<void> => {
 
   if (element instanceof HTMLElement) {
     if (!elementHasAnimation(element, 'moveTo')) {
       const keyframes = [
         { top: `${fromY}px`, left: `${fromX}px`, transform: `translate3d(-50%, -50%, 0px) scale(${fromScale})`, offset: 0 },
-        { top: `${toY}px`, left: `${toX}px`, transform: `translate3d(-50%, -50%, 0px) scale(${1})`, offset: 1 }
+        { top: `${toY}px`, left: `${toX}px`, transform: `translate3d(-50%, -50%, 0px) scale(${1})`, offset: 1 },
       ]
       const options = { easing: 'ease-in-out' }
 

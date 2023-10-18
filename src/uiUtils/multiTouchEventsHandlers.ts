@@ -50,7 +50,7 @@ const _fixAndroidTouchEvent = (touchEvent: IosTouch): IosTouch => {
  */
 const multiTouchEventsHandlers = (
   target: HTMLElement,
-  handlers: MultiTouchHandlers,
+  handlers: MultiTouchHandlers
 ): void => {
 
   const onSingleTouchStart = handlers.onSingleTouchStart

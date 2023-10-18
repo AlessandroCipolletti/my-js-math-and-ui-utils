@@ -19,7 +19,7 @@ const rgbaToHsla = (
   r: number,
   g: number,
   b: number,
-  a = 1,
+  a = 1
 ): HslaColorObject => {
 
   let s: number, h = 0

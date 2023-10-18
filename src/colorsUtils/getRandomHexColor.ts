@@ -14,7 +14,7 @@ const getRandomHexColor = (): string => {
   const a = getRandomNumber(255, 0, 0)
   const b = getRandomNumber(255, 0, 0)
   const c = getRandomNumber(255, 0, 0)
-  
+
   return `#${((256+a<<8|b)<<8|c).toString(16).slice(1)}`
 }
 

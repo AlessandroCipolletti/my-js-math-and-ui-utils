@@ -24,7 +24,7 @@ const getQuadraticBezierCurvePointAtTime = (
   y2: number,
   x3: number,
   y3: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): Array<number> => {
 
   return [

@@ -26,7 +26,7 @@ const getIntersectionBetween4Points = (
   y3: number,
   x4: number,
   y4: number,
-  decimals: number = defaultDecimalDigits,
+  decimals: number = defaultDecimalDigits
 ): Array<number> => {
   // points {x1, y1} and {x2, y2} define the first line
   // points {x3, y3} and {x4, y4} define the second line

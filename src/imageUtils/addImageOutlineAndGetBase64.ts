@@ -13,7 +13,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  */
 const addImageOutlineAndGetBase64 = (
   imageDom: HTMLCanvasElement|HTMLImageElement,
-  outlineColor: string,
+  outlineColor: string
 ): string => {
 
   if (imageDom instanceof HTMLCanvasElement) {

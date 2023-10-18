@@ -18,7 +18,7 @@ const distanceBetweenTwoPointsGreaterThan = (
   y1: number,
   x2: number,
   y2: number,
-  distance: number,
+  distance: number
 ): boolean => {
   return Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) >= Math.pow(distance, 2)
 }

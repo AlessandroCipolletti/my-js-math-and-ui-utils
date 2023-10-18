@@ -11,7 +11,7 @@ import getCanvasBlobAsync from './getCanvasBlobAsync'
  * @returns {Promise<string>}
  */
 const getImageBase64Async = async(
-  imageDom: HTMLCanvasElement|HTMLImageElement,
+  imageDom: HTMLCanvasElement|HTMLImageElement
 ): Promise<string> => {
   if (imageDom instanceof HTMLImageElement) {
     imageDom = convertImgToCanvas(imageDom)

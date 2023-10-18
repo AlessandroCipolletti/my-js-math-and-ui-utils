@@ -14,7 +14,7 @@
  */
 const filterTouchesByTargets = (
   event: AnyPointerEvent,
-  targets: HTMLElement|Array<HTMLElement>,
+  targets: HTMLElement|Array<HTMLElement>
 ): Array<OnePointerEvent> => {
 
   let events: Array<OnePointerEvent> = []

@@ -16,7 +16,7 @@ const tempContext = tempCanvas.getContext('2d') as CanvasRenderingContext2D
  */
 const imageHasUniformBackground = (
   imageDom: HTMLCanvasElement|HTMLImageElement,
-  tolerance = 3,
+  tolerance = 3
 ): boolean => {
 
   if (imageDom instanceof HTMLCanvasElement) {

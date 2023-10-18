@@ -83,7 +83,7 @@ const drawFramesAlongBezierCurveLine = (
   sizeToFramesRatio: number,
   p1: PointCoords,
   p2: PointCoords,
-  p3: PointCoords,
+  p3: PointCoords
 ): boolean => {
 
   let drewSomething = false
@@ -106,7 +106,7 @@ const drawFramesAlongBezierCurveLine = (
       destinationContext.lastDrawCoordY,
       frameX,
       frameY,
-      pxDistanceNeededFromLastFrame,
+      pxDistanceNeededFromLastFrame
     )
 
     if (farEnoughFromLastFrame) {

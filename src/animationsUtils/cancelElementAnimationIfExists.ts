@@ -14,7 +14,7 @@ import elementHasAnimation from './elementHasAnimation'
  */
 const cancelElementAnimationIfExists = (
   element: HTMLElementWithAnimations,
-  animName: string,
+  animName: string
 ): void => {
 
   element.animationsInProgress = element.animationsInProgress || {}

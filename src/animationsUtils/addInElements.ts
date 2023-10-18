@@ -38,7 +38,7 @@ interface AddInOptions {
  */
 const addInElements = async(
   elements: HTMLElementWithAnimations|Array<HTMLElementWithAnimations>,
-  options: AddInOptions = {},
+  options: AddInOptions = {}
 ): Promise<void> => {
 
   const duration = options.duration || DEFAULT_FADE_TRANSITION_DURATION
@@ -63,7 +63,7 @@ const _addInEl = async(
   element: HTMLElementWithAnimations,
   duration: number,
   maxFadeIn: number,
-  commitResult: boolean,
+  commitResult: boolean
 ): Promise<void> => {
 
   if (element instanceof HTMLElement) {

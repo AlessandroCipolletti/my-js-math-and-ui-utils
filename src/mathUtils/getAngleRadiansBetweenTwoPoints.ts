@@ -18,7 +18,7 @@ const getAngleRadiansBetweenTwoPoints = (
   x1: number,
   y1: number,
   x2: number,
-  y2: number,
+  y2: number
 ): number => {
 
   const m1 = x2 - x1

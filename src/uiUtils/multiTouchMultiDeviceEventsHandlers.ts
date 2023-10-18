@@ -30,7 +30,7 @@ import delayFn from '../jsUtils/delayFn'
  */
 const multiTouchMultiDeviceEventsHandlers = (
   targets: HTMLElement|Array<HTMLElement>,
-  handlers: MultiTouchHandlers,
+  handlers: MultiTouchHandlers
 ): void => {
 
   const delayedHandlers: MultiTouchHandlers = {}
