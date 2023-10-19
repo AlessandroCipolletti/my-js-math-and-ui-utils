@@ -1,7 +1,6 @@
 import roundNumber from '../mathUtils/roundNumber'
 import getNumberInBetween from '../mathUtils/getNumberInBetween'
 import getEventCoordX from '../domUtils/getEventCoordX'
-import getEventCoordY from '../domUtils/getEventCoordY'
 import preventDefault from '../domUtils/preventDefault'
 import getDomRect from '../domUtils/getDomRect'
 import { getPointerEventForThisDevice } from './utils'
