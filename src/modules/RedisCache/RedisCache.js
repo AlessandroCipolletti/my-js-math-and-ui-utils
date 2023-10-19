@@ -183,9 +183,9 @@ const initDefaultCache = async () => {
  * @returns {defaultCache}
  */
 export const getDefaultCache = async () => {
-  if (!defaultCache)
-    {await initDefaultCache()}
-
+  if (!defaultCache) {
+    await initDefaultCache()
+  }
 
   return defaultCache
 }

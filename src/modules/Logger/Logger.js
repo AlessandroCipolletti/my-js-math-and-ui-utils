@@ -12,11 +12,11 @@ import {
 // const FILE_ID = Math.trunc(Math.random() * 100000000000)
 
 
-class MyLogger {
+class Logger {
   constructor(options = {}) {
     this.includeDate = options.includeDate || true
     this.formatDate = options.formatDate || true
-    this.dateFormatIntl = options.dateFormatIntl || 'fr-BE'
+    this.dateFormatIntl = options.dateFormatIntl || 'fr-FR'
     // this.saveTofile = options.saveTofile && (typeof (process) !== 'undefined')
     // this.filesPath = options.filesPath || './'
 
@@ -120,4 +120,4 @@ class MyLogger {
   }
 }
 
-export default MyLogger
+export default Logger

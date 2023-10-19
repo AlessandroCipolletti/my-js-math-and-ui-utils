@@ -57,6 +57,7 @@
     "debounce": "^1.2.0",
     "lodash.isequal": "^4.5.0",
     "mobile-device-detect": "^0.4.3",
+    "redis": "^4.6.10",
     "uuid": "^8.3.2"
   }
 }
