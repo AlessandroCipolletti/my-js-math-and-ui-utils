@@ -1,4 +1,4 @@
-import { noop } from 'utils/jsUtils'
+const noop = () => {}
 const DEFAULT_MAX_HISTORY_LENGHT = 20
 
 class History {
