@@ -1,6 +1,5 @@
-
+import { noop } from 'utils/jsUtils'
 const DEFAULT_MAX_HISTORY_LENGHT = 20
-const noop = () => {}
 
 class History {
   #data = []
@@ -14,16 +13,18 @@ class History {
   }
 
   add(value) {
-    // const newValue = JSON.stringify(value)
-    let deletedItems = []
-    if (this.#data.length === 0 || value !== this.#data[this.#pointer]) {
-      deletedItems.push(...this.#data.splice(this.#pointer + 1, this.#data.length))
-      this.#data.push(value)
-      deletedItems.push(...this.#data.splice(0, this.#data.length - this.#maxLength))
-      this.#pointer = this.#data.length - 1
+    if (typeof value !== 'undefined') {
+      // const newValue = JSON.stringify(value)
+      let deletedItems = []
+      if (this.#data.length === 0 || value !== this.#data[this.#pointer]) {
+        deletedItems.push(...this.#data.splice(this.#pointer + 1, this.#data.length))
+        this.#data.push(value)
+        deletedItems.push(...this.#data.splice(0, this.#data.length - this.#maxLength))
+        this.#pointer = this.#data.length - 1
+      }
+      deletedItems.forEach(this.#onDeleteHandler)
+      return deletedItems
     }
-    deletedItems.forEach(this.#onDeleteHandler)
-    return deletedItems
   }
 
   getCurrent() {
@@ -65,14 +66,26 @@ class History {
     return false
   }
 
+  filterBackward(filterFn) {
+    if (typeof filterFn === 'function') {
+      this.filter((e) => this.#data.indexOf(e) > this.#pointer || filterFn(e))
+    }
+  }
+
+  filterForward(filterFn) {
+    if (typeof filterFn === 'function') {
+      this.filter((e) => this.#data.indexOf(e) <= this.#pointer || filterFn(e))
+    }
+  }
+
   filter(filterFn) {
     if (typeof filterFn === 'function') {
       const deletedData = this.#data.filter(e => !filterFn(e))
       const keptData = this.#data.filter(filterFn)
 
-      if (keptData.includes(this.getCurrent()))
-        {this.#pointer = keptData.indexOf(this.getCurrent())}
-       else {
+      if (keptData.includes(this.getCurrent())) {
+        this.#pointer = keptData.indexOf(this.getCurrent())
+      } else {
         while (this.#pointer > 0 && !keptData.includes(this.getCurrent())) {
           this.#pointer--
         }
@@ -96,9 +109,9 @@ class History {
   }
 
   onDelete(handler) {
-    if (typeof(handler) === 'function')
-      {this.#onDeleteHandler = handler}
-
+    if (typeof(handler) === 'function') {
+      this.#onDeleteHandler = handler
+    }
   }
 
   log() {
