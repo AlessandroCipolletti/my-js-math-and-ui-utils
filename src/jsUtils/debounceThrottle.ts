@@ -3,7 +3,7 @@
  * @function debounceThrottle
  * Trottle a function but at the end it executes the last callback call arrived during the waiting time too
  *
- * * @example
+ * @example
  * const myFn = (string) => console.log(string)
  * const myFnTrottled = debounceThrottle(myFn, 100)
  * myFnTrottled('hello') // <-- 'hello'
@@ -13,7 +13,7 @@
  *
  * @param {Function} callback
  * @param {number} limit
- * @returnss
+ * @returns {Function}
  */
 const debounceThrottle = (callback: () => any, limit: number) => {
   let waiting = false
