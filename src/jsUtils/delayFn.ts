@@ -9,8 +9,8 @@
  * myFnDelayed(12, 21)
  * console.log('hello world') // <-- this one is printed before
  *
- * @param {(...args: any[]) => any} fn
- * @returns {(any|Array<any>) => void}
+ * @param {Function} fn (...args: any[]) => any
+ * @returns {Function} (any | Array<any>) => void
  */
 const delayFn = (fn: (...args: any[]) => any) => (...args: Array<any>): void => {
   requestAnimationFrame(() => {

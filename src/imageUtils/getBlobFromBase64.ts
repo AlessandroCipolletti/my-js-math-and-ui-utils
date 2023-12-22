@@ -15,9 +15,9 @@ const _detachTempImageEvents = () => {
  * Takes a base64, loads it, and returns an image Blob and a local url pointing it
  *
  * @param {string} base64
- * @returns {Promise<[Blob, localObjectURL]>}
+ * @returns {Promise<Array<Blob | string>>} [blob, url]
  */
-const getBlobFromBase64 = (base64: string): Promise<Array<Blob|string>> => {
+const getBlobFromBase64 = (base64: string): Promise<Array<Blob | string>> => {
   return new Promise((resolve, reject) => {
     tempImage.onload = async () => {
       tempCanvas.width = tempImage.naturalWidth

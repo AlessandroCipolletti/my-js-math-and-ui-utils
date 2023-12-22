@@ -11,8 +11,8 @@
  * await iterateFn([10, 20, 30], multiply, 3) // [30, 60, 90]
  * await iterateFn([dom1, dom2], fadeIn)
  *
- * @param {any|Array<any>} els
- * @param {(el: any, ...args: Array<any>) => any} fn
+ * @param {any | Array<any>} els
+ * @param {Function} fn (el: any, ...args: Array<any>) => any
  * @param {Array<any>} ...params
  * @returns {Function}
  */

@@ -12,7 +12,7 @@ import iterateFn from '../jsUtils/iterateFn'
  * })
  *
  * @param {Array<HTMLElement>} elements
- * @param {Record<string, () => any>} events
+ * @param {Record<string, Function>} events Record<string, () => any>
  * @returns {void}
  */
 const attachDomEvents = (elements: Array<HTMLElement>, events: Record<string, () => any>): void => {
