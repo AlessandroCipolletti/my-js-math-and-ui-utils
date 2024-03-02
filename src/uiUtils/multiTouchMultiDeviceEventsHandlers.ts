@@ -32,7 +32,6 @@ const multiTouchMultiDeviceEventsHandlers = (
   targets: HTMLElement|Array<HTMLElement>,
   handlers: MultiTouchHandlers
 ): void => {
-
   const delayedHandlers: MultiTouchHandlers = {}
 
   let handlerName: keyof typeof handlers
@@ -67,6 +66,7 @@ const multiTouchMultiDeviceEventsHandlers = (
           onGestureStart,
           onGestureChange,
           onGestureEnd,
+          onWheel: delayedHandlers.onWheel,
         })
       }
     } else {

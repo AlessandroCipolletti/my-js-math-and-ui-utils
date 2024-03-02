@@ -26,6 +26,9 @@ interface GestureHandlers {
   onGestureEnd?: GestureHandler,
 }
 
+interface trackpadHandlers extends GestureHandlers {
+  onWheel?: (e: WheelEvent) => void
+}
 
 /**
  * @function trackpadGestureHandlers
@@ -44,10 +47,11 @@ interface GestureHandlers {
  * @param {GestureHandlers} handlers
  * @returns {void}
  */
-const trackpadGestureHandlers = (target: HTMLElement, handlers: GestureHandlers): void => {
+const trackpadGestureHandlers = (target: HTMLElement, handlers: trackpadHandlers): void => {
   const onGestureStart = handlers.onGestureStart
   const onGestureChange = handlers.onGestureChange
   const onGestureEnd = handlers.onGestureEnd
+  const onWheel = handlers.onWheel
 
   let isScrolling = false
   let currentGestureScale = 1
@@ -73,6 +77,9 @@ const trackpadGestureHandlers = (target: HTMLElement, handlers: GestureHandlers)
     // if (it's pinch to zoom gesture)
     if (e.ctrlKey) {
       currentGestureScale -= e.deltaY * 0.01
+    } else if (onWheel) {
+      onWheel(e)
+      return
     } else { // normal X Y scroll
       currentGestureX -= e.deltaX
       currentGestureY -= e.deltaY

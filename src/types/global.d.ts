@@ -177,20 +177,30 @@ declare type GestureHandler = (
 ) => void
 
 /**
+ * Custom handler for wheel mouse or trackpad event
+ * @typedef {(e: WheelEvent) => void} WheelHandler
+ */
+declare type WheelHandler = (
+  e: WheelEvent,
+) => void
+
+
+/**
  * @typeof MultiTouchHandlers
  * An object with all the touch handlers needed
  *
  * @prop {TouchHandler} onSingleTouchStart
  * @prop {TouchHandler} onSingleTouchMove
- * @prop {TouchHandler} onSingleTouchEnd
+ * @prop {TouchEndHandler} onSingleTouchEnd
  * @prop {GestureHandler} onGestureStart
  * @prop {GestureHandler} onGestureChange
  * @prop {GestureHandler} onGestureEnd
+ * @prop {WheelHandler} onWheel
  * @prop {TapHandler} onOneFingerLongPress
  * @prop {TapHandler} onOneFingerSingleTap
- * @prop {TapHandler} onTwoFingersSingleTap
- * @prop {TapHandler} onThreeFingersSingleTap
- * @prop {TapHandler} onFourFingersSingleTap
+ * @prop {TapsHandler} onTwoFingersSingleTap
+ * @prop {TapsHandler} onThreeFingersSingleTap
+ * @prop {TapsHandler} onFourFingersSingleTap
  */
 declare interface MultiTouchHandlers {
   onSingleTouchStart?: TouchHandler,
@@ -199,6 +209,7 @@ declare interface MultiTouchHandlers {
   onGestureStart?: GestureHandler,
   onGestureChange?: GestureHandler,
   onGestureEnd?: GestureHandler,
+  onWheel?: WheelHandler,
   onOneFingerLongPress?: TapHandler,
   onOneFingerSingleTap?: TapHandler,
   onTwoFingersSingleTap?: TapsHandler,
