@@ -1,4 +1,4 @@
-import { isAndroid } from 'mobile-device-detect'
+import { isAndroid, isTablet, isMobile, isBrowser } from 'mobile-device-detect'
 
 import roundNumber from '../mathUtils/roundNumber'
 import getAngleDegreesBetweenTwoPoints from '../mathUtils/getAngleDegreesBetweenTwoPoints'
@@ -19,6 +19,7 @@ const MOVE_EVENTS_TO_FORCE_MOVE = 6
 const TOUCH_TYPE_STYLUS = 'stylus'
 const TOUCH_TYPE_FINGER = 'direct'
 
+const isDesktop: boolean = !isTablet && !isMobile && isBrowser
 
 const _fixAndroidTouchEvent = (touchEvent: IosTouch): IosTouch => {
   if (isAndroid) {
@@ -243,7 +244,7 @@ const multiTouchEventsHandlers = (
     if (touchCanceled) return
     touches = filterTouchesByTargets(event, []) as Array<IosTouch>
 
-    if (!touches.length) {
+    if (!touches.length || (isDesktop && touches.length === 1)) {
       // @ts-expect-error it doesn't like a variable event name
       document.removeEventListener(eventMove, handleTouchMove)
       // @ts-expect-error it doesn't like a variable event name
