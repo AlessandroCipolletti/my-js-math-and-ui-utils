@@ -71,7 +71,7 @@ const multiTouchEventsHandlers = (
   let ratedTouchEvents: Array<IosTouch> = []
   let waitedLongEnoughForSecondFinger = false
   let waitedLongEnoughForTapEnd = false
-  let waitedLogEnoughForLongPress = false
+  let waitedLongEnoughForLongPress = false
   let movedBeforeGesture = false
   let gestureStarted = false
   let gestureInterrupted = false
@@ -91,7 +91,7 @@ const multiTouchEventsHandlers = (
     ratedTouchEvents = []
     waitedLongEnoughForSecondFinger = false
     waitedLongEnoughForTapEnd = false
-    waitedLogEnoughForLongPress = false
+    waitedLongEnoughForLongPress = false
     movedBeforeGesture = false
     gestureInterrupted = false
     gestureStarted = false
@@ -191,7 +191,7 @@ const multiTouchEventsHandlers = (
         await delay(TIME_TO_WAIT_FOR_TAP_END)
         waitedLongEnoughForTapEnd = true
         await delay(TIME_TO_WAIT_FOR_LONG_PRESS)
-        waitedLogEnoughForLongPress = true
+        waitedLongEnoughForLongPress = true
       }
     } else {
       if (touches.length > 1 && usedForSingleTouch) {
@@ -254,7 +254,7 @@ const multiTouchEventsHandlers = (
       if (usedForSingleTouch) {
         onSingleTouchEnd && onSingleTouchEnd(event)
         if (touchMoveLength <= MOVE_EVENTS_TO_FORCE_MOVE) {
-          if (waitedLogEnoughForLongPress) {
+          if (waitedLongEnoughForLongPress) {
             onOneFingerLongPress && onOneFingerLongPress(event, ratedTouchEvents[0])
           } else {
             onOneFingerSingleTap && onOneFingerSingleTap(event, ratedTouchEvents[0])
@@ -264,7 +264,7 @@ const multiTouchEventsHandlers = (
         usedForSingleTouch = true
         onSingleTouchStart && onSingleTouchStart(event, ratedTouchEvents[0])
         onSingleTouchEnd && onSingleTouchEnd(ratedTouchEvents[0])
-        if (waitedLogEnoughForLongPress) {
+        if (waitedLongEnoughForLongPress) {
           onOneFingerLongPress && onOneFingerLongPress(event, ratedTouchEvents[0])
         } else {
           onOneFingerSingleTap && onOneFingerSingleTap(event, ratedTouchEvents[0])
