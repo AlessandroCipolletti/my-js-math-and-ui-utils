@@ -1,3 +1,4 @@
+import nodeIsChildOf from './nodeIsChildOf'
 
 /**
  * @function filterTouchesByTargets
@@ -34,9 +35,15 @@ const filterTouchesByTargets = (
   }
 
   if (targets instanceof Array) {
-    return events.filter((event: Touch|Event) => targets.includes(event.target as HTMLElement))
+    return events.filter((event: Touch|Event) =>
+      targets.includes(event.target as HTMLElement) ||
+      targets.some((target: HTMLElement) => nodeIsChildOf(event.target as HTMLElement, target))
+    )
   } else {
-    return events.filter((event: Touch|Event) => event.target === targets)
+    return events.filter((event: Touch|Event) =>
+      event.target === targets ||
+      nodeIsChildOf(event.target as HTMLElement, targets)
+    )
   }
 }
 
